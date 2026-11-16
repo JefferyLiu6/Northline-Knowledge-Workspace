@@ -1,0 +1,169 @@
+Knowledge Workspace
+Workspace
+/
+Document Management
+Open Q&A
+PA
+Dashboard
+Knowledge Management
+Knowledge Bases
+Document Management
+Knowledge Chunks
+Chunking Strategy
+Retrieval Strategy
+Retrieval Testing
+Retrieval Debugger
+AI Configuration
+Q&A Apps
+Evaluation
+User Management
+Document Management
+
+Upload, preview, and index files in your knowledge bases.
+
+Upload document
+All knowledge bases
+All parsing statuses
+Search
+Reset
+11 documents
+	
+Document
+	
+Knowledge base
+	
+Parsing
+	
+Embedding
+	
+Actions
+	
+Spare Parts Supply and Returns
+TXT · 7.3 KB
+	
+After-Sales Service Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Customer FAQ
+MARKDOWN · 10.8 KB
+	
+After-Sales Service Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+After-Sales Service and Warranty Policy
+PDF · 6.5 KB
+	
+After-Sales Service Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Information Security and Data Protection Policy
+MARKDOWN · 10.6 KB
+	
+Company Policy Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Attendance and Leave Policy
+TXT · 9.1 KB
+	
+Company Policy Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Travel and Expense Reimbursement Policy
+WORD · 38.4 KB
+	
+Company Policy Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Employee Handbook
+MARKDOWN · 9.7 KB
+	
+Company Policy Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Firmware Upgrade and Release Notes
+TXT · 6.6 KB
+	
+Product Technical Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+GTE Series Fault Code Reference
+EXCEL · 8.2 KB
+	
+Product Technical Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+GTE Series Field Installation and Maintenance Guide
+WORD · 38.9 KB
+	
+Product Technical Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+1
+2

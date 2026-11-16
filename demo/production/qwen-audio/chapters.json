@@ -1,0 +1,74 @@
+[
+  {
+    "id": "01-cover",
+    "shot": 1,
+    "start": 0,
+    "end": 13.433333333333334,
+    "audio_seconds": 11.907083333333333,
+    "narration": "Meet Knowledge Workspace: a local AI support platform for the fictional Northline Industrial Systems. Follow a technician from a device fault to an answer, then inspect the evidence behind it."
+  },
+  {
+    "id": "02-library",
+    "shot": 2,
+    "start": 13.433333333333334,
+    "end": 27.5,
+    "audio_seconds": 12.549791666666666,
+    "narration": "The workspace organizes eleven source documents across three knowledge bases. Administrators can upload, preview, parse, split, and embed files, while checking their status in one place."
+  },
+  {
+    "id": "03-parse",
+    "shot": 3,
+    "start": 27.5,
+    "end": 40.36666666666667,
+    "audio_seconds": 11.358458333333333,
+    "narration": "Start with the input. This spreadsheet contains the gateway fault codes. The parsing preview exposes the extracted table, so an engineer can check the content before indexing it."
+  },
+  {
+    "id": "04-retrieve",
+    "shot": 4,
+    "start": 40.36666666666667,
+    "end": 61.96666666666667,
+    "audio_seconds": 20.078458333333334,
+    "narration": "For error five zero two two, retrieval testing exposes the selected passages, their scores, and timing. The fault-code reference appears first, making retrieval behavior visible before generation."
+  },
+  {
+    "id": "05-answer",
+    "shot": 5,
+    "start": 61.96666666666667,
+    "end": 74.6,
+    "audio_seconds": 11.113208333333333,
+    "narration": "Now ask the assistant about the G T E three thousand Pro. The live local model returns the correct limit: twenty thousand data points. Next, inspect its source attribution."
+  },
+  {
+    "id": "06-inspect",
+    "shot": 6,
+    "start": 74.6,
+    "end": 90.26666666666667,
+    "audio_seconds": 14.142166666666666,
+    "narration": "This capture exposes a citation defect. The answer names source two, but the explicit limit appears in source one. The inspector makes the mismatch visible. Citation accuracy still needs improvement."
+  },
+  {
+    "id": "07-recovery",
+    "shot": 7,
+    "start": 90.26666666666667,
+    "end": 106.16666666666667,
+    "audio_seconds": 14.391708333333334,
+    "narration": "Processing history preserves a failed attempt beside its successful retry. Separately, kill-and-restart tests passed for parsing, splitting, and embedding. Partial output is cleaned before an administrator retries."
+  },
+  {
+    "id": "08-evaluation",
+    "shot": 8,
+    "start": 106.16666666666667,
+    "end": 124.06666666666666,
+    "audio_seconds": 16.396708333333333,
+    "narration": "The development evaluation records one hundred fifty comparisons across fifty questions. Hybrid retrieval passed seventeen of eighteen selected technical fact checks, versus fifteen for vector search. These are development results, not production accuracy."
+  },
+  {
+    "id": "09-close",
+    "shot": 9,
+    "start": 124.06666666666666,
+    "end": 141.96666666666667,
+    "audio_seconds": 16.384083333333333,
+    "narration": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials."
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "shot": 1,
+  "lang": "en",
+  "text": "Meet Knowledge Workspace: a local AI support platform for the fictional Northline Industrial Systems. Follow a technician from a device fault to an answer, then inspect the evidence behind it.",
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16",
+  "voice": {
+    "speaker": "ryan",
+    "language": "english",
+    "instruct": "Speak as a calm, warm documentary narrator at a natural, steady pace. Not exaggerated."
+  },
+  "tts_input": "Meet Knowledge Workspace: a local AI support platform for the fictional Northline Industrial Systems. Follow a technician from a device fault to an answer, then inspect the evidence behind it.",
+  "seconds": 11.91,
+  "gen_seconds": 5.6
+}

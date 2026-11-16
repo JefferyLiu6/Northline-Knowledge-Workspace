@@ -1,0 +1,158 @@
+{
+  "text": "This capture exposes a citation defect. The answer names source two, but the explicit limit appears in source one. The inspector makes the mismatch visible. Citation accuracy still needs improvement.",
+  "audio_mtime": 1794866052.8275583,
+  "duration": 14.142,
+  "heard": "This capture exposes a citation defect. The answer names source two, but the explicit limit appears in source one. The inspector makes the mismatch visible. Citation accuracy still needs improvement.",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.22,
+      "word": " This"
+    },
+    {
+      "start": 0.22,
+      "end": 0.6,
+      "word": " capture"
+    },
+    {
+      "start": 0.6,
+      "end": 1.28,
+      "word": " exposes"
+    },
+    {
+      "start": 1.28,
+      "end": 1.48,
+      "word": " a"
+    },
+    {
+      "start": 1.48,
+      "end": 1.88,
+      "word": " citation"
+    },
+    {
+      "start": 1.88,
+      "end": 2.44,
+      "word": " defect."
+    },
+    {
+      "start": 2.9,
+      "end": 3.68,
+      "word": " The"
+    },
+    {
+      "start": 3.68,
+      "end": 4.02,
+      "word": " answer"
+    },
+    {
+      "start": 4.02,
+      "end": 4.34,
+      "word": " names"
+    },
+    {
+      "start": 4.34,
+      "end": 4.66,
+      "word": " source"
+    },
+    {
+      "start": 4.66,
+      "end": 4.98,
+      "word": " two,"
+    },
+    {
+      "start": 5.12,
+      "end": 5.22,
+      "word": " but"
+    },
+    {
+      "start": 5.22,
+      "end": 5.34,
+      "word": " the"
+    },
+    {
+      "start": 5.34,
+      "end": 5.84,
+      "word": " explicit"
+    },
+    {
+      "start": 5.84,
+      "end": 6.2,
+      "word": " limit"
+    },
+    {
+      "start": 6.2,
+      "end": 6.68,
+      "word": " appears"
+    },
+    {
+      "start": 6.68,
+      "end": 6.86,
+      "word": " in"
+    },
+    {
+      "start": 6.86,
+      "end": 7.2,
+      "word": " source"
+    },
+    {
+      "start": 7.2,
+      "end": 7.6,
+      "word": " one."
+    },
+    {
+      "start": 7.9,
+      "end": 8.48,
+      "word": " The"
+    },
+    {
+      "start": 8.48,
+      "end": 8.98,
+      "word": " inspector"
+    },
+    {
+      "start": 8.98,
+      "end": 9.34,
+      "word": " makes"
+    },
+    {
+      "start": 9.34,
+      "end": 9.5,
+      "word": " the"
+    },
+    {
+      "start": 9.5,
+      "end": 10.0,
+      "word": " mismatch"
+    },
+    {
+      "start": 10.0,
+      "end": 10.48,
+      "word": " visible."
+    },
+    {
+      "start": 11.06,
+      "end": 11.86,
+      "word": " Citation"
+    },
+    {
+      "start": 11.86,
+      "end": 12.44,
+      "word": " accuracy"
+    },
+    {
+      "start": 12.44,
+      "end": 12.96,
+      "word": " still"
+    },
+    {
+      "start": 12.96,
+      "end": 13.46,
+      "word": " needs"
+    },
+    {
+      "start": 13.46,
+      "end": 13.94,
+      "word": " improvement."
+    }
+  ]
+}

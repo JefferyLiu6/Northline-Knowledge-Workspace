@@ -1,0 +1,14 @@
+{
+  "shot": 9,
+  "lang": "en",
+  "text": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials.",
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16",
+  "voice": {
+    "speaker": "ryan",
+    "language": "english",
+    "instruct": "Speak as a calm, warm documentary narrator at a natural, steady pace. Not exaggerated."
+  },
+  "tts_input": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials.",
+  "seconds": 16.38,
+  "gen_seconds": 7.2
+}

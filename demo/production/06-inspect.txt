@@ -1,0 +1,1 @@
+This capture exposes a citation defect. The answer names source two, but the explicit limit appears in source one. The inspector makes the mismatch visible. Citation accuracy still needs improvement.

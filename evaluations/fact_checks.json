@@ -1,0 +1,77 @@
+{
+  "case-023": [
+    "\\b2000\\b",
+    "\\b5000\\b",
+    "\\b20000\\b"
+  ],
+  "case-024": [
+    "192\\.168\\.1\\.10",
+    "255\\.255\\.255\\.0"
+  ],
+  "case-025": [
+    "\\b32\\b",
+    "120\\s*(?:ohm|\u03c9|\u03a9)"
+  ],
+  "case-026": [
+    "\\b100000\\b",
+    "\\b500000\\b",
+    "\\b5000000\\b"
+  ],
+  "case-027": [
+    "gte.?3000pro",
+    "200\\s*mb"
+  ],
+  "case-028": [
+    "(?:5|five)\\s*seconds?"
+  ],
+  "case-030": [
+    "100\\s*(?:ms|milliseconds?)|0\\.1\\s*seconds?"
+  ],
+  "case-031": [
+    "(?:below|under|less than|<)\\s*9\\s*v",
+    "(?:3|three)\\s*seconds?"
+  ],
+  "case-032": [
+    "(?:above|over|greater than|>)\\s*36\\s*v",
+    "(?:1|one)\\s*seconds?",
+    "disconnect"
+  ],
+  "case-033": [
+    "5\\s*%",
+    "(?:10|ten)\\s*minutes?",
+    "ground|earth"
+  ],
+  "case-034": [
+    "\\b2000\\b",
+    "\\b5000\\b",
+    "\\b20000\\b",
+    "remove|upgrade"
+  ],
+  "case-035": [
+    "certificat",
+    "(?:5|five)\\s*minutes?"
+  ],
+  "case-036": [
+    "(?:six|6)[ -]*months?"
+  ],
+  "case-037": [
+    "(?:15|fifteen)\\s*days?",
+    "1\\s*%",
+    "per day|daily"
+  ],
+  "case-038": [
+    "(?:5|five)\\s*(?:business|working)\\s*days?"
+  ],
+  "case-039": [
+    "(?:4|four)\\s*(?:ohm|\u03c9)"
+  ],
+  "case-041": [
+    "same[ -]day",
+    "15:00|3\\s*p\\.?m\\.?",
+    "15\\s*%"
+  ],
+  "case-042": [
+    "december\\s*31|31\\s*december|12[/-]31",
+    "2026"
+  ]
+}

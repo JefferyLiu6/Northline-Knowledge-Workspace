@@ -1,0 +1,15 @@
+.git
+.env
+.env.*
+**/.local-jwt-secret
+**/__pycache__
+**/.pytest_cache
+**/.venv
+**/node_modules
+**/dist
+evaluations
+docs
+*.zip
+*.docx
+
+!ai_rag/fastapi-app/files/**

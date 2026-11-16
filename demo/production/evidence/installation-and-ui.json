@@ -1,0 +1,62 @@
+{
+  "recorded_at": "2026-11-16T21:33:52.294554+00:00",
+  "environment": {
+    "host": "Apple Silicon / Docker Desktop",
+    "container_architecture": "Linux/arm64",
+    "inference": "Host Ollama"
+  },
+  "clean_install": {
+    "result": "passed",
+    "project": "northline-clean-check",
+    "port": 8092,
+    "source": "Temporary source copy excluding .git, .env, private signing key, dependency directories, build output and caches",
+    "configuration": "Fresh generated credentials; fresh MySQL, PostgreSQL, upload and signing-key volumes",
+    "checks": [
+      "Docker build and service health",
+      "Seed import: 3 knowledge bases and 11 documents",
+      "Authenticated download of all 11 source documents with file-size checks",
+      "pgvector health",
+      "Chat, embedding and reranking API connectivity",
+      "Ollama model digests match recorded benchmark versions"
+    ],
+    "scope": "Clean-source installation, using the existing Docker engine/cache and preinstalled host Ollama models; not an empty-machine installation"
+  },
+  "backend_suite": {
+    "passed": 222,
+    "warnings": 5,
+    "result": "passed"
+  },
+  "browser": {
+    "result": "passed",
+    "browser": "Google Chrome via Playwright",
+    "origin": "http://127.0.0.1:8088",
+    "viewports": [
+      [
+        1440,
+        960
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "checks": [
+      "Admin login",
+      "Failed parse shown in processing history",
+      "Network outage shown and automatic reconnection",
+      "Retry creates a new Completed attempt",
+      "Original Failed attempt preserved",
+      "Progress totals displayed",
+      "Parsed replacement text correct",
+      "Authenticated cookie-only source download",
+      "No page-level horizontal overflow on mobile",
+      "No uncaught JavaScript errors"
+    ],
+    "cleanup": "Temporary test document and knowledge base deleted; final smoke check reports 3 knowledge bases and 11 documents"
+  },
+  "limitations": [
+    "Single backend worker",
+    "Explicit stage retry, not automatic job resumption",
+    "Historical retrieval benchmark was not rerun for deployment packaging"
+  ]
+}

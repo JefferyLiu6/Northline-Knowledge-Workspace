@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+button, input, textarea {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+}
+
+
+.line1 {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* More than a few lines omitted */
+    overflow: hidden;
+}
+ .line2 {
+     word-break: break-all;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp: 2; /* More than a few lines omitted */
+     overflow: hidden;
+ }
+.line3 {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* More than a few lines omitted */
+    overflow: hidden;
+}
+
+.line4 {
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; /* More than a few lines omitted */
+    overflow: hidden;
+}
+
+
+.dark1{
+    width: 20%;
+    text-align: center;
+}
+
+:root {
+    --canvas: #f1f5fc;
+    --surface: #fff;
+    --ink: #151e35;
+    --ink-muted: #526078;
+    --border: #dfe5ef;
+    --border-strong: #ccd5e4;
+    --accent: #4f55d9;
+    --accent-strong: #3c42bd;
+    --accent-soft: #ededff;
+    --focus: #4f55d9;
+    --radius: 10px;
+    --font: "Inter", "Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --el-font-family: var(--font);
+    --el-font-size-base: 14px;
+    --el-color-primary: var(--accent);
+    --el-color-primary-light-3: #7378e0;
+    --el-color-primary-light-5: #9b9feb;
+    --el-color-primary-light-7: #c4c6f4;
+    --el-color-primary-light-8: #dadcf9;
+    --el-color-primary-light-9: var(--accent-soft);
+    --el-color-primary-dark-2: var(--accent-strong);
+    --el-text-color-primary: var(--ink);
+    --el-text-color-regular: #35425a;
+    --el-text-color-secondary: var(--ink-muted);
+    --el-text-color-placeholder: #65718a;
+    --el-border-color: var(--border-strong);
+    --el-border-color-light: var(--border);
+    --el-border-color-lighter: #e9edf5;
+    --el-fill-color-light: #f3f5fa;
+    --el-fill-color-lighter: #f7f9fc;
+    --el-border-radius-base: 8px;
+    --el-box-shadow-light: 0 10px 28px #15234c16;
+    --el-color-success: #17834c;
+    --el-color-success-light-9: #e7f6ec;
+    --el-color-warning: #a9610e;
+    --el-color-warning-light-9: #fff4e1;
+    --el-color-danger: #bf3547;
+    --el-color-danger-light-9: #fdecf0;
+    --el-color-info: #586681;
+    --el-color-info-light-9: #eff2f8;
+}
+
+:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+}
+
+.el-popper.is-dark {
+    max-width: min(420px, 90vw);
+    line-height: 1.6;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+}
+
+.el-dialog {
+    --el-dialog-padding-primary: 24px;
+    --el-dialog-border-radius: 14px;
+    max-width: calc(100vw - 28px);
+}
+
+.el-dialog__title {
+    color: var(--ink);
+    font-size: 19px;
+    font-weight: 670;
+    letter-spacing: -.025em;
+}
+
+.el-dialog__body {
+    overflow-wrap: anywhere;
+}
+
+.el-button {
+    font-weight: 560;
+}
+
+.el-tag {
+    font-weight: 540;
+}
+
+@media (max-width: 700px) {
+    .el-dialog {
+        min-width: min(400px, calc(100vw - 28px));
+        --el-dialog-padding-primary: 18px;
+    }
+    .el-dialog .el-form-item {
+        display: block;
+    }
+    .el-dialog .el-form-item__label {
+        width: auto !important;
+        padding: 0;
+        justify-content: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,69 @@
+{
+  "recorded_at": "2026-11-16T23:33:44.990860+00:00",
+  "source_documents": {
+    "count": 11,
+    "content_audit": "passed",
+    "backend_copies_match": true,
+    "source_archives_match": true,
+    "sha256": {
+      "After-Sales Service and Warranty Policy.pdf": "2b570d36ac264cfe8da4c194d866d7861e026fe51af792881b960513a43ef120",
+      "Attendance and Leave Policy.txt": "4e7b42b8b87aa1c936ac8f5fb3120c222ac18ea5e8aea26535d2aa942c026335",
+      "Customer FAQ.md": "02383b4b7b8eeb5d65f0cd8f8afd55d8a869cf7b737cdf69758da9068d2db515",
+      "Employee Handbook.md": "f87bc1963ca4d9f63680b82516367d380c9b8abc76b2497bd27b428740ac4285",
+      "Firmware Upgrade and Release Notes.txt": "80aa80e61447e14c72cae605fdafca4a8761af6fded5f46b90ab2bf705b006c2",
+      "GTE Series Fault Code Reference.xlsx": "35d9c52cf83d0bc301d9c08f769695771ed7ca615556a1ef2ba99f363c22025e",
+      "GTE Series Field Installation and Maintenance Guide.docx": "2cdbd9517d78c6c9b63ae4695e21793e34ab123115479a44700480d3a5300106",
+      "GTE-3000 Series Technical Manual.md": "5914cf0b7eb973a89adf72ce0e4c5a43a5234e560315aeeb3dad89a3fb166596",
+      "Information Security and Data Protection Policy.md": "786be4a520d317ef89cf7626b0fe41fb6fdcbdd370afe298ee1acc6c7e9b0c11",
+      "Spare Parts Supply and Returns.txt": "4269d403b8f89ac2f5546128aebb643915b98b6def632f7b168ce2d8b372ed2e",
+      "Travel and Expense Reimbursement Policy.docx": "0cbd9bf9aa08bfca952f026fe52099d1318b3bd778a02a2037dbb645ccf6469e"
+    }
+  },
+  "vector_index": {
+    "searchable_chunks": 110,
+    "parent_chunks": 11,
+    "vectors": 110,
+    "dimensions": 1024,
+    "model": "mxbai-embed-large:latest",
+    "all_embeddings_regenerated": true,
+    "vector_text_matches_chunks": true
+  },
+  "database_seeds": {
+    "mysql": "ai_rag.sql",
+    "postgres": "ai_rag_vector.sql",
+    "content_audit": "passed",
+    "fresh_import": "passed",
+    "sha256": {
+      "ai_rag.sql": "9ddb21ee93cdb8af4a65bf47eee59815fdab0ca8ce0b492b98279c3d746e1c81",
+      "ai_rag_vector.sql": "ac7c435b208d1880fee73038f349854eeff864d70f926adaa426903a63f2aa8d"
+    }
+  },
+  "verification": {
+    "backend_tests_passed": 222,
+    "dependency_warnings": 5,
+    "frontend_build": "passed",
+    "backend_build": "passed",
+    "local_health_and_downloads": "passed",
+    "fresh_install_health_and_downloads": "passed",
+    "local_url": "http://127.0.0.1:8088",
+    "standard_user_logins_and_admin_denial": "passed",
+    "sample_users": [
+      "admin",
+      "morgan",
+      "taylor"
+    ]
+  },
+  "document_visual_checks": {
+    "travel_policy_pages": 3,
+    "warranty_policy_pages": 3,
+    "result": "passed"
+  },
+  "evaluation": {
+    "status": "passed",
+    "comparisons_planned": 150,
+    "results": "evaluations/results/",
+    "recorded_demo_metrics": "evaluations/recorded-demo/",
+    "completed_comparisons": 150,
+    "request_errors": 0
+  }
+}

@@ -1,0 +1,22 @@
+# Configuration used for the narrated Northline demonstration.
+language: en
+tts:
+  python: tools/audio/.venv/bin/python
+  backend: qwen3
+  model: mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16
+  voices:
+    en:
+      speaker: ryan
+      language: english
+      instruct: Speak as a calm, warm documentary narrator at a natural, steady pace. Not exaggerated.
+subtitles:
+  model: mlx-community/whisper-large-v3-turbo
+  max_chars:
+    en: 42
+compose:
+  lead_in_s: 0.4
+  width: 1920
+  height: 1080
+  crf: 18
+  preset: medium
+  audio_bitrate: 192k

@@ -1,0 +1,14 @@
+{
+  "shot": 8,
+  "lang": "en",
+  "text": "The development evaluation records one hundred fifty comparisons across fifty questions. Hybrid retrieval passed seventeen of eighteen selected technical fact checks, versus fifteen for vector search. These are development results, not production accuracy.",
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16",
+  "voice": {
+    "speaker": "ryan",
+    "language": "english",
+    "instruct": "Speak as a calm, warm documentary narrator at a natural, steady pace. Not exaggerated."
+  },
+  "tts_input": "The development evaluation records one hundred fifty comparisons across fifty questions. Hybrid retrieval passed seventeen of eighteen selected technical fact checks, versus fifteen for vector search. These are development results, not production accuracy.",
+  "seconds": 16.4,
+  "gen_seconds": 7.2
+}

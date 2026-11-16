@@ -1,0 +1,13 @@
+{
+  "chat_model": "llama3.1:8b",
+  "embedding_model": "mxbai-embed-large:latest",
+  "reranker": "llama3.1:8b",
+  "corpus_chunks": 110,
+  "case_sha256": "724fd878939f7796f78e770cb3ae8e288b06b7286e74f99141105bedf179609b",
+  "prompt_sha256": "acbb2ee72eff23e77389257dd4489932d4652f6f4aa6d7ae005fae73e390e1d7",
+  "top_k": 5,
+  "query_rewrite": false,
+  "parent_expansion": false,
+  "judge": "Same local model as generator; automated estimates, not human certification",
+  "timestamp_utc": "2026-11-16T20:31:12.120087+00:00"
+}

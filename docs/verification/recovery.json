@@ -1,0 +1,26 @@
+[
+  {
+    "stage": "parse",
+    "interrupted_task": 637,
+    "partial_success_count": 0,
+    "recovered_status": "Failed",
+    "retry_task": 638,
+    "retry_status": "Completed"
+  },
+  {
+    "stage": "split",
+    "interrupted_task": 640,
+    "partial_success_count": 0,
+    "recovered_status": "Failed",
+    "retry_task": 641,
+    "retry_status": "Completed"
+  },
+  {
+    "stage": "embed",
+    "interrupted_task": 644,
+    "partial_success_count": 10,
+    "recovered_status": "Failed",
+    "retry_task": 645,
+    "retry_status": "Completed"
+  }
+]

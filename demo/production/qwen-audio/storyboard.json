@@ -1,0 +1,68 @@
+{
+  "title": "Northline Knowledge Workspace",
+  "shots": [
+    {
+      "id": 1,
+      "duration_s": 15,
+      "narration": {
+        "en": "Meet Knowledge Workspace: a local AI support platform for the fictional Northline Industrial Systems. Follow a technician from a device fault to an answer, then inspect the evidence behind it."
+      }
+    },
+    {
+      "id": 2,
+      "duration_s": 15,
+      "narration": {
+        "en": "The workspace organizes eleven source documents across three knowledge bases. Administrators can upload, preview, parse, split, and embed files, while checking their status in one place."
+      }
+    },
+    {
+      "id": 3,
+      "duration_s": 15,
+      "narration": {
+        "en": "Start with the input. This spreadsheet contains the gateway fault codes. The parsing preview exposes the extracted table, so an engineer can check the content before indexing it."
+      }
+    },
+    {
+      "id": 4,
+      "duration_s": 15,
+      "narration": {
+        "en": "For error five zero two two, retrieval testing exposes the selected passages, their scores, and timing. The fault-code reference appears first, making retrieval behavior visible before generation."
+      }
+    },
+    {
+      "id": 5,
+      "duration_s": 15,
+      "narration": {
+        "en": "Now ask the assistant about the G T E three thousand Pro. The live local model returns the correct limit: twenty thousand data points. Next, inspect its source attribution."
+      }
+    },
+    {
+      "id": 6,
+      "duration_s": 15,
+      "narration": {
+        "en": "This capture exposes a citation defect. The answer names source two, but the explicit limit appears in source one. The inspector makes the mismatch visible. Citation accuracy still needs improvement."
+      }
+    },
+    {
+      "id": 7,
+      "duration_s": 15,
+      "narration": {
+        "en": "Processing history preserves a failed attempt beside its successful retry. Separately, kill-and-restart tests passed for parsing, splitting, and embedding. Partial output is cleaned before an administrator retries."
+      }
+    },
+    {
+      "id": 8,
+      "duration_s": 15,
+      "narration": {
+        "en": "The development evaluation records one hundred fifty comparisons across fifty questions. Hybrid retrieval passed seventeen of eighteen selected technical fact checks, versus fifteen for vector search. These are development results, not production accuracy."
+      }
+    },
+    {
+      "id": 9,
+      "duration_s": 15,
+      "narration": {
+        "en": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials."
+      }
+    }
+  ]
+}

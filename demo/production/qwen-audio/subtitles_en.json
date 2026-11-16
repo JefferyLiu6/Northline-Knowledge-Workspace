@@ -1,0 +1,308 @@
+[
+  {
+    "shot": 1,
+    "start": 0.4,
+    "end": 2.96,
+    "text": "Meet Knowledge Workspace: a local AI"
+  },
+  {
+    "shot": 1,
+    "start": 2.96,
+    "end": 4.82,
+    "text": "support platform for the fictional"
+  },
+  {
+    "shot": 1,
+    "start": 4.82,
+    "end": 6.58,
+    "text": "Northline Industrial Systems."
+  },
+  {
+    "shot": 1,
+    "start": 7.08,
+    "end": 9.54,
+    "text": "Follow a technician from a device fault to"
+  },
+  {
+    "shot": 1,
+    "start": 9.54,
+    "end": 12.307,
+    "text": "an answer, then inspect the evidence behind it."
+  },
+  {
+    "shot": 2,
+    "start": 13.833,
+    "end": 16.253,
+    "text": "The workspace organizes eleven source"
+  },
+  {
+    "shot": 2,
+    "start": 16.253,
+    "end": 18.673,
+    "text": "documents across three knowledge bases."
+  },
+  {
+    "shot": 2,
+    "start": 19.313,
+    "end": 20.693,
+    "text": "Administrators can upload,"
+  },
+  {
+    "shot": 2,
+    "start": 20.913,
+    "end": 23.953,
+    "text": "preview, parse, split, and embed files,"
+  },
+  {
+    "shot": 2,
+    "start": 24.133,
+    "end": 26.383,
+    "text": "while checking their status in one place."
+  },
+  {
+    "shot": 3,
+    "start": 27.9,
+    "end": 30.5,
+    "text": "Start with the input. This spreadsheet"
+  },
+  {
+    "shot": 3,
+    "start": 30.5,
+    "end": 32.44,
+    "text": "contains the gateway fault codes."
+  },
+  {
+    "shot": 3,
+    "start": 32.64,
+    "end": 35.14,
+    "text": "The parsing preview exposes the extracted"
+  },
+  {
+    "shot": 3,
+    "start": 35.14,
+    "end": 37.62,
+    "text": "table, so an engineer can check the"
+  },
+  {
+    "shot": 3,
+    "start": 37.62,
+    "end": 39.258,
+    "text": "content before indexing it."
+  },
+  {
+    "shot": 4,
+    "start": 40.767,
+    "end": 45.387,
+    "text": "For error five zero two two,"
+  },
+  {
+    "shot": 4,
+    "start": 46.587,
+    "end": 49.487,
+    "text": "retrieval testing exposes the selected"
+  },
+  {
+    "shot": 4,
+    "start": 49.487,
+    "end": 52.927,
+    "text": "passages, their scores, and timing."
+  },
+  {
+    "shot": 4,
+    "start": 53.727,
+    "end": 56.527,
+    "text": "The fault-code reference appears first,"
+  },
+  {
+    "shot": 4,
+    "start": 56.787,
+    "end": 60.845,
+    "text": "making retrieval behavior visible before generation."
+  },
+  {
+    "shot": 5,
+    "start": 62.367,
+    "end": 64.827,
+    "text": "Now ask the assistant about the G T E"
+  },
+  {
+    "shot": 5,
+    "start": 64.827,
+    "end": 67.307,
+    "text": "three thousand Pro. The live local model"
+  },
+  {
+    "shot": 5,
+    "start": 67.307,
+    "end": 68.607,
+    "text": "returns the correct limit:"
+  },
+  {
+    "shot": 5,
+    "start": 68.607,
+    "end": 70.307,
+    "text": "twenty thousand data points."
+  },
+  {
+    "shot": 5,
+    "start": 70.707,
+    "end": 73.48,
+    "text": "Next, inspect its source attribution."
+  },
+  {
+    "shot": 6,
+    "start": 75.0,
+    "end": 77.44,
+    "text": "This capture exposes a citation defect."
+  },
+  {
+    "shot": 6,
+    "start": 77.9,
+    "end": 79.98,
+    "text": "The answer names source two,"
+  },
+  {
+    "shot": 6,
+    "start": 80.12,
+    "end": 82.2,
+    "text": "but the explicit limit appears in source"
+  },
+  {
+    "shot": 6,
+    "start": 82.2,
+    "end": 85.0,
+    "text": "one. The inspector makes the mismatch"
+  },
+  {
+    "shot": 6,
+    "start": 85.0,
+    "end": 88.46,
+    "text": "visible. Citation accuracy still needs"
+  },
+  {
+    "shot": 6,
+    "start": 88.46,
+    "end": 89.16,
+    "text": "improvement."
+  },
+  {
+    "shot": 7,
+    "start": 90.667,
+    "end": 92.647,
+    "text": "Processing history preserves a failed"
+  },
+  {
+    "shot": 7,
+    "start": 92.647,
+    "end": 94.807,
+    "text": "attempt beside its successful retry."
+  },
+  {
+    "shot": 7,
+    "start": 95.527,
+    "end": 98.307,
+    "text": "Separately, kill-and-restart tests passed"
+  },
+  {
+    "shot": 7,
+    "start": 98.307,
+    "end": 101.207,
+    "text": "for parsing, splitting, and embedding."
+  },
+  {
+    "shot": 7,
+    "start": 101.467,
+    "end": 103.567,
+    "text": "Partial output is cleaned before an"
+  },
+  {
+    "shot": 7,
+    "start": 103.567,
+    "end": 105.059,
+    "text": "administrator retries."
+  },
+  {
+    "shot": 8,
+    "start": 106.567,
+    "end": 109.187,
+    "text": "The development evaluation records one"
+  },
+  {
+    "shot": 8,
+    "start": 109.187,
+    "end": 111.227,
+    "text": "hundred fifty comparisons across fifty"
+  },
+  {
+    "shot": 8,
+    "start": 111.227,
+    "end": 113.667,
+    "text": "questions. Hybrid retrieval passed"
+  },
+  {
+    "shot": 8,
+    "start": 113.667,
+    "end": 115.887,
+    "text": "seventeen of eighteen selected technical"
+  },
+  {
+    "shot": 8,
+    "start": 115.887,
+    "end": 118.407,
+    "text": "fact checks, versus fifteen for vector"
+  },
+  {
+    "shot": 8,
+    "start": 118.407,
+    "end": 120.807,
+    "text": "search. These are development results,"
+  },
+  {
+    "shot": 8,
+    "start": 121.087,
+    "end": 122.964,
+    "text": "not production accuracy."
+  },
+  {
+    "shot": 9,
+    "start": 124.467,
+    "end": 126.867,
+    "text": "Run the stack locally with Docker Compose"
+  },
+  {
+    "shot": 9,
+    "start": 126.867,
+    "end": 129.787,
+    "text": "and host Ollama. The repository includes"
+  },
+  {
+    "shot": 9,
+    "start": 129.787,
+    "end": 131.847,
+    "text": "architecture, contribution notes,"
+  },
+  {
+    "shot": 9,
+    "start": 132.187,
+    "end": 134.227,
+    "text": "recovery tests, and documented"
+  },
+  {
+    "shot": 9,
+    "start": 134.227,
+    "end": 137.067,
+    "text": "limitations. This is an AI-assisted"
+  },
+  {
+    "shot": 9,
+    "start": 137.067,
+    "end": 139.467,
+    "text": "adaptation, demonstrated with fictional"
+  },
+  {
+    "shot": 9,
+    "start": 139.467,
+    "end": 140.851,
+    "text": "company materials."
+  }
+]

@@ -1,0 +1,212 @@
+Knowledge Workspace
+Workspace
+/
+Document Management
+Open Q&A
+PA
+Dashboard
+Knowledge Management
+Knowledge Bases
+Document Management
+Knowledge Chunks
+Chunking Strategy
+Retrieval Strategy
+Retrieval Testing
+Retrieval Debugger
+AI Configuration
+Q&A Apps
+Evaluation
+User Management
+Document Management
+
+Upload, preview, and index files in your knowledge bases.
+
+Upload document
+All knowledge bases
+All parsing statuses
+Search
+Reset
+11 documents
+	
+Document
+	
+Knowledge base
+	
+Parsing
+	
+Embedding
+	
+Actions
+	
+Spare Parts Supply and Returns
+TXT · 7.3 KB
+	
+After-Sales Service Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Customer FAQ
+MARKDOWN · 10.8 KB
+	
+After-Sales Service Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+After-Sales Service and Warranty Policy
+PDF · 6.5 KB
+	
+After-Sales Service Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Information Security and Data Protection Policy
+MARKDOWN · 10.6 KB
+	
+Company Policy Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Attendance and Leave Policy
+TXT · 9.1 KB
+	
+Company Policy Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Travel and Expense Reimbursement Policy
+WORD · 38.4 KB
+	
+Company Policy Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Employee Handbook
+MARKDOWN · 9.7 KB
+	
+Company Policy Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+Firmware Upgrade and Release Notes
+TXT · 6.6 KB
+	
+Product Technical Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+GTE Series Fault Code Reference
+EXCEL · 8.2 KB
+	
+Product Technical Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+
+
+	
+GTE Series Field Installation and Maintenance Guide
+WORD · 38.9 KB
+	
+Product Technical Knowledge Base
+	
+Parsed
+	
+Completed
+	
+More
+1
+2
+Parsing results
+Characters 6312
+Includes tables
+[Sheet: Fault Codes]
+| Fault code | Name | Severity | Trigger condition | Field troubleshooting | Affects data collection |
+| --- | --- | --- | --- | --- | --- |
+| ERR-1001 | Input voltage too low | Critical | Input remains below 9 V for more than 3 seconds. | Measure the voltage at the terminals. Check the upstream circuit breaker and wiring voltage drop. Replace the power adapter if needed. | Yes |
+| ERR-1002 | Input voltage too high | Critical | Input remains above 36 V for more than 1 second. | Disconnect power immediately. Verify the power supply rating. Use an industrial 24 V power supply. | Yes |
+| ERR-1005 | Internal temperature too high | Warning | The mainboard temperature sensor reads above 85 °C. | Check whether the device is near a heat source. Add airflow ducting or move the device to a cooler location. | No |
+| ERR-2003 | eMMC write failure | Critical | Write verification fails three times in a row. | Export the logs and return the unit for inspection. Replace the mainboard if the storage chip has reached the end of its life. | Yes |
+| ERR-2007 | Low storage space | Warning | Free storage falls below 10%. | Clear old logs on the System Maintenance page or reduce the local cache retention period. | No |
+| ERR-3011 | RS485 communication timeout | Warning | The same slave device fails to respond for five consecutive collection cycles. | Check for reversed A/B wires, mismatched serial settings, an incorrect slave address, and missing termination resistors, in that order. | Partial |
+| ERR-3012 | High RS485 CRC error rate | Warning | CRC verification failures exceed 5% in 10 minutes. | Check protective earth, confirm the shield is grounded at one end only, and verify the bus length is within 1,200 m. | Partial |
+| ERR-3020 | Modbus slave returned an exception | Advisory | The slave returns exception code 01, 02, or 03. | Verify the register address and data type. Confirm that the device supports the requested function code. | Partial |
+| ERR-4002 | OPC UA session creation failed | Warning | The handshake with the OPC UA server fails. | Verify the endpoint, security policy, username, and password. Check whether the certificate has expired. | Partial |
+| ERR-4015 | S7 connection refused | Warning | The PLC refuses to establish the connection. | Verify the rack and slot numbers, and check whether the PLC has reached its connection limit. | Partial |
+| ERR-5021 | Data point configuration incompatible with protocol stack | Critical | A field cannot be parsed while the data point configuration is loading. | Often follows a major firmware upgrade. Roll back and upgrade again through the intermediate release. | Yes |
+| ERR-5022 | Data point count exceeds model limit | Warning | The configured data point count exceeds the device model's limit. | Remove data points or upgrade to a higher model. Limits are 2,000 for GTE-3000, 5,000 for GTE-3000S, and 20,000 for GTE-3000Pro. | Partial |
+| ERR-6003 | MQTT authentication failed | Critical | The broker returns CONNACK error code 4 or 5. | Verify the username, password, and ClientID. Confirm that the device is enabled on the platform. | No |
+| ERR-6008 | TLS handshake failed | Critical | Certificate validation fails or clocks are out of sync. | Check certificate validity and the CA chain. Check whether the device clock is off by more than five minutes. | No |
+| ERR-6012 | Local cache full | Warning | While offline, the number of cached records reaches the device model's limit. | Restore network access as soon as possible. Once the cache is full, the oldest records are discarded first. | No |
+| ERR-7001 | Edge rule syntax error | Advisory | The syntax parser fails when saving the rule. | Use the debugger on the Edge Rules page to identify the error line. Verify the field and stream names. | No |
+| ERR-7005 | Model loading failed | Warning | The ONNX model fails validation or exceeds 200 MB. | Verify the model format and operator version. Compress or prune the model before uploading it again. | No |
+| ERR-7009 | Insufficient memory for edge inference | Critical | Models running concurrently exceed the memory threshold. | Run fewer models concurrently. Use at most three per device as a guideline. | Partial |
+| ERR-8004 | Firmware signature verification failed | Critical | The firmware package signature does not match the device public key. | Download the package again from the official source and verify its SHA-256 checksum. | No |
+| ERR-8006 | Firmware model mismatch | Advisory | The model identifier in the firmware package differs from the device model. | GTE-3000 and GTE-3000S firmware packages are model-specific. Check the model identifier in the package name. | No |
+| ERR-9002 | Hot standby heartbeat lost | Warning | The standby device sends no heartbeat for five consecutive seconds. | Check the heartbeat cable. Confirm both devices have the same model and firmware version. | No |
+| ERR-9007 | System clock not synchronized | Advisory | NTP synchronization has failed continuously for more than 24 hours. | Verify the NTP server is reachable. Without internet access, use an internal NTP server or set the clock manually. | No |
+
+[Sheet: LED Status]
+| Indicator | Status | Meaning | Recommended action |
+| --- | --- | --- | --- |
+| PWR | Solid | Power supply is normal. | No action needed. |
+| PWR | Off | No incoming power or faulty power supply. | Measure the input voltage and replace the power adapter if needed. |
+| SYS | Flashes once per second | The system is running normally. | No action needed. |
+| SYS | Flashes quickly | System fault. | Power cycle the device. If the fault persists, export the logs and request service. |
+| SYS | Solid | The system is starting or has stopped responding. | Wait 90 seconds. If the light remains solid, power cycle the device. |
+| COM | Flashing | The serial port is sending or receiving data. | No action needed. |
+| COM | Not flashing | No data on the serial port. | Check the wiring, serial settings, and slave address. |
+| NET | Solid | The northbound connection is established. | No action needed. |
+| NET | Flashes slowly | Reconnecting. | Check the network and certificates. See ERR-6003 and ERR-6008. |
+| ALM | Solid | A critical alarm has not been acknowledged. | Sign in to the web interface and check the alarm list. |
+Close

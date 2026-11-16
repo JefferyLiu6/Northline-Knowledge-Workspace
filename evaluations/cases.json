@@ -1,0 +1,352 @@
+[
+  {
+    "id": "case-001",
+    "question": "What is the standard delivery cycle for the GTE-3000?",
+    "source_file": "Customer FAQ.md",
+    "reference": "When standard models have sufficient stock, the goods will be shipped within 3 working days after payment. GTE-3000Pro and custom configurations are produced on order, with a delivery cycle of 15 working days. Bulk orders exceeding 100 units will have a delivery cycle confirmed separately.",
+    "category": "faq"
+  },
+  {
+    "id": "case-002",
+    "question": "What accessories are included in the shipment?",
+    "source_file": "Customer FAQ.md",
+    "reference": "The standard packaging includes: 1 gateway host, 1 24V/2A power adapter, 1 DIN rail clip set, 1 3-pin power terminal, 2 serial port terminals (4 for GTE-3000S and GTE-3000Pro), 1 quick start guide, 1 certificate of conformity. Antennas are optional accessories, and 4G/5G models come with 1 suction cup antenna by default.",
+    "category": "faq"
+  },
+  {
+    "id": "case-003",
+    "question": "Can I try before purchasing?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Support is available. Potential customers can apply for a 30-day trial, which requires submitting a trial application form and approval from a sales manager. During the trial period, the equipment ownership belongs to the company, and it must be returned within 7 days after the trial or converted into a purchase. The shipping costs for trial equipment are borne by the customer, and the shipping costs can be deducted from the payment upon conversion to a purchase.",
+    "category": "faq"
+  },
+  {
+    "id": "case-004",
+    "question": "Can a VAT special invoice be issued?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Yes. After the customer provides the invoicing information (company name, taxpayer identification number, address and phone number, bank account and number), a 13% VAT special invoice will be issued either with the goods or within 5 working days after receiving the payment.",
+    "category": "faq"
+  },
+  {
+    "id": "case-005",
+    "question": "What is the warranty period for the equipment?",
+    "source_file": "Customer FAQ.md",
+    "reference": "The entire GTE series is guaranteed for 24 months from the date of manufacture. The warranty period for power adapters, antennas, and other accessories is 12 months. The warranty period is based on the manufacturing date on the equipment's nameplate. If the customer can provide valid purchase proof, the warranty period can be extended from the purchase date, with a maximum extension of 3 months.",
+    "category": "faq"
+  },
+  {
+    "id": "case-006",
+    "question": "What situations are not covered by the warranty?",
+    "source_file": "Customer FAQ.md",
+    "reference": "The following situations are not covered by the warranty and will be handled as paid repairs:\n\n- Beyond the warranty period\n- Improper use as per the manual, such as input voltage exceeding the DC 9V~36V range causing damage\n- Self-disassembly, modification, or broken seal\n- Damage caused by water immersion, fire, lightning, earthquakes, etc., which are force majeure events\n- Obvious mechanical damage to the casing, such as structural deformation caused by dropping\n- Faults caused by using non-Northline Industrial Systems firmware or third-party unauthorized software",
+    "category": "faq"
+  },
+  {
+    "id": "case-007",
+    "question": "How to report a device malfunction?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Choose any of the following three methods:\n\n1. Call the service hotline at 416-555-0147, from 8:30 to 20:30 on weekdays, and 9:00 to 18:00 on holidays\n2. Submit an online service ticket on the Northline Industrial Systems official website under the [Service Support] section\n3. Contact the assigned sales manager or after-sales engineer\n\nWhen reporting a repair, please provide the device serial number (SN), description of the fault phenomenon, time of fault occurrence, and on-site photos or log files. The serial number is located on the device's side panel, with the format GL3000-YYWW-XXXXX.",
+    "category": "faq"
+  },
+  {
+    "id": "case-008",
+    "question": "How long does the repair usually take?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Repair method: After the customer sends the device, we will complete the inspection and repair within 5 working days and return it. The round-trip shipping costs during the warranty period are covered by the company, while customers are responsible for the shipping costs outside the warranty period.\n\nOn-site service method: This is only applicable to customers who have purchased the on-site service package or projects with a single purchase of more than 50 units. In major service cities, the service team will arrive on-site within 24 hours, while in regional business destinations, it will arrive within 48 hours.",
+    "category": "faq"
+  },
+  {
+    "id": "case-009",
+    "question": "Can a spare device be borrowed?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Customers who have signed an annual service agreement can apply for borrowing a spare device, with a maximum borrowing period of 15 days. The spare device is of the same or higher model, and the configuration during the borrowing period will be assisted by our engineers. A daily usage fee of 1% of the original device price will be charged if the device is not returned on time.",
+    "category": "faq"
+  },
+  {
+    "id": "case-010",
+    "question": "What should I do if I forget the device management port IP?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Press the RESET button on the device panel for more than 10 seconds to restore the device to factory settings. The management port IP will be restored to 192.168.1.10, with the default account admin and default password Gl@2024. Restoring to factory settings will clear all point configuration. Please try other methods first to recover the IP, such as using a network scanning tool to find the device with the MAC prefix 8C:1F:64 in the network segment.",
+    "category": "faq"
+  },
+  {
+    "id": "case-011",
+    "question": "How to troubleshoot RS485 communication timeout?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Follow the steps below to troubleshoot:\n\n1. Confirm that the A and B lines are not reversed; reversed connections result in no response at all.\n2. Confirm that the serial port parameters match those of the slave device, especially the baud rate, data bits, stop bits, and parity.\n3. Confirm that the slave address is correct, with Modbus slave address ranging from 1 to 247.\n4. Confirm that 120Ω terminal resistors are connected at both ends of the bus, and they must be connected if the distance exceeds 300 meters.\n5. Confirm that the device's PE terminal is grounded. In environments with many variable frequency drives, interference is strong, and grounding is essential to prevent data loss.\n6. Use the [Running Monitoring]→[Communication Quality] panel to check the response time and timeout rate to determine if the issue is with all slaves or individual slaves.",
+    "category": "faq"
+  },
+  {
+    "id": "case-012",
+    "question": "What should I do if the platform does not receive data after uploading?",
+    "source_file": "Customer FAQ.md",
+    "reference": "First, check the connection status on the [Data Forwarding] page. A status of \"Connected\" indicates normal network and authentication, with issues likely in topic mapping or platform-side subscription. A status of \"Reconnecting\" suggests network or certificate problems; check if the device can ping the platform domain name, whether the certificate has expired, and whether the system time is accurate. A system time deviation of more than 5 minutes can cause TLS handshake failure.",
+    "category": "faq"
+  },
+  {
+    "id": "case-013",
+    "question": "Can point configurations be imported in bulk?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Yes. Download the Excel template from [Device Management]→[Point Management], fill in the point name, register address, data type, scaling factor, and unit fields according to the template, and then import. Single imports should not exceed 5000 rows; if exceeded, import in batches. The system will perform format validation before import, and rows that fail validation will be highlighted in red with the reason. Correct the issues and re-import.",
+    "category": "faq"
+  },
+  {
+    "id": "case-014",
+    "question": "What does the error code ERR-5021 mean?",
+    "source_file": "Customer FAQ.md",
+    "reference": "ERR-5021 indicates incompatibility between point configuration and the protocol stack, commonly occurring after cross-major version firmware upgrades. The solution is to roll back to the firmware version before the upgrade, and follow the instructions in the [Firmware Upgrade and Version Release Notes] to first upgrade to the transitional version before the target version.",
+    "category": "faq"
+  },
+  {
+    "id": "case-015",
+    "question": "Why does the device frequently restart?",
+    "source_file": "Customer FAQ.md",
+    "reference": "The three most common reasons are:\n\n1. Unstable power supply. Use a multimeter to measure the input voltage; if it is below 9V, the device will power off and restart. Prioritize checking the power adapter and line voltage drop.\n2. High ambient temperature. Long-term temperatures above 60°C will trigger a protection restart. Check if the installation location is near a heat source and if the cabinet has proper ventilation.\n3. High memory usage by edge rules or models. When the GTE-3000Pro runs more than three models simultaneously, it may trigger memory protection. Reduce the number of models.",
+    "category": "faq"
+  },
+  {
+    "id": "case-016",
+    "question": "Will data be lost during network disconnection?",
+    "source_file": "Customer FAQ.md",
+    "reference": "No, data will not be immediately lost. During network disconnection, data is stored in local cache. The GTE-3000 can cache up to 100,000 entries, the GTE-3000S up to 500,000 entries, and the GTE-3000Pro up to 5,000,000 entries. Data is automatically transmitted once the network is restored. Data is only discarded in a first-in-first-out manner when the cache is full and the network is not restored.",
+    "category": "faq"
+  },
+  {
+    "id": "case-017",
+    "question": "What should I do if I forget the Web management password?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Guest password cannot be recovered, so the device must be reset via factory reset. Operator and visitor account passwords can be reset by the administrator via [System Maintenance]→[User Management]. It is recommended to retain at least two administrator accounts during deployment.",
+    "category": "faq"
+  },
+  {
+    "id": "case-018",
+    "question": "What security reinforcement measures does the device support?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Telnet and FTP are disabled by default at factory release, only HTTPS and SSH are open. Additional reinforcement measures include: changing the default SSH port, disabling SSH password login and using keys instead, enabling mutual certificate authentication for northbound MQTT, assigning accounts by role to avoid shared administrator access, and regularly downloading and archiving logs via [System Maintenance].",
+    "category": "faq"
+  },
+  {
+    "id": "case-019",
+    "question": "Does the firmware upgrade automatically?",
+    "source_file": "Customer FAQ.md",
+    "reference": "No. The device does not perform automatic upgrades. All upgrades must be manually triggered via the Web interface or device management platform to avoid unexpected interruption of data collection during production hours.",
+    "category": "faq"
+  },
+  {
+    "id": "case-020",
+    "question": "What certifications does the product have?",
+    "source_file": "Customer FAQ.md",
+    "reference": "GTE series has obtained CE, FCC, and RoHS certifications. Confirm region-specific wireless approvals with the sales manager before deployment. Certification documents can be obtained in electronic format from the sales manager.",
+    "category": "faq"
+  },
+  {
+    "id": "case-021",
+    "question": "Is the old model GTE-2000 still available for purchase?",
+    "source_file": "Customer FAQ.md",
+    "reference": "GTE-2000 was discontinued in December 2023. Currently, only spare parts and repair support are provided, with support until December 2026. New projects are recommended to directly select the GTE-3000 series. Point configuration files can be migrated from GTE-2000 to GTE-3000 via conversion tools.",
+    "category": "faq"
+  },
+  {
+    "id": "case-022",
+    "question": "Can secondary development interfaces be provided?",
+    "source_file": "Customer FAQ.md",
+    "reference": "Yes. The device provides two ways for integration: RESTful API and OPC UA Server. API documentation can be downloaded from the official website's [Developer] section. GTE-3000Pro also supports deploying custom containers, which requires signing a technical cooperation agreement for access permissions to be opened by us.",
+    "category": "faq"
+  },
+  {
+    "id": "case-023",
+    "question": "What are the data point limits for GTE-3000, GTE-3000S and GTE-3000Pro?",
+    "source_file": "GTE-3000 Series Technical Manual.md",
+    "reference": "GTE-3000 can be configured with a maximum of 2000 data points, GTE-3000S with 5000, and GTE-3000Pro with 20000. New data points exceeding the limit will be rejected, with a prompt on the web configuration page stating \"Exceeded the current model's data point limit.\"",
+    "category": "model_specific"
+  },
+  {
+    "id": "case-024",
+    "question": "What management IP and subnet mask does LAN1 use at the factory?",
+    "source_file": "GTE-3000 Series Technical Manual.md",
+    "reference": "LAN1 is the default management port, with a factory IP of 192.168.1.10 and subnet mask 255.255.255.0. LAN2 is the default business port, configured as a DHCP client at factory settings. LAN3 and LAN4 on GTE-3000S and GTE-3000Pro can be configured as switch ports to cascade downstream devices.",
+    "category": "model_specific"
+  },
+  {
+    "id": "case-025",
+    "question": "How many slave devices and what termination resistance does RS485 support?",
+    "source_file": "GTE-3000 Series Technical Manual.md",
+    "reference": "RS485 uses a 2-pin terminal with A and B lines. Serial port parameters support 1200 ~ 115200bps, default 9600bps, 8 data bits, 1 stop bit, no parity check. A maximum of 32 slave devices can be connected on the same 485 bus, with 120Ω terminal resistors required at both ends of the bus. GTE-3000S and GTE-3000Pro have built-in terminal resistors that can be enabled via a dip switch.",
+    "category": "model_specific"
+  },
+  {
+    "id": "case-026",
+    "question": "What are the offline cache capacities for all three GTE-3000 models?",
+    "source_file": "GTE-3000 Series Technical Manual.md",
+    "reference": "Data is stored in local cache when the network is down. GTE-3000 has a cache capacity of 100,000 entries, GTE-3000S has 500,000, and GTE-3000Pro has 5,000,000. After network recovery, data is resent in chronological order, with a default transmission rate limit of 200 entries per second to avoid overwhelming the upper system. When the cache is full, the oldest data is discarded on a first-in-first-out basis.",
+    "category": "model_specific"
+  },
+  {
+    "id": "case-027",
+    "question": "Which model supports ONNX inference and how large may a model file be?",
+    "source_file": "GTE-3000 Series Technical Manual.md",
+    "reference": "Model inference supports ONNX format, with model files not exceeding 200MB. Typical scenarios include initial screening for product appearance defects, filtering out clearly qualified images at the edge to only upload suspected defective images to the central system for re-examination, reducing upward bandwidth usage by over 80%.",
+    "category": "model_specific"
+  },
+  {
+    "id": "case-028",
+    "question": "How quickly does the standby GTE-3000S take over?",
+    "source_file": "GTE-3000 Series Technical Manual.md",
+    "reference": "**Dual Machine Hot Standby**: Two GTE-3000S units are interconnected via a heartbeat line. The standby unit takes over within 5 seconds if the main unit fails. Point configuration is automatically synchronized from the main unit to the standby unit. Hot standby requires both devices to have the same model and firmware version.",
+    "category": "model_specific"
+  },
+  {
+    "id": "case-029",
+    "question": "What happens when the gateway temperature stays above 60 degrees C?",
+    "source_file": "GTE-3000 Series Technical Manual.md",
+    "reference": "When the installation site temperature is consistently higher than 60℃, a heat dissipation duct must be installed or the device must be moved out of the high-temperature area; otherwise, the processor will trigger frequency reduction protection, manifested as longer data collection cycles and increased data latency.",
+    "category": "model_specific"
+  },
+  {
+    "id": "case-030",
+    "question": "What is the smallest configurable data collection interval?",
+    "source_file": "GTE-3000 Series Technical Manual.md",
+    "reference": "Collection tasks are organized by \"Collection Groups.\" A collection group includes several data points, a collection cycle, and a reporting strategy. The minimum collection cycle is 100ms, maximum 3600s. Reporting strategies include three types:",
+    "category": "model_specific"
+  },
+  {
+    "id": "case-031",
+    "question": "What triggers ERR-1001, and what should a technician check?",
+    "source_file": "GTE Series Fault Code Reference.xlsx",
+    "reference": "| ERR-1001 | Input voltage too low | Critical | Input remains below 9 V for more than 3 seconds. | Measure the voltage at the terminals. Check the upstream circuit breaker and wiring voltage drop. Replace the power adapter if needed. | Yes |",
+    "category": "fault_code"
+  },
+  {
+    "id": "case-032",
+    "question": "What triggers ERR-1002, and what should a technician check?",
+    "source_file": "GTE Series Fault Code Reference.xlsx",
+    "reference": "| ERR-1002 | Input voltage too high | Critical | Input remains above 36 V for more than 1 second. | Disconnect power immediately. Verify the power supply rating. Use an industrial 24 V power supply. | Yes |",
+    "category": "fault_code"
+  },
+  {
+    "id": "case-033",
+    "question": "What triggers ERR-3012, and what should a technician check?",
+    "source_file": "GTE Series Fault Code Reference.xlsx",
+    "reference": "| ERR-3012 | High RS485 CRC error rate | Warning | CRC verification failures exceed 5% in 10 minutes. | Check protective earth, confirm the shield is grounded at one end only, and verify the bus length is within 1,200 m. | Partial |",
+    "category": "fault_code"
+  },
+  {
+    "id": "case-034",
+    "question": "What triggers ERR-5022, and what should a technician check?",
+    "source_file": "GTE Series Fault Code Reference.xlsx",
+    "reference": "| ERR-5022 | Data point count exceeds model limit | Warning | The configured data point count exceeds the device model's limit. | Remove data points or upgrade to a higher model. Limits are 2,000 for GTE-3000, 5,000 for GTE-3000S, and 20,000 for GTE-3000Pro. | Partial |",
+    "category": "fault_code"
+  },
+  {
+    "id": "case-035",
+    "question": "What triggers ERR-6008, and what should a technician check?",
+    "source_file": "GTE Series Fault Code Reference.xlsx",
+    "reference": "| ERR-6008 | TLS handshake failed | Critical | Certificate validation fails or clocks are out of sync. | Check certificate validity and the CA chain. Check whether the device clock is off by more than five minutes. | No |",
+    "category": "fault_code"
+  },
+  {
+    "id": "case-036",
+    "question": "What warranty applies to separately purchased spare parts?",
+    "source_file": "After-Sales Service and Warranty Policy.pdf",
+    "reference": "4. Separately purchased spare parts carry a six-month warranty from receipt. Parts replaced during\nrepair carry the remainder of the device warranty, with a minimum of three months.\n",
+    "category": "warranty"
+  },
+  {
+    "id": "case-037",
+    "question": "What is the loaner duration and overdue charge?",
+    "source_file": "After-Sales Service and Warranty Policy.pdf",
+    "reference": "Customers with an annual service agreement may request a loaner during repairs for up to 15 days.\nThe loaner is the same or a higher model, and our engineers help import the configuration. The\noverdue fee is 1% of the original device price per day.\n",
+    "category": "warranty"
+  },
+  {
+    "id": "case-038",
+    "question": "How long does mail-in repair take and who pays shipping?",
+    "source_file": "After-Sales Service and Warranty Policy.pdf",
+    "reference": "3. Mail-in repair: We test, repair, and ship the device back within five business days of receipt. During\nthe warranty period, the company pays shipping both ways. Outside the warranty period, the customer\npays to send the device and the company pays for return shipping.\n",
+    "category": "warranty"
+  },
+  {
+    "id": "case-039",
+    "question": "What maximum grounding resistance is allowed during installation?",
+    "source_file": "GTE Series Field Installation and Maintenance Guide.docx",
+    "reference": "3. Connect power supply: the 3-pin terminal from left to right is V+, V-, PE, PE must be connected to the grounding busbar of the cabinet, grounding resistance should not exceed 4Ω.",
+    "category": "installation"
+  },
+  {
+    "id": "case-040",
+    "question": "What checks are required each quarter for the gateway?",
+    "source_file": "GTE Series Field Installation and Maintenance Guide.docx",
+    "reference": "Quarterly maintenance: Clean dust from the device surface and heat sink, retighten power and serial port terminals, check if system time deviation exceeds 1 minute, export a complete configuration file backup.",
+    "category": "installation"
+  },
+  {
+    "id": "case-041",
+    "question": "When can an emergency spare part ship and what surcharge applies?",
+    "source_file": "Spare Parts Supply and Returns.txt",
+    "reference": "Common Spare Parts: Shipped Within 2 Working Days After Payment.\nNon-Common Spare Parts (Such as Discontinued Model Mainboards): Inventory and Production Plan Assessment Required, Generally Delivered Within 20 Working Days, Written Response Within 3 Working Days If Not Available.\nEmergency Spare Parts: Customers with Annual Service Agreements Can Apply for Emergency Shipment, Shipped the Same Day if Ordered Before 15:00, With an Additional 15% Rush Fee.",
+    "category": "spare_parts"
+  },
+  {
+    "id": "case-042",
+    "question": "Until when are GTE-2000 spare parts supported?",
+    "source_file": "Spare Parts Supply and Returns.txt",
+    "reference": "GTE-2000 Series Was Discontinued in December 2023, Spare Parts Support Until December 31, 2026. Supply Based on Existing Inventory During Support Period, Alternative Solutions Provided After Inventory Depletion, Including Trade-In Discounts or Migration to GTE-3000 Series.",
+    "category": "spare_parts"
+  },
+  {
+    "id": "case-043",
+    "question": "What is the GTE-9000 maximum data point count?",
+    "source_file": null,
+    "reference": null,
+    "category": "unanswerable"
+  },
+  {
+    "id": "case-044",
+    "question": "What is the GTE-3000 retail price in Canadian dollars today?",
+    "source_file": null,
+    "reference": null,
+    "category": "unanswerable"
+  },
+  {
+    "id": "case-045",
+    "question": "What is the current inventory count at the Toronto warehouse?",
+    "source_file": null,
+    "reference": null,
+    "category": "unanswerable"
+  },
+  {
+    "id": "case-046",
+    "question": "What is the delivery tracking number for purchase order NIS-99999?",
+    "source_file": null,
+    "reference": null,
+    "category": "unanswerable"
+  },
+  {
+    "id": "case-047",
+    "question": "Can you provide the private administrator password for customer Acme?",
+    "source_file": null,
+    "reference": null,
+    "category": "unanswerable"
+  },
+  {
+    "id": "case-048",
+    "question": "What is the announced release date for firmware version V99.0?",
+    "source_file": null,
+    "reference": null,
+    "category": "unanswerable"
+  },
+  {
+    "id": "case-049",
+    "question": "What is the GTE-3000 radiation tolerance for use on Mars?",
+    "source_file": null,
+    "reference": null,
+    "category": "unanswerable"
+  },
+  {
+    "id": "case-050",
+    "question": "What is the warranty serial number and expiry date for my device without its serial number?",
+    "source_file": null,
+    "reference": null,
+    "category": "unanswerable"
+  }
+]

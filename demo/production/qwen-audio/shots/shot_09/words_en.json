@@ -1,0 +1,168 @@
+{
+  "text": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials.",
+  "audio_mtime": 1794866073.544546,
+  "duration": 16.384,
+  "heard": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials.",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.24,
+      "word": " Run"
+    },
+    {
+      "start": 0.24,
+      "end": 0.38,
+      "word": " the"
+    },
+    {
+      "start": 0.38,
+      "end": 0.68,
+      "word": " stack"
+    },
+    {
+      "start": 0.68,
+      "end": 1.18,
+      "word": " locally"
+    },
+    {
+      "start": 1.18,
+      "end": 1.44,
+      "word": " with"
+    },
+    {
+      "start": 1.44,
+      "end": 1.76,
+      "word": " Docker"
+    },
+    {
+      "start": 1.76,
+      "end": 2.4,
+      "word": " Compose"
+    },
+    {
+      "start": 2.4,
+      "end": 2.6,
+      "word": " and"
+    },
+    {
+      "start": 2.6,
+      "end": 3.02,
+      "word": " host"
+    },
+    {
+      "start": 3.02,
+      "end": 3.54,
+      "word": " Ollama."
+    },
+    {
+      "start": 3.76,
+      "end": 4.24,
+      "word": " The"
+    },
+    {
+      "start": 4.24,
+      "end": 4.78,
+      "word": " repository"
+    },
+    {
+      "start": 4.78,
+      "end": 5.32,
+      "word": " includes"
+    },
+    {
+      "start": 5.32,
+      "end": 5.98,
+      "word": " architecture,"
+    },
+    {
+      "start": 6.32,
+      "end": 6.86,
+      "word": " contribution"
+    },
+    {
+      "start": 6.86,
+      "end": 7.38,
+      "word": " notes,"
+    },
+    {
+      "start": 7.72,
+      "end": 8.14,
+      "word": " recovery"
+    },
+    {
+      "start": 8.14,
+      "end": 8.58,
+      "word": " tests,"
+    },
+    {
+      "start": 8.7,
+      "end": 9.14,
+      "word": " and"
+    },
+    {
+      "start": 9.14,
+      "end": 9.76,
+      "word": " documented"
+    },
+    {
+      "start": 9.76,
+      "end": 10.38,
+      "word": " limitations."
+    },
+    {
+      "start": 10.8,
+      "end": 11.2,
+      "word": " This"
+    },
+    {
+      "start": 11.2,
+      "end": 11.32,
+      "word": " is"
+    },
+    {
+      "start": 11.32,
+      "end": 11.48,
+      "word": " an"
+    },
+    {
+      "start": 11.48,
+      "end": 11.9,
+      "word": " AI"
+    },
+    {
+      "start": 11.9,
+      "end": 12.6,
+      "word": "-assisted"
+    },
+    {
+      "start": 12.6,
+      "end": 13.28,
+      "word": " adaptation,"
+    },
+    {
+      "start": 13.54,
+      "end": 14.32,
+      "word": " demonstrated"
+    },
+    {
+      "start": 14.32,
+      "end": 14.62,
+      "word": " with"
+    },
+    {
+      "start": 14.62,
+      "end": 15.0,
+      "word": " fictional"
+    },
+    {
+      "start": 15.0,
+      "end": 15.44,
+      "word": " company"
+    },
+    {
+      "start": 15.44,
+      "end": 15.98,
+      "word": " materials."
+    }
+  ]
+}

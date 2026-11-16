@@ -1,0 +1,111 @@
+Northline Industrial Systems Inc. Spare Parts Supply and Returns
+
+Version: V3.1
+Responsible Department: Customer Service Center / Supply Chain Department
+Effective Date: October 1, 2024
+One, Applicability Scope
+
+I. Scope of application
+
+GTE Series Industrial Intelligent Gateway and Accessories Spare Parts Purchase, Return, and Replacement Policies Apply. Terms in the Project Contract Take Precedence.
+
+II. Spare Parts Catalog and Pricing
+
+Common Spare Parts and Reference Prices (Including Tax, Unit: CAD):
+
+GTE-3000 Mainboard                    1280
+GTE-3000S Mainboard                   1860
+GTE-3000Pro Mainboard                 3450
+24V/2A Industrial Power Adapter              120
+3-Pin Power Phoenix Terminal                    15
+Serial Terminal (5-Pin)                    18
+DIN Rail Clip                       25
+4G Clamp Antenna (SMA Interface)             65
+5G Rod Antenna (SMA Interface)             150
+Dust Cover Kit (IP54 Upgrade)              280
+Replacement Enclosure (Including Reprint of Label)              420
+
+Spare Parts Prices Are Adjusted Every Six Months, Based on the Price Published on the Official Website on the Order Date. Bulk Purchases of 20 Units or More Can Apply for Discounts, Approved by the Sales Manager.
+
+III. Spare Parts Supply Cycle
+
+Common Spare Parts: Shipped Within 2 Working Days After Payment.
+Non-Common Spare Parts (Such as Discontinued Model Mainboards): Inventory and Production Plan Assessment Required, Generally Delivered Within 20 Working Days, Written Response Within 3 Working Days If Not Available.
+Emergency Spare Parts: Customers with Annual Service Agreements Can Apply for Emergency Shipment, Shipped the Same Day if Ordered Before 15:00, With an Additional 15% Rush Fee.
+
+IV. Spare Parts Support for Discontinued Models
+
+GTE-2000 Series Was Discontinued in December 2023, Spare Parts Support Until December 31, 2026. Supply Based on Existing Inventory During Support Period, Alternative Solutions Provided After Inventory Depletion, Including Trade-In Discounts or Migration to GTE-3000 Series.
+
+Spare Parts for Discontinued Models Are Not Acceptable for Returns.
+
+V. Return Policy
+
+(I) Eligible for Return
+
+1. Within 7 Days of Delivery, If the Equipment Is Unopened, Packaging Intact, and Accessories Complete, and the Customer Requests a Return for Reasons Related to the Customer, a No-Reason Return Can Be Applied, with the Customer Bearing Round-Trip Freight, and the Company Not Charging Depreciation Fees.
+2. Within 15 Days of Delivery, If the Equipment Is Confirmed to Have Quality Issues That Cannot Be Resolved Through Repair, a Return Can Be Applied, with Round-Trip Freight Covered by the Company and Full Refund of the Purchase Price.
+3. If the Delivered Model and Configuration Do Not Match the Contract and the Customer Does Not Accept Replacement, a Return Can Be Applied, with All Costs Covered by the Company.
+
+(II) Not Eligible for Return
+
+1. More Than 15 Days After Delivery
+2. The Equipment Has Been Put into Use and Has Caused Wear, Scratches, or Terminal Deformation
+3. Seal Broken or Self-Disassembly
+4. Devices with Custom Firmware or Custom Hardware Configuration
+5. Devices Converted from Trial to Purchase (Trial Period Is the Acceptance Period)
+6. Devices for promotion, clearance, and special price sales of sample units
+
+(3) Return Process
+
+1. Customers submit a return application, noting the device serial number, purchase order number, and reason for return, along with on-site photos
+2. Customer Service Center reviews and responds within 2 working days
+3. After approval, customers return the device, with a copy of the return application attached inside the packaging
+4. We complete the appearance and function inspection within 3 working days after receiving the device
+5. Refund is processed within 5 working days after the inspection passes, and the refund is returned via the original payment method
+
+If the device is found to have been damaged by the customer, the return application is void, and the device is returned to the customer, with the shipping cost borne by the customer
+
+Six. Exchange Policy
+
+(1) Exchange During Warranty Period
+
+If the same fault occurs in the device during the warranty period and remains unresolved after two repairs, an exchange can be requested. The warranty period of the new device is calculated based on the remaining warranty period of the original device, with a minimum of 3 months if less than 3 months remains
+
+If non-human functional faults occur within 30 days of delivery, a new device can be directly requested for exchange without prior repair
+
+(2) Model Upgrade Exchange
+
+Within 90 days of purchase, if a project change requires upgrading to a higher model (e.g., GTE-3000 to GTE-3000S), an exchange can be requested with the difference in price. The difference amount = new model price - original model price × 0.9, where 0.9 is the depreciation coefficient. The device must be in good appearance and functioning condition
+
+(3) Exchange Process
+
+1. Submit an exchange application, noting the original device serial number and target model
+2. After approval, the company will first send the new device (the customer must provide a deposit or sign a Device Return Commitment Letter)
+3. The customer returns the original device within 10 working days after receiving the new device
+4. After inspecting the original device and confirming no human damage, the deposit is refunded or the commitment letter is released
+5. If the original device is not returned on time, a charge will be issued based on the original price of the new device
+
+Seven. Packaging Requirements for Repairs and Returns
+
+1. Use the original factory packaging box; if unavailable, use a hard cardboard box with no less than 5 layers of corrugated paper
+2. Fill the device around with shock-absorbing material of no less than 3 centimeters thickness
+3. Small parts such as terminals and antennas should be individually bagged to avoid scratching the motherboard during transportation
+4. The box must include a Repair/Return Application Form, stating the serial number, fault symptoms, contact person, and phone number
+5. Choose a trackable logistics method when shipping, and do not accept cash-on-delivery items
+
+The responsibility for any new damage caused by improper packaging during transportation lies with the sender
+
+Eight. Common Issues
+
+Q: Where can I find the device serial number?
+A: The serial number is printed on the device's side label, with the format GL3000-YYWW-XXXXX, where YY represents the last two digits of the manufacturing year and WW represents the manufacturing week. It can also be viewed at the top of the Web interface's [Operation Monitoring] page
+
+Q: How to handle the invoice when returning?
+A: The original copy of the issued VAT special invoice must be returned. We will process the refund after receiving the original invoice. If the invoice has been authenticated and claimed for tax deduction, the customer must issue a red invoice information form
+
+Q: Can I just replace the motherboard and repair it myself?
+Question: The opportunity for self-dismantling during the period of quality assurance results in loss of eligibility for warranty.
+
+Q: Does the spare part have a warranty?
+A: Yes. Spare parts purchased separately are warranted for 6 months from the date of receipt. Spare parts replaced during a full system repair will carry the remaining warranty period of the system, with any remaining period less than 3 months counted as 3 months.

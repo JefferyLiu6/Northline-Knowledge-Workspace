@@ -1,0 +1,9 @@
+{
+  "clips": 9,
+  "audio_seconds": 128.3,
+  "gen_seconds": 57.0,
+  "load_seconds": 7.8,
+  "models": [
+    "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16"
+  ]
+}

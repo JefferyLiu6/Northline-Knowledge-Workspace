@@ -1,0 +1,153 @@
+{
+  "text": "Now ask the assistant about the G T E three thousand Pro. The live local model returns the correct limit: twenty thousand data points. Next, inspect its source attribution.",
+  "audio_mtime": 1794866046.6226394,
+  "duration": 11.113,
+  "heard": "Now ask the assistant about the G T E three thousand Pro. The live local model returns the correct limit twenty thousand data points. Next, inspect its source attribution.",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.4,
+      "word": " Now"
+    },
+    {
+      "start": 0.4,
+      "end": 0.9,
+      "word": " ask"
+    },
+    {
+      "start": 0.9,
+      "end": 1.06,
+      "word": " the"
+    },
+    {
+      "start": 1.06,
+      "end": 1.44,
+      "word": " assistant"
+    },
+    {
+      "start": 1.44,
+      "end": 1.7,
+      "word": " about"
+    },
+    {
+      "start": 1.7,
+      "end": 1.86,
+      "word": " the"
+    },
+    {
+      "start": 1.86,
+      "end": 2.04,
+      "word": " G"
+    },
+    {
+      "start": 2.04,
+      "end": 2.22,
+      "word": " T"
+    },
+    {
+      "start": 2.22,
+      "end": 2.46,
+      "word": " E"
+    },
+    {
+      "start": 2.46,
+      "end": 2.72,
+      "word": " three"
+    },
+    {
+      "start": 2.72,
+      "end": 3.08,
+      "word": " thousand"
+    },
+    {
+      "start": 3.08,
+      "end": 3.44,
+      "word": " Pro."
+    },
+    {
+      "start": 3.68,
+      "end": 4.06,
+      "word": " The"
+    },
+    {
+      "start": 4.06,
+      "end": 4.28,
+      "word": " live"
+    },
+    {
+      "start": 4.28,
+      "end": 4.6,
+      "word": " local"
+    },
+    {
+      "start": 4.6,
+      "end": 4.94,
+      "word": " model"
+    },
+    {
+      "start": 4.94,
+      "end": 5.36,
+      "word": " returns"
+    },
+    {
+      "start": 5.36,
+      "end": 5.56,
+      "word": " the"
+    },
+    {
+      "start": 5.56,
+      "end": 5.86,
+      "word": " correct"
+    },
+    {
+      "start": 5.86,
+      "end": 6.24,
+      "word": " limit"
+    },
+    {
+      "start": 6.24,
+      "end": 6.92,
+      "word": " twenty"
+    },
+    {
+      "start": 6.92,
+      "end": 7.3,
+      "word": " thousand"
+    },
+    {
+      "start": 7.3,
+      "end": 7.54,
+      "word": " data"
+    },
+    {
+      "start": 7.54,
+      "end": 7.94,
+      "word": " points."
+    },
+    {
+      "start": 8.34,
+      "end": 8.94,
+      "word": " Next,"
+    },
+    {
+      "start": 9.16,
+      "end": 9.8,
+      "word": " inspect"
+    },
+    {
+      "start": 9.8,
+      "end": 10.02,
+      "word": " its"
+    },
+    {
+      "start": 10.02,
+      "end": 10.28,
+      "word": " source"
+    },
+    {
+      "start": 10.28,
+      "end": 11.04,
+      "word": " attribution."
+    }
+  ]
+}

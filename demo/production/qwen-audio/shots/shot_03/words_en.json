@@ -1,0 +1,148 @@
+{
+  "text": "Start with the input. This spreadsheet contains the gateway fault codes. The parsing preview exposes the extracted table, so an engineer can check the content before indexing it.",
+  "audio_mtime": 1794866032.8527122,
+  "duration": 11.358,
+  "heard": "Start with the input. This spreadsheet contains the gateway fault codes. The parsing preview exposes the extracted table, so an engineer can check the content before indexing it.",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.48,
+      "word": " Start"
+    },
+    {
+      "start": 0.48,
+      "end": 0.7,
+      "word": " with"
+    },
+    {
+      "start": 0.7,
+      "end": 0.86,
+      "word": " the"
+    },
+    {
+      "start": 0.86,
+      "end": 1.28,
+      "word": " input."
+    },
+    {
+      "start": 1.56,
+      "end": 2.08,
+      "word": " This"
+    },
+    {
+      "start": 2.08,
+      "end": 2.6,
+      "word": " spreadsheet"
+    },
+    {
+      "start": 2.6,
+      "end": 3.14,
+      "word": " contains"
+    },
+    {
+      "start": 3.14,
+      "end": 3.38,
+      "word": " the"
+    },
+    {
+      "start": 3.38,
+      "end": 3.66,
+      "word": " gateway"
+    },
+    {
+      "start": 3.66,
+      "end": 4.04,
+      "word": " fault"
+    },
+    {
+      "start": 4.04,
+      "end": 4.54,
+      "word": " codes."
+    },
+    {
+      "start": 4.74,
+      "end": 5.04,
+      "word": " The"
+    },
+    {
+      "start": 5.04,
+      "end": 5.46,
+      "word": " parsing"
+    },
+    {
+      "start": 5.46,
+      "end": 5.86,
+      "word": " preview"
+    },
+    {
+      "start": 5.86,
+      "end": 6.5,
+      "word": " exposes"
+    },
+    {
+      "start": 6.5,
+      "end": 6.7,
+      "word": " the"
+    },
+    {
+      "start": 6.7,
+      "end": 7.24,
+      "word": " extracted"
+    },
+    {
+      "start": 7.24,
+      "end": 7.7,
+      "word": " table,"
+    },
+    {
+      "start": 7.88,
+      "end": 8.36,
+      "word": " so"
+    },
+    {
+      "start": 8.36,
+      "end": 8.7,
+      "word": " an"
+    },
+    {
+      "start": 8.7,
+      "end": 9.06,
+      "word": " engineer"
+    },
+    {
+      "start": 9.06,
+      "end": 9.36,
+      "word": " can"
+    },
+    {
+      "start": 9.36,
+      "end": 9.58,
+      "word": " check"
+    },
+    {
+      "start": 9.58,
+      "end": 9.72,
+      "word": " the"
+    },
+    {
+      "start": 9.72,
+      "end": 10.12,
+      "word": " content"
+    },
+    {
+      "start": 10.12,
+      "end": 10.48,
+      "word": " before"
+    },
+    {
+      "start": 10.48,
+      "end": 11.18,
+      "word": " indexing"
+    },
+    {
+      "start": 11.18,
+      "end": 11.3,
+      "word": " it."
+    }
+  ]
+}

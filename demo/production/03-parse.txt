@@ -1,0 +1,1 @@
+Start with the input. This spreadsheet contains the gateway fault codes. The parsing preview exposes the extracted table, so an engineer can check the content before indexing it.

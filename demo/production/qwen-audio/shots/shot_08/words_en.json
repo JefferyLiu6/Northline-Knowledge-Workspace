@@ -1,0 +1,173 @@
+{
+  "text": "The development evaluation records one hundred fifty comparisons across fifty questions. Hybrid retrieval passed seventeen of eighteen selected technical fact checks, versus fifteen for vector search. These are development results, not production accuracy.",
+  "audio_mtime": 1794866066.3514576,
+  "duration": 16.397,
+  "heard": "The development evaluation records one hundred fifty comparisons across fifty questions. Hybrid retrieval passed seventeen of eighteen selected technical fact checks, versus fifteen for vector search. These are development results, not production accuracy.",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.16,
+      "word": " The"
+    },
+    {
+      "start": 0.16,
+      "end": 0.62,
+      "word": " development"
+    },
+    {
+      "start": 0.62,
+      "end": 1.42,
+      "word": " evaluation"
+    },
+    {
+      "start": 1.42,
+      "end": 2.18,
+      "word": " records"
+    },
+    {
+      "start": 2.18,
+      "end": 2.62,
+      "word": " one"
+    },
+    {
+      "start": 2.62,
+      "end": 2.72,
+      "word": " hundred"
+    },
+    {
+      "start": 2.72,
+      "end": 3.08,
+      "word": " fifty"
+    },
+    {
+      "start": 3.08,
+      "end": 3.72,
+      "word": " comparisons"
+    },
+    {
+      "start": 3.72,
+      "end": 4.18,
+      "word": " across"
+    },
+    {
+      "start": 4.18,
+      "end": 4.66,
+      "word": " fifty"
+    },
+    {
+      "start": 4.66,
+      "end": 5.26,
+      "word": " questions."
+    },
+    {
+      "start": 5.6,
+      "end": 6.12,
+      "word": " Hybrid"
+    },
+    {
+      "start": 6.12,
+      "end": 6.74,
+      "word": " retrieval"
+    },
+    {
+      "start": 6.74,
+      "end": 7.1,
+      "word": " passed"
+    },
+    {
+      "start": 7.1,
+      "end": 7.56,
+      "word": " seventeen"
+    },
+    {
+      "start": 7.56,
+      "end": 7.9,
+      "word": " of"
+    },
+    {
+      "start": 7.9,
+      "end": 8.26,
+      "word": " eighteen"
+    },
+    {
+      "start": 8.26,
+      "end": 8.88,
+      "word": " selected"
+    },
+    {
+      "start": 8.88,
+      "end": 9.32,
+      "word": " technical"
+    },
+    {
+      "start": 9.32,
+      "end": 9.68,
+      "word": " fact"
+    },
+    {
+      "start": 9.68,
+      "end": 10.06,
+      "word": " checks,"
+    },
+    {
+      "start": 10.24,
+      "end": 10.64,
+      "word": " versus"
+    },
+    {
+      "start": 10.64,
+      "end": 11.14,
+      "word": " fifteen"
+    },
+    {
+      "start": 11.14,
+      "end": 11.52,
+      "word": " for"
+    },
+    {
+      "start": 11.52,
+      "end": 11.84,
+      "word": " vector"
+    },
+    {
+      "start": 11.84,
+      "end": 12.32,
+      "word": " search."
+    },
+    {
+      "start": 12.56,
+      "end": 13.06,
+      "word": " These"
+    },
+    {
+      "start": 13.06,
+      "end": 13.2,
+      "word": " are"
+    },
+    {
+      "start": 13.2,
+      "end": 13.64,
+      "word": " development"
+    },
+    {
+      "start": 13.64,
+      "end": 14.24,
+      "word": " results,"
+    },
+    {
+      "start": 14.52,
+      "end": 14.86,
+      "word": " not"
+    },
+    {
+      "start": 14.86,
+      "end": 15.46,
+      "word": " production"
+    },
+    {
+      "start": 15.46,
+      "end": 15.98,
+      "word": " accuracy."
+    }
+  ]
+}

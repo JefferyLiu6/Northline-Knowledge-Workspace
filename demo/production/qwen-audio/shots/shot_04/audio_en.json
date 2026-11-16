@@ -1,0 +1,14 @@
+{
+  "shot": 4,
+  "lang": "en",
+  "text": "For error five zero two two, retrieval testing exposes the selected passages, their scores, and timing. The fault-code reference appears first, making retrieval behavior visible before generation.",
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16",
+  "voice": {
+    "speaker": "ryan",
+    "language": "english",
+    "instruct": "Speak as a calm, warm documentary narrator at a natural, steady pace. Not exaggerated."
+  },
+  "tts_input": "For error five zero two two, retrieval testing exposes the selected passages, their scores, and timing. The fault-code reference appears first, making retrieval behavior visible before generation.",
+  "seconds": 20.08,
+  "gen_seconds": 8.9
+}

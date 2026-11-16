@@ -1,0 +1,56 @@
+.front-layout {
+    --workspace-header: 65px;
+    min-height: 100dvh;
+    background: var(--canvas);
+}
+
+.front-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    min-height: var(--workspace-header);
+    padding: 8px clamp(12px, 2vw, 28px);
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.front-brand,
+.front-header-right,
+.front-account {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.front-brand {
+    color: var(--ink);
+}
+
+.front-brand :deep(.workspace-brand) {
+    font-size: clamp(15px, 2vw, 20px);
+}
+
+.front-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 8px;
+    border-radius: 7px;
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.front-nav-link:hover {
+    background: var(--accent-soft);
+}
+
+.front-account {
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}

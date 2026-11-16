@@ -1,0 +1,174 @@
+Knowledge Workspace
+Admin
+PA
+Application
+Product Technical Assistant
+New conversation
+My conversations
+For ERR-5022, what is the maximum number of data points for the GTE-3000Pro?
+Nov 16, 2026, 9:44 PM
+How do I install the GTE-3000?
+Sep 5, 2026, 5:43 PM
+How do I claim travel expenses?
+Sep 5, 2026, 5:42 PM
+What company policies are available?
+Sep 5, 2026, 5:41 PM
+How are after-sales refunds processed?
+Sep 5, 2026, 5:41 PM
+List the differences between the GTE-3000, GTE-3000S, and GTE-3000Pro, including processor, memory, interfaces, wireless connectivity, and data point limits.
+Sep 5, 2026, 5:33 PM
+List the differences between the GTE-3000, GTE-3000S, and GTE-3000Pro, including processor, memory, interfaces, wireless connectivity, and data point limits.
+Sep 5, 2026, 5:28 PM
+How do I resolve error ERR-5021 on the device?
+Sep 5, 2026, 5:27 PM
+How do I resolve error ERR-5021 on the device?
+Sep 5, 2026, 5:26 PM
+How do I resolve error ERR-5021 on the device?
+Sep 5, 2026, 5:26 PM
+List the differences between the GTE-3000, GTE-3000S, and GTE-3000Pro, including processor, memory, interfaces, wireless connectivity, and data point limits.
+Sep 5, 2026, 4:38 PM
+List the differences between the GTE-3000, GTE-3000S, and GTE-3000Pro, including processor, memory, interfaces, wireless connectivity, and data point limits.
+Sep 5, 2026, 4:37 PM
+List the differences between the GTE-3000, GTE-3000S, and GTE-3000Pro, including processor, memory, interfaces, wireless connectivity, and data point limits.
+Sep 5, 2026, 4:34 PM
+How are after-sales refunds usually processed?
+Sep 5, 2026, 4:31 PM
+How many data points does the GTE-3000Pro support?
+Sep 5, 2026, 4:27 PM
+How many data points does the GTE-3000Pro support?
+Sep 5, 2026, 4:26 PM
+How many data points does the GTE-3000Pro support?
+Sep 5, 2026, 4:17 PM
+How many data points does the GTE-3000Pro support?
+Sep 5, 2026, 4:16 PM
+How does your refund process work?
+Sep 5, 2026, 3:49 PM
+How long is the warranty?
+Sep 5, 2026, 3:14 PM
+For ERR-5022, what is the maximum number of data points for the GTE-3000Pro?
+
+According to Source 2, the maximum number of data points for the GTE-3000Pro is 20,000.
+
+Sources (8)
+#1
+Chunk 169
+Relevance 0.032787
+| S7 Connection Refused | Confirm the PLC's rack and slot configuration, confirm that the number of allowed connections has not been exhausted | Partial
+| ERR-5021 | Data point configuration incompatible with protocol stack | Critical | A field cannot be parsed while the data point configuration is loading. | Often follows a major firmware upgrade. Roll back and upgrade again through the intermediate release. | Yes |
+| ERR-5022 | Data point count exceeds model limit | Warning | The configured data point count exceeds the device model's limit. | Remove data points or upgrade to a higher model. Limits are 2,000 for GTE-3000, 5,000 for GTE-3000S, and 20,000 for GTE-3000Pro. | Partial |
+| ERR-6003 | MQTT authentication failed | Critical | The broker returns CONNACK error code 4 or 5. | Verify the username, password, and ClientID. Confirm that the device is enabled on the platform. | No |
+| ERR-6008 | TLS handshake failed | Critical | Certificate validation fails or clocks are out of sync. | Check certificate validity and the CA chain. Check whether the device clock is off by more than five minutes. | No |
+| ERR-6012 | Local cache full | Warning | While offline, the number of cached records reaches the device model's limit. | Restore network access. Once the cache is full, the oldest records are discarded first.
+#2
+Chunk 158
+Relevance 0.032002
+New data points beyond the point limit will be rejected, and the web configuration page will prompt "Number of data points exceeds the current model limit"
+
+## 5. Data Collection and Reporting Mechanism
+
+Collection tasks are organized by "Collection Groups." A collection group includes several data points, a collection cycle, and a reporting strategy. The minimum collection cycle is 100ms, maximum 3600s. Reporting strategies include three types:
+
+**Periodic Reporting**: Pack the latest value and report it at fixed intervals, independent of the collection cycle configuration. Suitable for trend data, such as temperature, current.
+
+**Change Reporting**: Report only when the value changes beyond the set deadband threshold. Suitable for state data, significantly reducing traffic. Deadband threshold supports absolute value and percentage formats.
+
+**Hybrid Reporting**: Immediately report upon change, while also reporting once at a longer heartbeat cycle to ensure the upper system receives the latest value even if it missed the change event. Recommended for production environments.
+
+Data is stored in local cache when the network is down. GTE-3000 has a cache capacity of 100,000 entries, GTE-3000S has 500,000, and GTE-3000Pro has 5,000,000. After network recovery, data is resent in chronological order, with a default transmission rate limit of 200 entries per second to avoid overwhelming the upper system. When the cache is full, the oldest data is discarded on a first-in-first-out basis.
+
+## 6. Edge Computing
+
+GTE-3000Pro supports running edge rules and lightweight models on the device
+#3
+Chunk 161
+Relevance 0.031498
+The upgrade process takes about 3 to 5 minutes, during which data collection is interrupted. After upgrade, the device automatically restarts and restores the original configuration
+
+## 9. Typical Deployment Methods
+
+**Single Machine Deployment**: One GTE-3000 connects to a PLC and instruments on a production line, and connects to the workshop switch via LAN2, with data reporting to the plant-level MES.
+
+**Dual Machine Hot Standby**: Two GTE-3000S units are interconnected via a heartbeat line. The standby unit takes over within 5 seconds if the main unit fails. Point configuration is automatically synchronized from the main unit to the standby unit. Hot standby requires both devices to have the same model and firmware version.
+
+**Cascade Deployment**: At the workshop level, multiple GTE-3000 units collect data nearby, and the data is aggregated to a GTE-3000Pro for edge computing and unified cloud upload, reducing the number of public network connections.
+
+## 10. Selection Recommendations
+
+- Less than 500 points, with wired network, no edge computing needs: GTE-3000
+- 500 to 3000 points, no network cables on site, requires 4G uplink: GTE-3000S
+- More than 3000 points, requires edge inference or CNC device connection: GTE-3000Pro
+
+The point configuration format of all three devices is fully compatible. When upgrading from GTE-3000 to GTE-3000Pro later, export the configuration and import it directly, without needing to re-enter the points.
+#4
+Chunk 156
+Relevance 0.029851
+LAN2 is default as business port, with factory configuration as DHCP client. LAN3 and LAN4 of GTE-3000S and GTE-3000Pro can be configured as switch ports, cascading downstream devices
+
+When the management port IP is forgotten, hold the RESET button for more than 10 seconds to restore factory settings, returning the management port IP to 192.168.1.10. Restoring factory settings will clear all collected point configurations; make sure to export the configuration file before operation.
+
+### 3.3 Serial Ports
+
+RS485 uses a 2-pin terminal with A and B lines. Serial port parameters support 1200 ~ 115200bps, default 9600bps, 8 data bits, 1 stop bit, no parity check. A maximum of 32 slave devices can be connected on the same 485 bus, with 120Ω terminal resistors required at both ends of the bus. GTE-3000S and GTE-3000Pro have built-in terminal resistors that can be enabled via a dip switch.
+
+### 3.4 Digital Input/Output
+
+GTE-3000Pro provides 4 routes DI and 2 paths DO. DI is inputted for dry interfaces, which are relay output, contact capacity 30VDC/2A. DO is often used to connect sound alarms and to export signals when collecting breaks or threshold limits
+#5
+Chunk 458
+Relevance 0.029412
+Use a multimeter to measure the input voltage. When it is below 9V, the device will power off and restart. Prioritize checking the power adapter and line voltage drop
+
+## V. Account and Security
+
+### Q17: What should I do if I forget the Web management password?
+
+Guest password cannot be recovered, so the device must be reset via factory reset. Operator and visitor account passwords can be reset by the administrator via [System Maintenance]→[User Management]. It is recommended to retain at least two administrator accounts during deployment.
+
+### Q18: What security reinforcement measures does the device support?
+
+Data will not be immediately lost. When the network is disconnected, data is stored in local cache. GTE-3000 can cache up to 100,000 entries, GTE-3000S up to 500,000 entries, and GTE-3000Pro up to 5,000,000 entries
+#6
+Chunk 457
+Relevance 0.016129
+Single import is limited to no more than 5000 rows, and batch imports are required if exceeded. The system will perform format validation before import, and rows that fail validation will be highlighted in red with the reason, and re-import after correction
+2. High ambient temperature. Long-term temperatures above 60°C will trigger a protection restart. Check if the installation location is near a heat source and if the cabinet has proper ventilation.
+3. High memory usage by edge rules or models. When the GTE-3000Pro runs more than three models simultaneously, it may trigger memory protection. Reduce the number of models.
+
+### Q16: Will data be lost during network disconnection?
+
+Unstable power supply
+#7
+Chunk 157
+Relevance 0.015625
+. DO is often used for connecting sound alarms to export signals when collecting breaks or thresholds.
+
+## 4. Protocol Support
+
+Protocols supported by the device facing field equipment:
+
+- Modbus RTU / Modbus TCP
+- OPC UA Client
+- Siemens S7(S7-200 Smart / S7-1200 / S7-1500)
+- Mitsubishi MC Protocol (3E Frame)
+- Omron FINS
+- Mitsubishi FX Series Programming Port Protocol
+- CNC Equipment's FOCAS Protocol (Only supported by GTE-3000Pro)
+
+Protocols supported by the device facing upper-level systems:
+
+- MQTT 3.1.1 / MQTT 5.0, supporting TLS encryption and mutual certificate authentication
+- HTTP / HTTPS Active Reporting
+- OPC UA Server
+- Standard access to Alibaba Cloud, Huawei Cloud, AWS IoT platforms
+
+GTE-3000 can be configured with up to 2000 data points, GTE-3000S with 5000, and GTE-3000Pro with 20000. New data points beyond the point limit will be rejected, and the web configuration page will prompt "Number of data points exceeds the current model limit"
+#8
+Chunk 453
+Relevance 0.015385
+GTE-3000 series product technical manual
+
+### GTE series on-site installation and maintenance operation guide
+Helpful
+Not helpful
+Shift + Enter for a new line
+Send

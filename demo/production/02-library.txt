@@ -1,0 +1,1 @@
+The workspace organizes eleven source documents across three knowledge bases. Administrators can upload, preview, parse, split, and embed files, while checking their status in one place.

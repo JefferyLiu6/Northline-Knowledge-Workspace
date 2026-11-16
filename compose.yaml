@@ -1,0 +1,85 @@
+name: northline-rag
+services:
+  mysql:
+    image: mysql:8.4@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Run python3 scripts/configure.py first}
+      MYSQL_DATABASE: ai_rag
+      MYSQL_USER: rag
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Run python3 scripts/configure.py first}
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./ai_rag.sql:/docker-entrypoint-initdb.d/01-seed.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=$$MYSQL_PASSWORD mysql -h 127.0.0.1 -u rag ai_rag -e 'SELECT 1 FROM user LIMIT 1'"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+  postgres:
+    image: pgvector/pgvector:pg17@sha256:b513c48566e4777cd3370451400000c78eda6a08131d68f4c31d4a76f27bd8fd
+    environment:
+      POSTGRES_DB: ai_rag_vector
+      POSTGRES_USER: rag
+      POSTGRES_PASSWORD: ${PGPASSWORD:?Run python3 scripts/configure.py first}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./ai_rag_vector.sql:/docker-entrypoint-initdb.d/01-seed.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "PGPASSWORD=$$POSTGRES_PASSWORD psql -h 127.0.0.1 -U rag -d ai_rag_vector -c 'SELECT 1 FROM knowledge_chunk_vector LIMIT 1'"]
+      interval: 5s
+      timeout: 5s
+      retries: 40
+  backend:
+    build:
+      context: .
+      dockerfile: deploy/backend.Dockerfile
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ai_rag
+      MYSQL_USER: rag
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      PGHOST: postgres
+      PGPORT: 5432
+      PGDATABASE: ai_rag_vector
+      PGUSER: rag
+      PGPASSWORD: ${PGPASSWORD}
+      PUBLIC_API_BASE: /api
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://host.docker.internal:11434/v1}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - uploads:/app/files
+      - app-state:/app/state
+    depends_on:
+      mysql:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9090/health/ready', timeout=4)"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    restart: unless-stopped
+  frontend:
+    build:
+      context: .
+      dockerfile: deploy/frontend.Dockerfile
+    ports:
+      - "127.0.0.1:${APP_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1/"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+volumes:
+  mysql-data:
+  postgres-data:
+  uploads:
+  app-state:

@@ -1,0 +1,83 @@
+[
+  {
+    "id": "01-cover",
+    "chapter": "LOCAL AI / INDUSTRIAL SUPPORT",
+    "title": "From scattered<br>manuals to<br><em>inspectable<br>answers.</em>",
+    "body": "Knowledge Workspace",
+    "note": "A portfolio walkthrough for a fictional industrial support team.",
+    "kind": "cover",
+    "narration": "Meet Knowledge Workspace: a local AI support platform for the fictional Northline Industrial Systems. Follow a technician from a device fault to an answer, then inspect the evidence behind it."
+  },
+  {
+    "id": "02-library",
+    "chapter": "01 / ORGANIZE THE KNOWLEDGE",
+    "title": "One workspace.<br>Eleven source<br>documents.",
+    "body": "Product manuals, warranty rules, and company policies stay connected to their processing status.",
+    "note": "3 knowledge bases \u00b7 110 searchable vectors",
+    "image": "02-documents.png",
+    "narration": "The workspace organizes eleven source documents across three knowledge bases. Administrators can upload, preview, parse, split, and embed files, while checking their status in one place."
+  },
+  {
+    "id": "03-parse",
+    "chapter": "02 / INSPECT THE INPUT",
+    "title": "Check the text<br>before it reaches<br>the model.",
+    "body": "Inspect extracted text and tables before chunking and embedding.",
+    "note": "PDF \u00b7 DOCX \u00b7 XLSX \u00b7 Markdown \u00b7 TXT",
+    "kind": "parse",
+    "narration": "Start with the input. This spreadsheet contains the gateway fault codes. The parsing preview exposes the extracted table, so an engineer can check the content before indexing it."
+  },
+  {
+    "id": "04-retrieve",
+    "chapter": "03 / TRACE THE RETRIEVAL",
+    "title": "See what the<br>retriever actually<br>found.",
+    "body": "Inspect ranked passages, source documents, scores, and stage timings.",
+    "note": "Live capture: vector baseline",
+    "image": "04b-retrieval-evidence.png",
+    "narration": "For error five zero two two, retrieval testing exposes the selected passages, their scores, and timing. The fault-code reference appears first, making retrieval behavior visible before generation."
+  },
+  {
+    "id": "05-answer",
+    "chapter": "04 / ASK A REAL QUESTION",
+    "title": "A specific fault.<br>A specific model.<br>A concise answer.",
+    "body": "The live Ollama response returns 20,000 data points for the GTE-3000Pro.",
+    "note": "Observed answer \u00b7 source attribution reviewed next",
+    "kind": "answer",
+    "narration": "Now ask the assistant about the G T E three thousand Pro. The live local model returns the correct limit: twenty thousand data points. Next, inspect its source attribution."
+  },
+  {
+    "id": "06-inspect",
+    "chapter": "05 / VERIFY THE EVIDENCE",
+    "title": "Correct value.<br><em>Wrong source<br>number.</em>",
+    "body": "The answer names Source 2. The explicit 20,000 limit is in Source 1.",
+    "note": "An observed citation defect, retained in this demo.",
+    "kind": "sources",
+    "narration": "This capture exposes a citation defect. The answer names source two, but the explicit limit appears in source one. The inspector makes the mismatch visible. Citation accuracy still needs improvement."
+  },
+  {
+    "id": "07-recovery",
+    "chapter": "06 / MAKE FAILURE VISIBLE",
+    "title": "Keep the failure.<br>Retry the step.<br>Inspect the result.",
+    "body": "A new completed attempt sits beside the original failure in processing history.",
+    "note": "Real parse failure and retry \u00b7 temporary demo fixture",
+    "kind": "recovery",
+    "narration": "Processing history preserves a failed attempt beside its successful retry. Separately, kill-and-restart tests passed for parsing, splitting, and embedding. Partial output is cleaned before an administrator retries."
+  },
+  {
+    "id": "08-evaluation",
+    "chapter": "07 / MEASURE THE TRADEOFFS",
+    "title": "Evidence beyond<br>the happy path.",
+    "body": "50 development questions.\n150 recorded strategy comparisons.",
+    "note": "Development results, not production accuracy.",
+    "kind": "metrics",
+    "narration": "The development evaluation records one hundred fifty comparisons across fifty questions. Hybrid retrieval passed seventeen of eighteen selected technical fact checks, versus fifteen for vector search. These are development results, not production accuracy."
+  },
+  {
+    "id": "09-close",
+    "chapter": "EXPLORE / INSPECT / REPRODUCE",
+    "title": "Run it locally.<br>Follow the evidence.<br><em>Improve what fails.</em>",
+    "body": "Vue + FastAPI + MySQL + pgvector + Ollama",
+    "note": "AI-assisted adaptation of an existing enterprise RAG application.",
+    "kind": "close",
+    "narration": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials."
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "corpus_sha256": "4b43fc2996e65bb96cca86fc083ecfd969ee7cb99b331ce503d8996ea3a8b9fe",
+  "ollama_models": [
+    {
+      "name": "mxbai-embed-large:latest",
+      "digest": "468836162de7f81e041c43663fedbbba921dcea9b9fefea135685a39b2d83dd8"
+    },
+    {
+      "name": "llama3.1:8b",
+      "digest": "46e0c10c039e019119339687c3c1757cc81b9da49709a3b3924863ba87ca666e"
+    }
+  ]
+}

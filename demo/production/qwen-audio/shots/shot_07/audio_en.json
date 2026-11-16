@@ -1,0 +1,14 @@
+{
+  "shot": 7,
+  "lang": "en",
+  "text": "Processing history preserves a failed attempt beside its successful retry. Separately, kill-and-restart tests passed for parsing, splitting, and embedding. Partial output is cleaned before an administrator retries.",
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16",
+  "voice": {
+    "speaker": "ryan",
+    "language": "english",
+    "instruct": "Speak as a calm, warm documentary narrator at a natural, steady pace. Not exaggerated."
+  },
+  "tts_input": "Processing history preserves a failed attempt beside its successful retry. Separately, kill-and-restart tests passed for parsing, splitting, and embedding. Partial output is cleaned before an administrator retries.",
+  "seconds": 14.39,
+  "gen_seconds": 6.3
+}

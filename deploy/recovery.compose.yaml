@@ -1,0 +1,8 @@
+# Test-only fault injection; never used by the normal startup command.
+services:
+  backend:
+    volumes:
+      - ./deploy/recovery_server.py:/testhooks/recovery_server.py:ro
+    environment:
+      RECOVERY_TEST_STAGE: ${RECOVERY_TEST_STAGE:?Set a test stage}
+    command: ["python", "/testhooks/recovery_server.py"]

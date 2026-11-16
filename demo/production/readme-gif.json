@@ -1,0 +1,28 @@
+{
+  "duration_seconds": 30,
+  "loop": "infinite",
+  "frames": 9,
+  "presentation": "Timed walkthrough of the recorded 4K screenshots",
+  "source_resolution": [
+    3840,
+    2160
+  ],
+  "gif_exports": {
+    "Northline-Preview-4K.gif": {
+      "resolution": [
+        3840,
+        2160
+      ],
+      "bytes": 4413573,
+      "sha256": "180392de3152c6f097598d7e1f6dd8be3c11ea0c9d9e3a5f89d728a19182e53d"
+    },
+    "Northline-Preview-1080p.gif": {
+      "resolution": [
+        1920,
+        1080
+      ],
+      "bytes": 2021416,
+      "sha256": "8c35c18de641c2ac1f6814a4fb1b8ff26abdef25cf5456eb606e3021dfe39132"
+    }
+  }
+}

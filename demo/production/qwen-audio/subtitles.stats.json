@@ -1,0 +1,8 @@
+{
+  "model": "mlx-community/whisper-large-v3-turbo",
+  "modes": [
+    "en"
+  ],
+  "alignments": 9,
+  "align_seconds": 14.4
+}

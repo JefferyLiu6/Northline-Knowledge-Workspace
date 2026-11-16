@@ -1,0 +1,11 @@
+# Local build and interpreter files
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+.venv/
+.DS_Store
+
+.local-jwt-secret
+
+.env

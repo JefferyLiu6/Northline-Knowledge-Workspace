@@ -1,0 +1,153 @@
+{
+  "text": "Processing history preserves a failed attempt beside its successful retry. Separately, kill-and-restart tests passed for parsing, splitting, and embedding. Partial output is cleaned before an administrator retries.",
+  "audio_mtime": 1794866059.1562965,
+  "duration": 14.392,
+  "heard": "Processing history preserves a failed attempt beside its successful retry. Separately, kill-and-restart tests passed for parsing, splitting, and embedding. Partial output is cleaned before an administrator retries.",
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.64,
+      "word": " Processing"
+    },
+    {
+      "start": 0.64,
+      "end": 0.96,
+      "word": " history"
+    },
+    {
+      "start": 0.96,
+      "end": 1.58,
+      "word": " preserves"
+    },
+    {
+      "start": 1.58,
+      "end": 1.74,
+      "word": " a"
+    },
+    {
+      "start": 1.74,
+      "end": 1.98,
+      "word": " failed"
+    },
+    {
+      "start": 1.98,
+      "end": 2.34,
+      "word": " attempt"
+    },
+    {
+      "start": 2.34,
+      "end": 2.74,
+      "word": " beside"
+    },
+    {
+      "start": 2.74,
+      "end": 3.0,
+      "word": " its"
+    },
+    {
+      "start": 3.0,
+      "end": 3.56,
+      "word": " successful"
+    },
+    {
+      "start": 3.56,
+      "end": 4.14,
+      "word": " retry."
+    },
+    {
+      "start": 4.86,
+      "end": 5.58,
+      "word": " Separately,"
+    },
+    {
+      "start": 6.12,
+      "end": 6.32,
+      "word": " kill"
+    },
+    {
+      "start": 6.32,
+      "end": 6.46,
+      "word": "-and"
+    },
+    {
+      "start": 6.46,
+      "end": 6.94,
+      "word": "-restart"
+    },
+    {
+      "start": 6.94,
+      "end": 7.28,
+      "word": " tests"
+    },
+    {
+      "start": 7.28,
+      "end": 7.64,
+      "word": " passed"
+    },
+    {
+      "start": 7.64,
+      "end": 7.8,
+      "word": " for"
+    },
+    {
+      "start": 7.8,
+      "end": 8.34,
+      "word": " parsing,"
+    },
+    {
+      "start": 8.62,
+      "end": 9.22,
+      "word": " splitting,"
+    },
+    {
+      "start": 9.54,
+      "end": 9.94,
+      "word": " and"
+    },
+    {
+      "start": 9.94,
+      "end": 10.54,
+      "word": " embedding."
+    },
+    {
+      "start": 10.8,
+      "end": 11.52,
+      "word": " Partial"
+    },
+    {
+      "start": 11.52,
+      "end": 11.9,
+      "word": " output"
+    },
+    {
+      "start": 11.9,
+      "end": 12.1,
+      "word": " is"
+    },
+    {
+      "start": 12.1,
+      "end": 12.42,
+      "word": " cleaned"
+    },
+    {
+      "start": 12.42,
+      "end": 12.74,
+      "word": " before"
+    },
+    {
+      "start": 12.74,
+      "end": 12.9,
+      "word": " an"
+    },
+    {
+      "start": 12.9,
+      "end": 13.52,
+      "word": " administrator"
+    },
+    {
+      "start": 13.52,
+      "end": 14.18,
+      "word": " retries."
+    }
+  ]
+}

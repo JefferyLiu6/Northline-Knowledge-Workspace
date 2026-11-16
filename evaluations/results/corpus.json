@@ -1,0 +1,721 @@
+{
+  "documents": [
+    {
+      "id": 125,
+      "file_name": "GTE-3000 Series Technical Manual.md",
+      "kb_id": 206
+    },
+    {
+      "id": 126,
+      "file_name": "GTE Series Field Installation and Maintenance Guide.docx",
+      "kb_id": 206
+    },
+    {
+      "id": 127,
+      "file_name": "GTE Series Fault Code Reference.xlsx",
+      "kb_id": 206
+    },
+    {
+      "id": 128,
+      "file_name": "Firmware Upgrade and Release Notes.txt",
+      "kb_id": 206
+    },
+    {
+      "id": 129,
+      "file_name": "Employee Handbook.md",
+      "kb_id": 207
+    },
+    {
+      "id": 130,
+      "file_name": "Travel and Expense Reimbursement Policy.docx",
+      "kb_id": 207
+    },
+    {
+      "id": 131,
+      "file_name": "Attendance and Leave Policy.txt",
+      "kb_id": 207
+    },
+    {
+      "id": 132,
+      "file_name": "Information Security and Data Protection Policy.md",
+      "kb_id": 207
+    },
+    {
+      "id": 133,
+      "file_name": "After-Sales Service and Warranty Policy.pdf",
+      "kb_id": 208
+    },
+    {
+      "id": 134,
+      "file_name": "Customer FAQ.md",
+      "kb_id": 208
+    },
+    {
+      "id": 135,
+      "file_name": "Spare Parts Supply and Returns.txt",
+      "kb_id": 208
+    }
+  ],
+  "chunks": [
+    {
+      "id": 153,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": "# GTE-3000 Series Industrial Smart Gateway Technical Manual\n\nDocument Number: GL-PRD-2024-017\nVersion: V3.2\nModels covered: GTE-3000, GTE-3000S, and GTE-3000Pro\nPublished by the Product Department, Northline Industrial Systems Inc.\n\n## 1. Product Overview\n\nGTE-3000 Series is a industrial intelligent gateway launched by Northline Industrial Systems for discrete manufacturing and process industries. It is deployed between production line equipment and upper-level systems, responsible for protocol conversion, edge computing, and data cloud upload. The device adopts a fanless aluminum alloy casing design, supporting DIN rail mounting and wall mounting"
+    },
+    {
+      "id": 154,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": ".\n\nThere are three models in the series, with consistent hardware platforms, and differences mainly lie in computing power, number of interfaces, and wireless capabilities:\n\n| Model | Processor | Memory | Storage | Ethernet Port | Serial Port | Wireless | Typical Power Consumption |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| GTE-3000 | Quad-core 1.2GHz | 2GB | 8GB eMMC | 2 × Gigabit | 2 × RS485 | None | 6.5W |\n| GTE-3000S | Quad-core 1.2GHz | 4GB | 16GB eMMC | 4 × Gigabit | 4 × RS485/RS232 | 4G Full Network Coverage | 9.2W |\n| GTE-3000Pro | Eight-core 1.8GHz | 8GB | 64GB eMMC | 4 × Gigabit | 4 × RS485/RS232 | 5G + Wi-Fi 6 | 15.8W |\n\nGTE-3000 is the basic model, suitable for small-scale data collection on a single production line; GTE-3000S adds 4G uplink and more serial ports, suitable for workshops without wired networks; GTE-3000Pro has local inference capabilities, allowing lightweight vision detection models to run at the edge"
+    },
+    {
+      "id": 155,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": ".\n\n## 2. Environmental Parameters\n\n| Project | Metric |\n| --- | --- |\n| Operating Temperature | -20℃ ~ +70℃ |\n| Storage Temperature | -40℃ ~ +85℃ |\n| Relative Humidity | 5% ~ 95%, No Condensation |\n| Protection Level | IP40 (Can reach IP54 with dust cover kit) |\n| Input Voltage | DC 9V ~ 36V, Standard 24V Power Adapter |\n| Vibration Resistance | 5 ~ 500Hz,2Grms |\n| Mean Time Between Failures | MTBF ≥ 100000 Hours |\n\nWhen the installation site temperature is consistently higher than 60℃, a heat dissipation duct must be installed or the device must be moved out of the high-temperature area; otherwise, the processor will trigger frequency reduction protection, manifested as longer data collection cycles and increased data latency.\n\n## 3. Interface Description\n\n### 3.1 Power Interface\n\nThe left side of the device has a 3-pin Phoenix terminal, from left to right: V+, V-, PE. PE is the protective grounding; grounding is mandatory when there is significant electrical interference in the workshop, otherwise RS485 communication is prone to checksum errors.\n\n### 3.2 Ethernet Ports\n\nLAN1 is default as management port, with factory IP 192.168.1.10, subnet mask 255.255.255.0. LAN2 is default as business port, with factory configuration as DHCP client"
+    },
+    {
+      "id": 156,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": "LAN2 is default as business port, with factory configuration as DHCP client. LAN3 and LAN4 of GTE-3000S and GTE-3000Pro can be configured as switch ports, cascading downstream devices\n\nWhen the management port IP is forgotten, hold the RESET button for more than 10 seconds to restore factory settings, returning the management port IP to 192.168.1.10. Restoring factory settings will clear all collected point configurations; make sure to export the configuration file before operation.\n\n### 3.3 Serial Ports\n\nRS485 uses a 2-pin terminal with A and B lines. Serial port parameters support 1200 ~ 115200bps, default 9600bps, 8 data bits, 1 stop bit, no parity check. A maximum of 32 slave devices can be connected on the same 485 bus, with 120Ω terminal resistors required at both ends of the bus. GTE-3000S and GTE-3000Pro have built-in terminal resistors that can be enabled via a dip switch.\n\n### 3.4 Digital Input/Output\n\nGTE-3000Pro provides 4 routes DI and 2 paths DO. DI is inputted for dry interfaces, which are relay output, contact capacity 30VDC/2A. DO is often used to connect sound alarms and to export signals when collecting breaks or threshold limits"
+    },
+    {
+      "id": 157,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": ". DO is often used for connecting sound alarms to export signals when collecting breaks or thresholds.\n\n## 4. Protocol Support\n\nProtocols supported by the device facing field equipment:\n\n- Modbus RTU / Modbus TCP\n- OPC UA Client\n- Siemens S7(S7-200 Smart / S7-1200 / S7-1500)\n- Mitsubishi MC Protocol (3E Frame)\n- Omron FINS\n- Mitsubishi FX Series Programming Port Protocol\n- CNC Equipment's FOCAS Protocol (Only supported by GTE-3000Pro)\n\nProtocols supported by the device facing upper-level systems:\n\n- MQTT 3.1.1 / MQTT 5.0, supporting TLS encryption and mutual certificate authentication\n- HTTP / HTTPS Active Reporting\n- OPC UA Server\n- Standard access to AWS IoT and Azure IoT platforms\n\nGTE-3000 can be configured with up to 2000 data points, GTE-3000S with 5000, and GTE-3000Pro with 20000. New data points beyond the point limit will be rejected, and the web configuration page will prompt \"Number of data points exceeds the current model limit\""
+    },
+    {
+      "id": 158,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": "New data points beyond the point limit will be rejected, and the web configuration page will prompt \"Number of data points exceeds the current model limit\"\n\n## 5. Data Collection and Reporting Mechanism\n\nCollection tasks are organized by \"Collection Groups.\" A collection group includes several data points, a collection cycle, and a reporting strategy. The minimum collection cycle is 100ms, maximum 3600s. Reporting strategies include three types:\n\n**Periodic Reporting**: Pack the latest value and report it at fixed intervals, independent of the collection cycle configuration. Suitable for trend data, such as temperature, current.\n\n**Change Reporting**: Report only when the value changes beyond the set deadband threshold. Suitable for state data, significantly reducing traffic. Deadband threshold supports absolute value and percentage formats.\n\n**Hybrid Reporting**: Immediately report upon change, while also reporting once at a longer heartbeat cycle to ensure the upper system receives the latest value even if it missed the change event. Recommended for production environments.\n\nData is stored in local cache when the network is down. GTE-3000 has a cache capacity of 100,000 entries, GTE-3000S has 500,000, and GTE-3000Pro has 5,000,000. After network recovery, data is resent in chronological order, with a default transmission rate limit of 200 entries per second to avoid overwhelming the upper system. When the cache is full, the oldest data is discarded on a first-in-first-out basis.\n\n## 6. Edge Computing\n\nGTE-3000Pro supports running edge rules and lightweight models on the device"
+    },
+    {
+      "id": 159,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": ".\n\n## 6. Edge Computing\n\nGTE-3000Pro supports running edge rules and lightweight models on the device.\n\nEdge rules are written using a SQL-like syntax, for example:\n\n```text\nSELECT device_id, temperature\nFROM stream\nWHERE temperature > 85\n```\n\nAfter a rule is triggered, three types of actions can be initiated: reporting alarm messages, setting DO outputs, and calling write commands to downstream devices.\n\nModel inference supports ONNX format, with model files not exceeding 200MB. Typical scenarios include initial screening for product appearance defects, filtering out clearly qualified images at the edge to only upload suspected defective images to the central system for re-examination, reducing upward bandwidth usage by over 80%.\n\n## 7. Web Configuration Interface\n\nAccess `https://192.168.1.10` via browser, default account admin, default password Gl@2024. Password must be changed upon first login, with new password at least 10 characters, including at least three of the four categories: uppercase letters, lowercase letters, numbers, and special characters"
+    },
+    {
+      "id": 160,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": ".\n\nMain functional areas:\n\n- Runtime Monitoring: CPU, memory, storage usage, real-time status of each collection group\n- Device Management: Adding, deleting, modifying, and querying field devices and data points, supporting Excel batch import\n- Data Forwarding: Configuration and topic mapping for northbound connections\n- Edge Rules: Rule writing and debugging\n- System Maintenance: Firmware upgrades, configuration import/export, log download, time synchronization\n\nExported configuration files are in an encrypted .glcfg format. During import, the model and version are validated, and cross-model imports are rejected. Configurations from GTE-3000 can be imported into GTE-3000S, but not vice versa, due to the possibility of exceeding the lower model's data point limit with higher model data points.\n\n## 8. Security Mechanism\n\nThe device defaults to disabling Telnet and FTP, only opening HTTPS and SSH. SSH default port is 22, which can be modified in the system maintenance page.\n\nSupports three levels of user roles: administrators can perform all operations; maintenance personnel can view monitoring, download logs, and restart collection tasks, but cannot modify point configuration; visitors have read-only access.\n\nFirmware packages are signed by Northline Industrial Systems, and signature verification is performed during device upgrades. If the signature is invalid, the upgrade is rejected and the original firmware is retained. The upgrade process takes about 3 to 5 minutes, during which data collection is interrupted. After upgrade, the device automatically restarts and restores the original configuration"
+    },
+    {
+      "id": 161,
+      "kb_id": 206,
+      "document_id": 125,
+      "content": "The upgrade process takes about 3 to 5 minutes, during which data collection is interrupted. After upgrade, the device automatically restarts and restores the original configuration\n\n## 9. Typical Deployment Methods\n\n**Single Machine Deployment**: One GTE-3000 connects to a PLC and instruments on a production line, and connects to the workshop switch via LAN2, with data reporting to the plant-level MES.\n\n**Dual Machine Hot Standby**: Two GTE-3000S units are interconnected via a heartbeat line. The standby unit takes over within 5 seconds if the main unit fails. Point configuration is automatically synchronized from the main unit to the standby unit. Hot standby requires both devices to have the same model and firmware version.\n\n**Cascade Deployment**: At the workshop level, multiple GTE-3000 units collect data nearby, and the data is aggregated to a GTE-3000Pro for edge computing and unified cloud upload, reducing the number of public network connections.\n\n## 10. Selection Recommendations\n\n- Less than 500 points, with wired network, no edge computing needs: GTE-3000\n- 500 to 3000 points, no network cables on site, requires 4G uplink: GTE-3000S\n- More than 3000 points, requires edge inference or CNC device connection: GTE-3000Pro\n\nThe point configuration format of all three devices is fully compatible. When upgrading from GTE-3000 to GTE-3000Pro later, export the configuration and import it directly, without needing to re-enter the points."
+    },
+    {
+      "id": 162,
+      "kb_id": 206,
+      "document_id": 126,
+      "content": "GTE Series Gateway Field Installation and Maintenance Guide\n\nDocument Number: GL-OPS-2024-009\n\nVersion: V2.6\n\nModels covered: GTE-3000, GTE-3000S, and GTE-3000Pro\n\nPrepared by: Technical Service Department\n\n1. Preparation Before Operation\n\nBefore on-site operation, three confirmations must be completed: first, confirm that the ambient temperature at the installation location does not exceed 60°C long-term, and is away from strong interference sources such as inverters and large power contactors; second, confirm that the on-site power supply is DC 9V to 36V, and an independent circuit breaker is reserved; third, confirm the network conditions, wired access requires pre-laid network cables, and 4G/5G access requires confirmation that the signal strength on-site is no less than -95dBm.\n\nList of Tools:\n\n2. Installation steps\n\n1. Disconnect the on-site power supply, confirm the power indicator light is off before proceeding with wiring work.\n\n2. Insert the gateway's snap hook into the DIN rail, first hang the side then push down to secure, you can hear the snap hook in place sound; for wall mounting, use M4 screws to fix the four corners.\n\n3. Connect power supply: the 3-pin terminal from left to right is V+, V-, PE, PE must be connected to the grounding busbar of the cabinet, grounding resistance should not exceed 4Ω.\n\n4. Connecting to RS485: A connects to A, B connects to B, 120Ω terminal resistor is enabled at both ends of the bus, and the shield is grounded at one end"
+    },
+    {
+      "id": 163,
+      "kb_id": 206,
+      "document_id": 126,
+      "content": ".\n\n5. Connect Ethernet: LAN1 is the management port, LAN2 is the business port, after the network cable is done, use the tester to confirm the wiring order is T568B.\n\n6. Install the antenna for the wireless model, the antenna should be extended as much as possible outside the metal cabinet, installation inside the cabinet will cause signal attenuation of more than 10dB.\n\n7. Power on, observe the indicator lights: PWR constantly lit indicates normal power supply, SYS flashing once per second indicates normal system operation, COM flashing indicates data transmission and reception on the serial port.\n\n3. Commissioning and acceptance\n\nLaptop network port configured as 192.168.1.100/24, access https://192.168.1.10 via browser to log in to the Web interface, default account admin, default password Gl@2024, password must be changed upon first login.\n\nComplete sequentially: change the management port IP to the planned on-site address, configure the business port network, add southbound devices and points, configure northbound MQTT connection, start the collection group, confirm the status of each collection group is running on the operation monitoring page.\n\nAcceptance criteria:\n\n4. Daily maintenance\n\nMonthly maintenance: Check indicator light status, check if CPU and memory usage on the Web interface are consistently above 80%, check if remaining storage space is below 20%, export and archive operational logs.\n\nQualitative maintenance: clean dust on the device surface and heat sink, retighten power and serial port terminals, check if system time deviation exceeds 1 minute, and export a complete configuration file backup"
+    },
+    {
+      "id": 164,
+      "kb_id": 206,
+      "document_id": 126,
+      "content": ".\n\nAnnual maintenance: Check if the power adapter output voltage has decayed, evaluate if the firmware version needs to be upgraded, perform a master-slave switch exercise for dual-machine hot standby devices.\n\n5. Common on-site fault handling\n\nPWR light not lit: First measure the input voltage at the terminal, check the upstream circuit breaker and wiring if no voltage, if voltage exists but the device does not light up, replace the power adapter.\n\nSYS light flashing rapidly: System anomaly, first power off and reboot; if still flashing rapidly after reboot, export logs and contact technical service department.\n\nCOM light not flashing: No data transmission on the serial port, troubleshoot in the order of A/B wiring reversed, parameter inconsistency, slave station address error, missing terminal resistor.\n\nCollection group reports ERR-5021: Position configuration is incompatible with the protocol stack, commonly occurs after firmware upgrade across major versions, rollback firmware and reupgrade according to the transitional version.\n\nDevice frequently reboots: Troubleshoot in the order of stable power supply, environmental temperature exceeding 60°C, number of edge models exceeding 3.\n\n6. Safety precautions\n\nDo not connect wires while powered on; must work after disconnecting and testing for electricity.\n\nWear anti-static wristband before disassembling the motherboard, hold the motherboard edges, do not touch chip pins.\n\nUse safety harness for high-altitude work, use insulating ladder for cabinet top installation.\n\nAfter completing the job, count the tools to prevent metal tools from being left in the cabinet, causing short circuits"
+    },
+    {
+      "id": 165,
+      "kb_id": 206,
+      "document_id": 126,
+      "content": ".\n\n| Tool Name | Specification | Purpose |\n| --- | --- | --- |\n| Cross Screwdriver | PH1 / PH2 | Terminal tightening and housing disassembly |\n| Multimeter | Supports DC voltage 0-100V | Measuring input voltage and line voltage drop |\n| Network Cable Tester | RJ45 | Confirming cable continuity and wiring |\n| Notebook Computer | With network port or USB to network port | Configuration management and debugging |\n| Signal Strength Detector | Supports 4G/5G | Signal survey before wireless installation |\n| Anti-static Wristband | - | Preventing electrostatic breakdown when disassembling the motherboard |\n\n| Acceptance Item | Acceptance Standard | Inspection Method |\n| --- | --- | --- |\n| Power Supply Voltage | Measured 22V to 26V at the terminal | Measured with a multimeter |\n| Grounding Resistance | No more than 4Ω | Grounding resistance tester |\n| Serial Communication | Timeout rate of each slave station is less than 1% | Observing communication quality panel for 10 minutes |\n| Data Point | Randomly check 10 data points and compare with on-site instrument readings | On-site comparison |\n| Cloud Upload Link | Data forwarding status is connected, and data can be received on the platform side | Verification on the platform side |\n| Disconnection Recovery | Unplug the network cable for 5 minutes and then restore, data has no gaps | Query platform"
+    },
+    {
+      "id": 166,
+      "kb_id": 206,
+      "document_id": 126,
+      "content": "| Data can be received | Platform-side verification |\n| Disconnection Recovery | Unplug the network cable for 5 minutes and then restore, data has no gaps | Query platform historical curves\n| Restart Recovery | Automatic data collection resumes within 90 seconds after power-off restart | On-site power-off test"
+    },
+    {
+      "id": 167,
+      "kb_id": 206,
+      "document_id": 127,
+      "content": "[Sheet: Fault Codes]\n| Fault code | Name | Severity | Trigger condition | Field troubleshooting | Affects data collection |\n| --- | --- | --- | --- | --- | --- |\n| ERR-1001 | Input voltage too low | Critical | Input remains below 9 V for more than 3 seconds. | Measure the voltage at the terminals. Check the upstream circuit breaker and wiring voltage drop. Replace the power adapter if needed. | Yes |\n| ERR-1002 | Input voltage too high | Critical | Input remains above 36 V for more than 1 second. | Disconnect power immediately. Verify the power supply rating. Use an industrial 24 V power supply. | Yes |\n| ERR-1005 | Internal temperature too high | Warning | The mainboard temperature sensor reads above 85 °C. | Check whether the device is near a heat source. Add airflow ducting or move the device to a cooler location. | No |\n| ERR-2003 | eMMC write failure | Critical | Write verification fails three times in a row. | Export the logs and return the unit for inspection. Replace the mainboard if the storage chip has reached the end of its life. | Yes |\n| ERR-2007 | Low storage space | Warning | Free storage falls below 10%. | Clear old logs on the System Maintenance page or reduce the local cache retention period. | No |\n| ERR-301"
+    },
+    {
+      "id": 168,
+      "kb_id": 206,
+      "document_id": 127,
+      "content": "| Storage Space Insufficient | Remaining storage space is below 10% | Clean up historical logs on the system maintenance page, or shorten the local cache retention period | No\n| ERR-3011 | RS485 communication timeout | Warning | The same slave device fails to respond for five consecutive collection cycles. | Check for reversed A/B wires, mismatched serial settings, an incorrect slave address, and missing termination resistors, in that order. | Partial |\n| ERR-3012 | High RS485 CRC error rate | Warning | CRC verification failures exceed 5% in 10 minutes. | Check protective earth, confirm the shield is grounded at one end only, and verify the bus length is within 1,200 m. | Partial |\n| ERR-3020 | Modbus slave returned an exception | Advisory | The slave returns exception code 01, 02, or 03. | Verify the register address and data type. Confirm that the device supports the requested function code. | Partial |\n| ERR-4002 | OPC UA session creation failed | Warning | The handshake with the OPC UA server fails. | Verify the endpoint, security policy, username, and password. Check whether the certificate has expired. | Partial |\n| ERR-4015 | S7 connection refused | Warning | The PLC refuses to establish the connection. | Verify the rack and slot numbers, and check whether the PLC has reached its connection limit. | Partial |"
+    },
+    {
+      "id": 169,
+      "kb_id": 206,
+      "document_id": 127,
+      "content": "| S7 Connection Refused | Confirm the PLC's rack and slot configuration, confirm that the number of allowed connections has not been exhausted | Partial\n| ERR-5021 | Data point configuration incompatible with protocol stack | Critical | A field cannot be parsed while the data point configuration is loading. | Often follows a major firmware upgrade. Roll back and upgrade again through the intermediate release. | Yes |\n| ERR-5022 | Data point count exceeds model limit | Warning | The configured data point count exceeds the device model's limit. | Remove data points or upgrade to a higher model. Limits are 2,000 for GTE-3000, 5,000 for GTE-3000S, and 20,000 for GTE-3000Pro. | Partial |\n| ERR-6003 | MQTT authentication failed | Critical | The broker returns CONNACK error code 4 or 5. | Verify the username, password, and ClientID. Confirm that the device is enabled on the platform. | No |\n| ERR-6008 | TLS handshake failed | Critical | Certificate validation fails or clocks are out of sync. | Check certificate validity and the CA chain. Check whether the device clock is off by more than five minutes. | No |\n| ERR-6012 | Local cache full | Warning | While offline, the number of cached records reaches the device model's limit. | Restore network access. Once the cache is full, the oldest records are discarded first."
+    },
+    {
+      "id": 170,
+      "kb_id": 206,
+      "document_id": 127,
+      "content": "Local cache full | Warning | While offline, the number of cached records reaches the device model's limit. | Restore network access. Once the cache is full, the oldest records are discarded first. | No |\n| ERR-7001 | Edge rule syntax error | Advisory | The syntax parser fails when saving the rule. | Use the debugger on the Edge Rules page to identify the error line. Verify the field and stream names. | No |\n| ERR-7005 | Model loading failed | Warning | The ONNX model fails validation or exceeds 200 MB. | Verify the model format and operator version. Compress or prune the model before uploading it again. | No |\n| ERR-7009 | Insufficient memory for edge inference | Critical | Models running concurrently exceed the memory threshold. | Run fewer models concurrently. Use at most three per device as a guideline. | Partial |\n| ERR-8004 | Firmware signature verification failed | Critical | The firmware package signature does not match the device public key. | Download the package again from the official source and verify its SHA-256 checksum. | No |\n| ERR-8006 | Firmware model mismatch | Advisory | The model identifier in the firmware package differs from the device model. | GTE-3000 and GTE-3000S firmware packages are model-specific. Check the model identifier in the package name. | No |\n| ERR-9002 | Hot standby heartbeat lost | Warning |"
+    },
+    {
+      "id": 171,
+      "kb_id": 206,
+      "document_id": 127,
+      "content": "| Not compatible, check model identifier in package name | No |\n| ERR-9002 | Hot standby heartbeat lost | Warning | The standby device sends no heartbeat for five consecutive seconds. | Check the heartbeat cable. Confirm both devices have the same model and firmware version. | No |\n| ERR-9007 | System clock not synchronized | Advisory | NTP synchronization has failed continuously for more than 24 hours. | Verify the NTP server is reachable. Without internet access, use an internal NTP server or set the clock manually. | No |\n\n[Sheet: LED Status]\n| Indicator | Status | Meaning | Recommended action |\n| --- | --- | --- | --- |\n| PWR | Solid | Power supply is normal. | No action needed. |\n| PWR | Off | No incoming power or faulty power supply. | Measure the input voltage and replace the power adapter if needed. |\n| SYS | Flashes once per second | The system is running normally. | No action needed. |\n| SYS | Flashes quickly | System fault. | Power cycle the device. If the fault persists, export the logs and request service. |\n| SYS | Solid | The system is starting or has stopped responding. | Wait 90 seconds. If the light remains solid, power cycle the device. |\n| COM | Flashing | The serial port is sending or receiving data. | No action needed. |\n| COM | Not flashing | No data on the serial port. | Check the wiring and serial settings"
+    },
+    {
+      "id": 172,
+      "kb_id": 206,
+      "document_id": 127,
+      "content": "| COM | Not Flashing | No Data on Serial Port | Check wiring, serial port parameters, slave address |\n| COM | Not flashing | No data on the serial port. | Check the wiring, serial settings, and slave address. |\n| NET | Solid | The northbound connection is established. | No action needed. |\n| NET | Flashes slowly | Reconnecting. | Check the network and certificates. See ERR-6003 and ERR-6008. |\n| ALM | Solid | A critical alarm has not been acknowledged. | Sign in to the web interface and check the alarm list. |"
+    },
+    {
+      "id": 173,
+      "kb_id": 206,
+      "document_id": 128,
+      "content": "Northline Industrial Systems GTE Series Firmware Upgrade and Release Notes\n\nDocument number: GL-PRD-2024-023\nVersion: V1.8\nModels covered: GTE-3000, GTE-3000S, and GTE-3000Pro\nMaintenance Department: Product Department Firmware Group\n\nI. Firmware Version Naming Convention\n\nFirmware version numbers are in the format 3.2.14-r5, with the following four segments:\n\n3   Major version number, incremented when there is a major hardware platform change or protocol stack restructure\n2   Minor version number, incremented when new features are added\n14  Revision number, incremented when defects are fixed\nr5  Release batch, re-packaging of the same revision number with no functional changes\n\n| Firmware with different main version numbers cannot be directly upgraded, for example, from 2.x to 3.x must first upgrade to transition version 2.9.20, then to 3.0.0. Jump version upgrade will cause configuration files to be unreadable, and all points will be lost after device boot |"
+    },
+    {
+      "id": 174,
+      "kb_id": 206,
+      "document_id": 128,
+      "content": ".\n\nII. Current Maintenance Versions\n\n3.2.14-r5   Stable version, released in September 2024, recommended for production environments\n3.3.6-r2    Feature version, released in December 2024, supports 5G dual SIM dual standby and MQTT 5.0\n2.9.20-r8   Maintenance version, only fixes critical defects, maintenance stops on December 31, 2025\n\nIII. Major Changes in 3.3.6\n\nNew Features:\n1. MQTT 5.0 support, supports shared subscriptions and topic aliases, reducing message overhead by about 15% in long connection scenarios\n2. GTE-3000S and GTE-3000Pro support 5G dual SIM dual standby, automatically switching to the backup SIM within 30 seconds when the main SIM fails\n3. Collection groups support importing and exporting to Excel, including fields such as point name, register address, data type, and scaling coefficient\n4. Web interface adds a \"Communication Quality\" panel, displaying response time and timeout rate for each southbound device\n5. Edge rules support window functions, allowing calculation of 5-minute sliding averages\n\nBug Fixes:\n1. Fixed the occasional frame loss issue with RS485 at 115200bps over long periods, caused by the serial port driver buffer not being cleared in high load conditions\n2. Fixed the data order disorder issue during disconnection recovery, with the recovery queue now strictly sorted by timestamp\n3. | Configuration file import fixes DO |"
+    },
+    {
+      "id": 175,
+      "kb_id": 206,
+      "document_id": 128,
+      "content": "2. Fixed the data order disorder issue during disconnection recovery, with the recovery queue now strictly sorted by timestamp\n3. Fixed the issue where DO output status was not reset after importing a configuration file\n4. Fixed the issue where OPC UA Server did not release sessions after abnormal client disconnection, rejecting new connections after exceeding 64 sessions\n5. Fixed the issue where log timestamps were set to 1970 when the device time was not synchronized\n\nKnown Issues:\n1. GTE-3000Pro has high memory usage when running more than four ONNX models simultaneously, suggesting no more than three models per device\n2. FOCAS protocol connection to some older FANUC systems is slow on the first handshake, taking about 20 seconds\n\nIV. Pre-upgrade Preparation\n\n1. Export the current configuration from the Web interface under [System Maintenance] → [Configuration Management], with the filename recommended to include a date, for example line3-gw01-20241220.glcfg\n2. Export the last 7 days' logs from [System Maintenance] → [Log Download], for comparison after upgrade\n3. Ensure the device power supply is stable, as power interruption during upgrade may damage the firmware, requiring factory re-flashing\n4. Verify that the current firmware version matches the target firmware version's major version number\n5. Notify relevant production line personnel that data collection will be interrupted for 3 to 5 minutes during the upgrade\n\nFive, Upgrade Operation Steps\n\nMethod One: Web Interface Upgrade (Recommended)\n\n1. | Access device management via browser |"
+    },
+    {
+      "id": 176,
+      "kb_id": 206,
+      "document_id": 128,
+      "content": "| 3 to 5 minutes |\n\nFive, Upgrade Operation Steps\n\nMethod One: Web Interface Upgrade (Recommended)\n\n1. Access the device management port https://192.168.1.10 via a browser and log in with an administrator account\n2. Navigate to [System Maintenance]→[Firmware Upgrade]\n3. Click \"Select File\" and upload the .glfw firmware package\n4. The system automatically verifies the signature and model compatibility. Once verification is successful, the \"Start Upgrade\" button becomes clickable\n5. Click \"Start Upgrade\", the page displays a progress bar. At this time, do not close the page or power off the device\n6. After the progress reaches 100%, the device automatically restarts. The Web interface will be accessible again approximately 60 seconds later\n7. After logging in, check the version number in [Operation Monitoring] to confirm it has been updated, and ensure all collection groups are in \"Running\" status\n\nMethod Two: Batch Upgrade\n\n| Use Northline Industrial Systems device management platform for batch deployment when more than 20 devices |"
+    },
+    {
+      "id": 177,
+      "kb_id": 206,
+      "document_id": 128,
+      "content": ". The platform pushes firmware in groups, supporting batch gray release: first upgrade 10% of devices, observe 24 hours without anomalies, then push the remaining devices.\n\nSix, Handling Upgrade Failures\n\nPhenomenon One: After uploading the firmware package, it prompts \"Signature Verification Failed\"\nThe cause is that the firmware package is incomplete or from an untrusted source. Redownload from the official channel and verify the SHA256 checksum\n\nPhenomenon Two: Prompt \"Model Mismatch\"\nThe firmware package for GTE-3000 and GTE-3000S is not interchangeable. Check the model identifier in the package name\n\nPhenomenon Three: The device is inaccessible after the upgrade\nFirst confirm whether the management port IP has changed. Access 192.168.1.10 directly. If still inaccessible, hold RESET for 10 seconds to restore factory settings, then import the configuration file exported before the upgrade\n\nPhenomenon Four: The collection groups do not run after the upgrade, and the log shows ERR-5021\nThis is due to incompatibility between the point configuration and the new version protocol stack, commonly seen when upgrading from 2.x to 3.x. Roll back to the version before the upgrade, and reupgrade through the 2.9.20 transitional version\n\nSeven, Firmware Rollback\n\nDevices retain the firmware image of the previous version. Click \"Rollback to Previous Version\" on the [System Maintenance] → [Firmware Upgrade] page. The rollback process takes approximately 2 minutes. Only one historical version is retained. After two consecutive upgrades, rollback to an earlier version is not possible."
+    },
+    {
+      "id": 178,
+      "kb_id": 206,
+      "document_id": 128,
+      "content": ". Only one historical version is retained. After two consecutive upgrades, rollback to an earlier version is not possible.\n\nAfter rollback, the configuration file will automatically downgrade to be compatible, but new configuration items in the new version will be lost, for example, when rolling back from 3.3.6 to 3.2.14, the 5G dual-card configuration and window function rules will be cleared\n\nEight, Version Support Period\n\nNorthline Industrial Systems Inc. Spare Parts Supply and Return Policy"
+    },
+    {
+      "id": 180,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "# Northline Industrial Systems Inc. Employee Handbook\n\nDocument Number: GL-HR-2024-001\nVersion: V4.1\nEffective Date: July 1, 2024\nInterpretation Department: Human Resources Department\n\n## Chapter One General Provisions\n\nArticle 1: To standardize company management and clarify employees' rights and obligations, this handbook is formulated based on the \"company employment policy,\" the \"individual employment agreements,\" and other relevant laws and regulations, combined with the company's actual situation.\n\nArticle 2: This handbook applies to all employees who have signed labor contracts with the company, including regular employees and those in the probationary period. Interns and dispatched workers are subject to this handbook, unless otherwise agreed.\n\nArticle 3: Employees must carefully read this handbook and sign a confirmation upon joining. This handbook takes effect from the date of implementation, and any previous regulations inconsistent with this handbook will be replaced by this handbook.\n\n## Chapter Two: Onboarding"
+    },
+    {
+      "id": 181,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "Where the provisions of this manual differ from the regulations, this manual shall prevail.\n\n## Chapter 2: Onboarding and Probationary Period\n\nArticle 4: New employees must submit the following documents upon reporting for duty: original and copies of ID card, highest academic degree and diploma, proof of termination of previous employment, health examination report, copies of bank cards, and two one-inch photos. Academic information will be verified by the Human Resources Department through the approved credential-verification provider.\n\nArticle 5: If false documents are provided, the company has the right to terminate the labor contract without paying economic compensation. If discovered after employment, it will be treated as a serious disciplinary offense.\n\nArticle 6: The probation period is determined based on the term of the labor contract:\n\n- If the labor contract term is more than 1 year but less than 3 years, the probation period is 2 months\n- If the labor contract term is more than 3 years, the probation period is 6 months\n- If the labor contract term is more than 3 months but less than 1 year, the probation period is 1 month\n\nArticle 7: The probationary salary is 80% of the regular salary, and shall not be lower than"
+    },
+    {
+      "id": 182,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "1 month\n\nArticle 7: The probationary salary is 80% of the regular salary, and shall not be lower than the minimum wage standard in the company's location. For R&D positions, the probationary salary is 90% of the regular salary.\n\nArticle 8: 15 working days before the expiration of the probationary period, staff submit a request for conversion, the assessment is completed by their immediate supervisor and approved by the head of department.\n\nArticle 9: Employees on probation must give 3 days' written notice before leaving; formal employees must give 30 days' written notice before leaving.\n\n## Chapter Three Working Hours\n\nArticle 10: The company implements a standard working hours system, with 8 hours of work per day and 5 days of work per week. Working hours are from 9:00 to 18:00, during which"
+    },
+    {
+      "id": 183,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "5 days of work per week. Working hours are from 9:00 to 18:00, with 12:00 to 13:00 as the lunch break.\n\nArticle 11: Production departments implement a comprehensive working hours system, with a monthly cycle and total monthly working hours not exceeding the statutory standard. Specific shift arrangements are formulated by the Production Department and reported to the Human Resources Department for record.\n\nFlexible work: Research and development, design and product jobs can apply for flexible working hours ranging from 8:30 to 10:00.\n\nArticle 13: Overtime must be pre-approved through the OA system and approved by the direct supervisor to be valid. Voluntary extended work without approval does not count as overtime. Overtime can be compensated by either taking compensatory leave or receiving overtime pay according to regulations. Compensatory leave is valid for 3 months from the date of overtime."
+    },
+    {
+      "id": 184,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "Choosing compensatory leave or receiving overtime pay according to regulations, compensatory leave is valid for 3 months from the date of overtime.\n\n## Chapter Four Salary and Benefits\n\nArticle 14: The salary structure is: monthly total income = basic salary + position salary + performance salary + allowances. Basic salary and position salary are fixed, while performance salary fluctuates based on quarterly performance evaluations."
+    },
+    {
+      "id": 186,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "Article 15: Salary is paid on the 15th of each month, and if it falls on a holiday, it will be paid on the nearest working day. Salaries are transferred via bank, and personal income tax is withheld and paid by the company.\n\nArticle 16: The company provides the benefits described in each employee's agreement. Human Resources explains health coverage, retirement savings options, and payroll deductions during onboarding.\n\nArticle 17: Allowance items:\n\n- Lunch allowance: 30 CAD per working day, paid together with salary\n- Transportation allowance: 200 CAD per month, 500 CAD per month for fieldwork positions\n- Communication allowance: 100 CAD per month, 300 CAD per month for sales and after-sales positions\n- High-temperature allowance: 300 CAD per month from June to September\n- On-site allowance: 150 CAD per day for employees who stay on-site at the client's location for at least 5 consecutive working days\n\nArticle 18: Annual benefits"
+    },
+    {
+      "id": 187,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "For a period of at least 5 working days, 150 CAD per day\n\nArticle 18: Annual benefits include: one annual health check-up, 500 CAD birthday gift, 1000 CAD wedding gift, 1000 CAD maternity gift, and festival gifts for the year-end holiday and the company anniversary. Employees with 3 years of service receive an upgraded comprehensive health check-up package.\n\nArticle 19: Annual bonus is linked to the company's annual business performance and individual performance, generally paid in February of the following year. Employees who have left before the payment date are not eligible for the bonus.\n\n## Chapter Five Performance Management\n\nArticle 20: The company implements quarterly performance evaluations, with evaluation periods from January to March, April to June, July to September, and October to December each year.\n\nArticle 21: Performance evaluation grades are divided into S, A, B, C, D, corresponding to performance coefficients of 1.5, 1.2, 1.0, 0.8, 0. The proportion of S-level employees within the department shall not exceed 10%, A"
+    },
+    {
+      "id": 188,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "2, 1.0, 0.8, 0. The proportion of S-level employees within the department shall not exceed 10%, A-level employees shall not exceed 30%.\n\nArticle 22 Employees who receive a C rating for two consecutive quarters shall enter a 3-month performance improvement plan. If they fail to meet the standards by the end of the improvement period, the company may reassign them or terminate their employment in accordance with the law.\n\nArticle 23 Employees who receive a D rating in a single quarter shall receive zero performance-based salary for that quarter and shall undergo a face-to-face discussion with their department head and the Human Resources Department.\n\n## Chapter Six Training and Development\n\nArticle 24 New employees shall attend a 3-day onboarding training covering company overview, product knowledge, rules and regulations, and information security. Those who fail the training may take one make-up exam.\n\nArticle 25: Technical positions are entitled to no less than 40 hours of professional training annually. For external training expenses covered by the company, if the single expense exceeds 5,000 CAD, the employee must sign a training service agreement. The service period is 2 years. If an employee resigns voluntarily during the service period, the training fees will be refunded proportionally based on the number of unfulfilled months."
+    },
+    {
+      "id": 189,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "External training, if the single expense exceeds 5,000 CAD, the employee must sign a training service agreement. The service period is 2 years. If an employee resigns voluntarily during the service period, the training fees will be refunded proportionally based on the number of unfulfilled months.\n\nArticle 26 Employees may apply for internal job transfers. Those who have been employed for at least one year and have a performance rating of B or higher are eligible to apply. The transfer must be approved by both the original and receiving departments, and the employee will have a 1-month adaptation period after the transfer.\n\n## Chapter Seven Code of Conduct\n\nArticle 27 Employees shall abide by professional ethics and shall not engage in part-time work that competes with the company's business or use their position for personal gain.\n\nArticle 28 Employees shall not accept cash, securities, or valuable items from suppliers or customers. Gifts received for business purposes with a value exceeding 500 CAD shall be reported to the Administration Department for registration and handling.\n\nArticle 29: Employees in confidential positions must complete"
+    },
+    {
+      "id": 190,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "Submission to the Administration Department for registration and processing.\n\nArticle 29 Employees in confidential positions must complete the handover of confidential matters upon leaving and comply with the terms of the non-compete agreement. The maximum non-compete period shall not exceed 2 years, and the company shall pay monthly compensation.\n\nArticle 30: Serious disciplinary violations include, but are not limited to: leaking company trade secrets, forging reimbursement documents, and consecutive absence from work for 3 days"
+    },
+    {
+      "id": 192,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "Or cumulative absence from work for 5 days, fighting or brawling at the workplace, or serious negligence causing significant economic loss. In such cases, the company may terminate the employment contract immediately.\n\n## Chapter Eight Employee Departure Management\n\nArticle 31 Employees must complete work handover, including pending matters, documents, office equipment, access cards, and account permissions. After the handover is completed and both parties sign to confirm, the Human Resources Department will process the departure procedures.\n\nArticle 32 The company shall issue a departure certificate upon termination or termination of the labor contract and shall complete the transfer of employee records and benefits records within 15 days.\n\nArticle 33 The salary for the month of departure shall be paid together with the regular salary on the next normal payroll date. Unused statutory annual leave shall be paid at 300% of the daily wage.\n\n## Chapter Nine Supplementary Provisions\n\nArticle 34: This manual is interpreted and revised by the Human Resources Department. The revised version shall be approved by the General Manager"
+    },
+    {
+      "id": 193,
+      "kb_id": 207,
+      "document_id": 129,
+      "content": "Article 4: This manual is interpreted and revised by the Human Resources Department. The revised version shall be approved by the General Manager's Office Meeting and then released, taking effect from the date of release.\n\nArticle 35 Matters not covered in this manual shall be governed by national laws and regulations and the company's other policies."
+    },
+    {
+      "id": 195,
+      "kb_id": 207,
+      "document_id": 130,
+      "content": "Northline Industrial Systems Inc. Travel and Expense Reimbursement Policy\n\nDocument Number: GL-FIN-2024-004\n\nVersion: V3.5\n\nEffective Date: September 1, 2024\n\nResponsible Department: Finance Department\n\nChapter One General Provisions\n\nThis system is applicable to all employees of the company on official business, daily expense advances and various types of reimbursement operations.\n\nArticle 2: Reimbursement follows three principles: approval before expenditure, truthfulness, and compliance with documents. Expenses incurred without approval are not reimbursable by the company.\n\nChapter Two: Business Travel Management\n\nArticle 3: Before traveling on business, submit a business trip application through the OA system, specifying the purpose of the trip, destination, start and end dates, accompanying personnel, and estimated expenses. Approval is required before booking tickets. In case of urgent business trips, travel may be taken first, but the application must be submitted within 1"
+    },
+    {
+      "id": 196,
+      "kb_id": 207,
+      "document_id": 130,
+      "content": "Working day after departure. Approval is required before booking tickets. In case of urgent business trips, travel may be taken first, but the application must be submitted within 1 working day after departure.\n\nArticle 4: Travel approval authority: within 3 days, approved by the department head; 3 to 7 days, approved by the vice president in charge; more than 7 days or international travel, approved by the general manager.\n\nArticle 5: Standards for transportation:\n\nFor regular employees, an upgrade is allowed if the one-way flight duration exceeds 3 hours or the train journey exceeds 6 hours, requiring approval from the deputy general manager in charge.\n\nArticle 6: Accommodation Standards (per person per night, inclusive of tax):\n\nExcess accommodation standards require prior application and explanation of reasons. Any post-trip reimbursement will be based on the standard maximum, with the difference to be covered by the individual. For two employees of the same gender traveling together, it is encouraged to share a standard room, with savings of 50 CAD per person per night provided as a subsidy.\n\nArticle 7: Travel Allowance (per person per day):\n\nNo subsidy is provided for trips that return on the same day within less than 8 hours; customer"
+    },
+    {
+      "id": 197,
+      "kb_id": 207,
+      "document_id": 130,
+      "content": "Per person per day):\n\nSubsidy is not issued for round-trip travel on the same day that is less than 8 hours; if meals are arranged by the client or partner, the meal allowance for that day is not issued. If an employee is continuously stationed at the client site for 5 working days, an additional site stay allowance is issued according to Article 17 of the employee handbook.\n\nChapter Three: Expense Reimbursement\n\nArticle 8: Reimbursement Deadline: Submit the reimbursement form within 30 days after the expense occurs. For expenses spanning across years, the latest submission is by January 15th of the following year. Claims submitted after the deadline will not be processed.\n\nArticle 9: Document Requirements: The invoice name must be the full company name, and the taxpayer identification number must be accurate. Itemized receipts must identify the supplier, transaction date, amount, and applicable taxes. Meal and accommodation expenses must be accompanied by consumption details. Taxi fares must be supported by a trip itinerary, not just payment screenshots.\n\nArticle 10: Reimbursement Approval Authority:\n\nArticle 11: Payment cycle: Fixed payment dates are on the 10th and 25th of each month. Expense reports must be completed by the finance department within 3 working days before the payment date."
+    },
+    {
+      "id": 198,
+      "kb_id": 207,
+      "document_id": 130,
+      "content": ", 25th of each month. Expense reports completed by the finance department within 3 working days before the payment date are included in the current payment period; otherwise, they are postponed to the next period.\n\nArticle 12: Loan Management: Single prepayment loans shall not exceed 80% of the estimated expenses. The loan must be settled within 10 working days after the business trip. No new loan can be issued if the previous loan has not been settled.\n\nChapter Four: Violation Handling\n\nArticle 13: Full reimbursement will be reclaimed for fake invoices, false expense reporting, and splitting invoices to bypass approval. Such actions will be treated as serious violations according to Article 30 of the employee handbook.\n\nArticle 14 The Treasury conducts quarterly spot checks of reimbursement documents, which are not less than 10 per cent and the results are reported to the General Manager.\n\nChapter Five: Supplementary Provisions\n\nArticle 15: This regulation is interpreted by the Finance Department and will be implemented from the effective date.\n\n| Role | Air travel | Rail travel | Local transportation |\n| --- | --- | --- | ---"
+    },
+    {
+      "id": 199,
+      "kb_id": 207,
+      "document_id": 130,
+      "content": "Internal Transportation |\n| --- | --- | --- | --- |\n| General manager and above | Business class | Business class | Actual expenses |\n| Director or responsible vice president | Economy class | First class | Actual expenses |\n| Manager or supervisor | Economy class | Second class | Daily"
+    },
+    {
+      "id": 201,
+      "kb_id": 207,
+      "document_id": 130,
+      "content": "Daily limit of CAD 100 |\n| Staff | Economy class | Second class | Daily limit of CAD 80 |\n\n| City category | Staff | Manager or supervisor | Director and above |\n| --- | --- | --- | --- |\n| Tier 1 cities (Toronto, Vancouver, Montreal, and Calgary) | CAD 500 | CAD 700 | CAD 1,000 |\n| Tier 2 cities (other major business destinations) | CAD 400 | CAD 550 | CAD 800 |\n| Tier 3 cities (regional business destinations) | CAD 300 | CAD 400 | CAD 600 |\n| County seats and towns | CAD 220 | CAD 300 | CAD 450 |\n\n| City category | Meal allowance | Incidental allowance |\n| --- | --- | -"
+    },
+    {
+      "id": 202,
+      "kb_id": 207,
+      "document_id": 130,
+      "content": "Meal allowance | Incidental allowance |\n| --- | --- | --- |\n| Tier 1 cities | CAD 120 | CAD 30 |\n| Tier 2 cities | CAD 100 | CAD 30 |\n| Tier 3 cities and below | CAD 80 | CAD 20 |\n\n| Amount per claim | Approver |\n| --- | --- |\n| Below CAD 1,000 | Department head |\n| CAD 1,000 to CAD 5,000 | Responsible vice president |\n| CAD 5,000 to CAD 30,000 | General manager |\n| Above CAD 30,000 | General manager's executive meeting |"
+    },
+    {
+      "id": 204,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "Northline Industrial Systems Inc. Attendance and Leave Policy\n\nDocument Number: GL-HR-2024-006\nVersion: V2.3\nEffective Date: July 1, 2024\nResponsible Department: Human Resources Department\n\nChapter One: Attendance Regulations\n\nArticle 1: All employees must participate in attendance tracking. The attendance method is dual recording via the workforce portal location check-in and door access card swipe, with the workforce portal records as the primary reference, and door access records for anomaly verification.\n\nArticle 2: Two check-ins per day: one for morning arrival and one for evening departure. If the number of missed check-ins in a month does not exceed 3, the employee may submit a make-up check-in application via OA, which must be approved by the supervisor and will not be counted as an anomaly. If it exceeds 3, from the 4th missed check-in onwards, each instance will be treated as a late arrival.\n\nArticle 3: Tardiness and Early Departure:\nArriving at work within 30 minutes after the scheduled start time is considered tardy, and leaving before the scheduled end time by 30 minutes is considered early departure.\nNo more than"
+    },
+    {
+      "id": 205,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "30 minutes early departure within the previous day is considered as early departure.\nNo deductions will be made if the total number of tardy or early departures in a month does not exceed 2 times.\nStarting from the third occurrence, a deduction of 50 CAD will be made each time, and the performance evaluation will be downgraded by one level if the total exceeds 5 times in a month.\n\nArticle 4: Absence without prior approval:\n\nIf an employee arrives more than 30 minutes after the scheduled start time without prior approval, it will be treated as a half-day absence. If the employee does not show up for the entire day without proper leave procedures, it will be treated as a full-day absence.\nArticle 5: Absence Handling:\nA full-day absence will result in a deduction of twice the daily wage.\n\nIf an employee is absent for 3 consecutive days or accumulates 5 days of absence in a year, the company may terminate the employment contract according to the Employee Handbook, Article 30.\n\nArticle 7: Flexible positions are executed according to Article 12 of the Employee Handbook,"
+    },
+    {
+      "id": 206,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "One confirmation of attendance.\n\nArticle 6: Out-of-office and business trip periods:\n\nIf an employee cannot clock in during out-of-office or business trip periods, they must submit an out-of-office or business trip application on OA, and the system will automatically exempt them from clocking in after approval. For employees stationed at customer sites, the project manager will uniformly confirm attendance in the weekly report.\n\nChapter 2: Types and Standards of Leave\n\nArticle 8: Annual Leave Entitled by Law:\n\nAn employee who has worked for a cumulative period of 1 to 10 years is entitled to 5 days of annual leave; 10 to 20 years, 10 days; and 20 years or more, 15 days. The cumulative work experience includes the time worked at other companies, and it is based on the social security payment records or the termination certificate.\n\nFor employees with a tenure of one year or more, an additional 2 days of welfare annual leave is granted; for those with a tenure of three years, an additional 4 days; for those with a tenure of five years, an additional 6 days. Welfare annual leave is combined with statutory annual leave"
+    },
+    {
+      "id": 207,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "4 days; for those with a tenure of five years, an additional 6 days. Welfare annual leave is combined with statutory annual leave and used together, valid for the current year, not carried over to the next year, and not converted into salary.\n\nAn employee who has worked for at least 1 year in the company is entitled to an additional 2 days of benefits leave; 3 years, 4 days; and 5 years, 6 days. Benefits leave and statutory leave are combined for use, and it is valid for the current year, not carried over to the next year, and not converted into salary.\n\nArticle 10: Sick Leave:\nSick leave must be supported by a sick leave note and registration records from a hospital of level two or higher. If the total sick leave in a year does not exceed 10 days, it will be paid at 80% of the basic salary; for days exceeding 10, it will be paid at 80% of the local minimum wage standard.\nIf the sick leave exceeds 15 days consecutively, the employee must submit a return-to-work certificate before resuming work.\n\nThe medical leave is determined based on the length of service according to national regulations, and the company will not terminate the employment contract during the medical leave period.\n\nArticle 11: Personal Leave:\nPersonal leave is unpaid leave, and the salary will be deducted according to the daily wage standard. Daily wage = monthly wage ÷ 21.75.\nAnnual leave for personal reasons"
+    },
+    {
+      "id": 208,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "10 days of leave requires approval from the Deputy General Manager; exceeding 10 days requires approval from the General Manager.\nFor personal leave not exceeding 3 days, approval from the department head is required; for more than 3 days, approval from the vice president in charge is required; for more than 10 days, approval from the general manager is required.\n\nIf the total personal leave exceeds 20 days in a year, the employee will lose the eligibility for the annual bonus for that year.\n\nThose who are legally married are entitled to 13 days of wedding leave (including 3 days as stipulated by the state and 10 days as a local reward), including weekends and public holidays. Wedding leave must be taken within the month of obtaining the marriage certificate."
+    },
+    {
+      "id": 210,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "To be used within 12 months, otherwise it will expire.\n\nAn employee who is legally married is entitled to 13 days of marriage leave (including 3 days as stipulated by the state and 10 days as a local reward), including weekends and public holidays. The marriage leave must be taken within 12 months from the date of marriage registration, and it will expire if not taken within that period.\n\nArticle 13: Maternity Leave and Paternity Leave:\nFemale employees are entitled to 158 days of maternity leave, with 15 days available before childbirth. An additional 15 days will be granted for difficult childbirth, and an additional 15 days for each additional child.\nMale employees are entitled to 15 days of paternity leave, which must be taken within 3 months from the date of their spouse's childbirth.\n\nFemale employees are entitled to 1 hour of breastfeeding time per day for the first year of their child's life, which can be combined as an hour earlier departure each day.\n\nArticle 14: Childcare Leave:\n\nBoth parents are entitled to 10 days of childcare leave per year before their child turns 3 years old. Childcare leave is paid based on attendance, and it is not carried over if not taken in the same year.\n\nFor the death of direct relatives (parents, spouse, children), 3 days of bereavement leave is granted; for the death of grandparents, maternal grandparents, and parents-in-law, 1 day of bereavement leave is granted. If the employee needs to travel out of town for the funeral, additional travel leave will be given based on the ticket, up to a maximum of 2 days."
+    },
+    {
+      "id": 211,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "For the death of maternal grandparents, parents-in-law, and spouse's parents, 1 day of bereavement leave is granted. If the employee needs to travel out of town for the funeral, additional travel leave will be given based on the ticket, up to a maximum of 2 days.\n\nArticle 16 Employment injury leave\n\nIf an employee is recognized as having a work-related injury, their salary and welfare benefits during the period of suspended work shall remain unchanged and shall be paid by the company on a monthly basis. The period of suspended work generally does not exceed 12 months. For cases with severe injuries, the duration may be appropriately extended upon confirmation by the labor capacity appraisal committee.\n\nChapter Three - Leave Process\n\nArticle 17 - All types of leave must be applied for via the OA system. In case of emergency, employees may first notify their direct supervisor by phone, but must submit the application within 1 working day after returning to work. Failure to submit the application within the deadline will be treated as unauthorized absence.\n\nArticle 18 - Approval Authority:\n\nLeave of 0.5 to 1 day         Approval by Direct Supervisor\nLeave of more than 1 day to 3 days        Approval by Department Head\nLeave for 3 to 10 days"
+    },
+    {
+      "id": 212,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "Approved by the Department Head\nLeave of more than 3 days to 10 days       Approval by Deputy General Manager\nLeave of more than 10 days             Approval by General Manager\nMaternal Leave, Work Injury Leave               Approval by Department Head and then filing with the Human Resources Department\n\nIn principle, the annual leave must be applied for five working days in advance, avoiding peak production periods and key nodes of the project.\n\nArticle 20 - Work during the leave period must be assigned to a substitute and completed handover. The person on leave shall be held responsible if the work is delayed due to incomplete handover.\n\nChapter Four - Overtime and Compensatory Leave\n\nArticle 21 - Overtime is divided into three categories: overtime on workdays, overtime on rest days, and overtime on statutory holidays. Overtime applications must be submitted in advance via the OA system.\n\nArticle 22 - Overtime compensation methods:\n\nWorkday Overtime"
+    },
+    {
+      "id": 213,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "Overtime Application.\n\nArticle 22 - Overtime compensation methods:\n\nOvertime on workdays       Converted to compensatory leave at 1.5 times, or paid at 1.5 times the regular rate\nOvertime on rest days           Prioritizing compensatory leave of the same duration, or paid at 2 times the regular rate if compensatory leave is not possible\nOvertime on statutory holidays       Paid at 3 times the regular rate, and compensatory leave cannot be used as a substitute\n\nArticle 23 - Compensatory leave must be used within 3 months from the date of overtime, or it will expire. The minimum unit of compensatory leave is 0.5 days.\n\nArticle 24 - For positions under the comprehensive working hour system, overtime is calculated based on the total working hours exceeding the statutory standard within the monthly cycle, not on a daily basis.\n\nChapter Five - Attendance Statistics and Appeals\n\nArticle 25 - The Human Resources Department generates the attendance report for the previous month by the 3rd of each month and sends it to the department heads for confirmation.\n\nArticle 26: Employees have the right to review attendance records,"
+    },
+    {
+      "id": 214,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": "Table, sent to department heads for confirmation.\n\nArticle 26 - If employees have objections to the attendance records, they must submit an appeal to the Human Resources Department within 2 working days after receiving the report, and provide supporting materials such as access records, work emails, and system operation logs. Failure to appeal within the deadline is considered as acceptance.\n\nArticle 27: Attendance records are used for performance evaluation and year-end bonus distribution"
+    },
+    {
+      "id": 216,
+      "kb_id": 207,
+      "document_id": 131,
+      "content": ", one of the criteria for commendation and excellence.\n\nChapter Six - Supplementary Provisions\n\nArticle 28 - This regulation is interpreted by the Human Resources Department. In case of inconsistency with the Employee Handbook, this regulation shall prevail.\n\nArticle 29 - This regulation shall take effect from the date of its release, and the original \"Attendance Management Regulations\" (GL-HR-2022-006) shall be simultaneously abolished."
+    },
+    {
+      "id": 218,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "# Northline Industrial Systems Inc. Information Security and Data Protection Policy\n\nDocument number: GL-SEC-2024-003\nVersion: V2.8\nEffective date: November 1, 2024\nDepartment of Jurisdiction: Information Technology Department\n\n## Chapter One General Provisions\n\nArticle One To protect the company's information assets and customer data security, prevent information leakage, tampering, and loss, based on the \"company security policy\", \"company data-handling policy\", and \"company privacy policy\", and in combination with the company's actual situation, this regulation is formulated.\n\nArticle Two This regulation applies to all company employees, interns, outsourced personnel, and third-party personnel who need to access the company's information systems for business purposes.\n\nArticle 3: Information security follows the principle of \"who is in charge, who is responsible; who uses it, who is responsible.\" The Information Technology Department is responsible for technical measures and daily supervision, and department heads are"
+    },
+    {
+      "id": 219,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "\"who is in charge, who is responsible; who uses it, who is responsible.\" The Information Technology Department is responsible for technical measures and daily supervision, and department heads are the first responsible persons for information security in their departments.\n\n## Chapter Two Information Asset Classification\n\nArticle Four The company's information assets are divided into four levels based on their sensitivity:\n\n**Top Secret**: Core source code, firmware signature private keys, unpublished product design drawings, merger and financing materials. Access is limited to personnel on the authorized list, and all access activities are recorded.\n\n**Secret**: Customer lists and contact information, contracts and quotations, employee salary data, production process parameters, and customer site point configuration files. Access is granted based on job positions.\n\n**Internal**: Internal management systems, meeting minutes, project weekly reports, and training materials. All employees can access these, and they must not be disseminated externally.\n\n**Public**: Product brochures, publicly released technical manuals, official website content, and news releases. No access restrictions apply.\n\nArticle 5: The creator of a file is responsible for marking"
+    },
+    {
+      "id": 220,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "Network content, news drafts. No access restrictions.\n\nArticle Five The creator of a file is responsible for marking the classification level. Files without a marked level are treated as \"Internal\" by default. If a change in classification level is needed, the original creator must propose it, and the department head must approve.\n\n## Chapter Three Accounts and Permissions\n\nArticle Six When employees are hired, the Information Technology Department opens accounts based on their positions, including domain accounts, OA, email, code repositories, and production systems. Accounts follow the principle of minimal permissions, granting only the permissions necessary to perform job duties.\n\nArticle Seven Accounts must be real-name based, and sharing or lending of accounts is strictly prohibited. Security incidents caused by shared accounts will be the responsibility of the account owner.\n\nArticle 8: Password requirements: length of no less than 12 characters, including uppercase letters, lowercase letters, numbers, and special characters, at least three categories, not using name, birthday, employee number, or consecutive characters. Passwords must be changed every 90 days, and new passwords must not be the same as the previous 5"
+    },
+    {
+      "id": 221,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "Employee number, consecutive characters. Passwords must be changed every 90 days, and new passwords must not be the same as the previous 5 times.\n\nArticle Nine Systems involving Top Secret and Secret assets must enable two-factor authentication. Remote access to the company's internal network must be through a VPN, and the VPN must enforce two-factor authentication.\n\nArticle Ten Permission changes: Within three working days after an employee transfers positions, the original department must submit a permission revocation request. All accounts must be frozen on the day of departure and deleted after 30 days. The Information Technology Department conducts a permission review quarterly to clean up zombie accounts and excessive permissions.\n\n## Chapter Four Terminal and Network Security\n\nArticle Eleven All office terminals must install the company's unified terminal management software and antivirus software, and uninstallation or deactivation is prohibited. System patches must be installed within 30 days of release, and high-risk vulnerability patches must be installed within 7 days.\n\nArticle 12: Terminals must enable disk encryption and screen lock, with screen lock time not exceeding 10"
+    },
+    {
+      "id": 222,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "Article Twelve Terminals must enable disk encryption and screen lock, with a screen lock time not exceeding 10 minutes. Notebook computers must be carried with the user when leaving the office area and must not be left in a car or unattended.\n\nArticle 13: Without approval, it is prohibited to install cracked software, unknown sources tools, remote control software on office terminals. If necessary for development and debugging, apply to the Information Technology Department"
+    },
+    {
+      "id": 224,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "Apply to the Information Technology Department for a whitelist.\n\nArticle Fourteen USB storage devices are default disabled. If necessary, apply for access and use the company's uniformly issued encrypted USB drives. If an encrypted USB drive is lost, it must be reported within 24 hours.\n\nArticle Fifteen The office network, production network, and guest network are physically or logically isolated. The guest Wi-Fi only provides internet access and cannot access any internal systems. Production network devices must not be directly connected to the internet; external network access must be through a bastion host or industrial firewall proxy.\n\n## Chapter Five Data Protection\n\nArticle Sixteen The collection of customer data follows the principle of minimal necessity, collecting only the fields necessary for business. Before collection, the purpose must be informed, and authorization must be obtained.\n\nArticle Seventeen The point configuration files and operation logs from customer sites are classified as Secret assets. After export, they must be stored in the company's designated encrypted storage space and must not be stored in personal cloud drives, personal emails, or personal messaging apps."
+    },
+    {
+      "id": 225,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "Storage space, prohibited from being stored in personal cloud drives, personal email, personal messaging app.\n\nArticle Eighteen Data transmission: Data at the Secret level or higher must be encrypted when transmitted externally. When sending emails, use an encrypted compressed package, and inform the recipient of the password through another channel. The use of unapproved third-party file transfer tools is prohibited.\n\nArticle 19 Data backup: The core business system is backed up by incremental daily, full weekly backups, and the back-up data is stored off site for a period of not less than six months.\n\nArticle 20: Data Destruction: Before discarding storage media, physical destruction or irreversible erasure must be performed, executed and recorded by the Information Technology Department. Confidential paper documents must be shredded using a paper shredder and not directly discarded into trash bins.\n\nArticle 21: Personal information processing follows the \"company privacy policy\", systems involving employee and customer personal information must record processing"
+    },
+    {
+      "id": 226,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "\"company privacy policy\", systems involving employee and customer personal information must record processing logs and retain them for no less than 3 years.\n\n## Chapter 6: Development Security\n\nArticle 22: Source code is uniformly stored in the company's code repository, and uploading to public platforms like unapproved public repositories is prohibited. Engineering reviews third-party component requirements through the dependency approval process.\n\nArticle 23: Hardcoding of passwords, keys, and tokens is prohibited in code. Sensitive configurations are injected via a configuration center or environment variables, with access to the configuration center controlled by permissions and fully audited.\n\nArticle 24: Firmware signing private keys are stored in a hardware encryption device. Signing operations require two authorized persons to initiate. The private key must not be exported or copied to any terminal.\n\nArticle 25: Security testing must be completed before version release, including dependency component vulnerability scanning, static code scanning,"
+    },
+    {
+      "id": 227,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "Version release must complete security testing, including dependency component vulnerability scanning, static code scanning, interface privilege escalation testing. Versions with high-risk issues not fixed cannot be released.\n\nArticle 26: Production environment data must not be directly used for development and testing. If necessary, data must be desensitized first, with the desensitization plan reviewed by the Information Technology Department.\n\n## Chapter 7: Third-Party Management\n\nArticle 27: Before collaborating with third parties, a confidentiality agreement must be signed, clearly defining data usage scope, retention period, destruction requirements, and liability for breach.\n\nArticle 28: Outsourcing personnel accounts must be uniquely identified, with permissions limited to the project scope. Accounts must be immediately revoked after contract termination. Outsourcing personnel must not access classified assets.\n\nArticle 29: Third-party devices accessing the company network must first undergo security checks by the Information Technology Department, including patch status, antivirus software, and presence of malicious programs.\n\n## Chapter 8: Security Incident Handling\n\nArticle 30: If any of the following situations"
+    },
+    {
+      "id": 228,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "Program.\n\n## Chapter 8: Security Incident Handling\n\nArticle 30: The following situations must be reported to the Information Technology Department within 1 hour: abnormal account login, terminal infected with virus or ransomware, leakage of confidential files, loss of devices or storage media, and clicking on suspicious phishing emails.\n\nArticle 31: Security incident handling process: report → isolate"
+    },
+    {
+      "id": 230,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "Affected systems → assess impact scope → handling and recovery → review and output improvement measures. Major incidents are reported by the Information Technology Department to the General Manager, and according to regulations, reported to regulatory authorities within the specified time limit.\n\nArticle 32: Concealing or delaying reports leading to expanded losses will be handled strictly according to Article 30 of the Employee Handbook.\n\n## Chapter 9: Training and Assessment\n\nArticle 33: New employee onboarding training includes an information security module. Employees who fail the assessment will not be confirmed as regular employees. All employees must participate in an annual information security refresher training, which includes phishing email simulations.\n\nArticle 34: The Information Technology Department organizes a full-company phishing email simulation every six months, with click-through rate included in departmental management assessment. Employees who fail twice consecutively will receive specialized training.\n\n## Chapter 10: Supplementary Provisions\n\nArticle 35: This guideline is interpreted by the Information Technology Department. In case of conflict with national laws and regulations, the latter shall prevail."
+    },
+    {
+      "id": 231,
+      "kb_id": 207,
+      "document_id": 132,
+      "content": "The Information Technology Department is responsible for interpretation, and in case of conflict with national laws and regulations, the laws and regulations shall prevail.\n\nArticle 36: This guideline takes effect from the date of implementation, and the original \"Information Security Management Measures\" (GL-SEC-2022-003) is simultaneously abolished."
+    },
+    {
+      "id": 232,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": "[Page 1]\nNorthline Industrial Systems Inc.\nAfter-Sales Service and Warranty Policy\nDocument Number: GL-SVC-2024-002\nVersion: V4.2\nEffective Date: August 1, 2024\nResponsible Department: Customer Service Center\nArticle 1 Scope of Application\nThis clause applies to GTE series industrial intelligent gateways and their accessories purchased by customers from Northline Industrial Systems Inc. In case of specific agreements in the sales contract, such agreements shall prevail; for matters not specified in the contract, this clause shall apply.\nArticle 2 Quality Guarantee Period\n1. The whole machine quality guarantee period for GTE-3000, GTE-3000S, and GTE-3000Pro is 24 months from the date of manufacture. The warranty period shall be based on the factory date indicated on the equipment nameplate.\n2. If the customer can provide valid purchase proof, the warranty period may be calculated from the purchase date, with a maximum extension of 3 months.\n1. The GTE-3000, GTE-3000S, and GTE-3000Pro carry a warranty from the factory date\nthat lasts 24 months"
+    },
+    {
+      "id": 233,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": ". The warranty period is based on the manufacturing date indicated on the equipment nameplate.\n(ii) A maximum of 3 extensions for customers who can provide valid purchase vouchers, based on the date of purchase\nMonth.\nThree. The warranty period for accessories such as power adapters, antennas, terminals, rail clips, etc., is 12 months.\nFour. Spare parts purchased separately are warranted for 6 months from the date of receipt; spare parts replaced during whole machine repair follow the remaining warranty period of the whole machine, with a minimum of 3 months if less than 3 months remain.\nFive. If a fault is not resolved after two repairs within the warranty period, the customer may request a replacement. The warranty period of the new equipment is calculated based on the remaining warranty period of the original equipment, with a minimum of 3 months if less than 3 months remain.\nSix. Free warranty scope\nDuring the warranty period, functional faults caused by design, material, or manufacturing process defects are covered by free repair or replacement, including but not limited to: motherboard component failure, interface soldering issues, power module anomalies, wireless module non-recognition, and storage chip write failure.\nMonthly calculation"
+    },
+    {
+      "id": 234,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": ".\nOne. Beyond the warranty period.\nTwo. Improper use as per the product manual, such as input voltage exceeding the DC 9V to 36V range, long-term environmental temperature exceeding 70°C, or communication board damage due to lack of grounding.\nThree. Customer disassembly, modification, or damage to the seal.\nFour. Damage caused by force majeure such as water immersion, fire, lightning, earthquake, or power surge.\nFive. Obvious mechanical damage to the housing, such as structural deformation from dropping.\nSix. Use of firmware not released by Northline Industrial Systems or installation of unauthorized third-party software leading to faults.\nSeven. Normal use resulting in appearance wear or fading of printing that does not affect functionality, which is not covered by warranty and does not affect warranty of other components.\n\n[Page 2]\nEight. Service response time\nOne. Service hotline 416-555-0147, available from 8:30 to 20:00 on weekdays, and 9:00 to 18:00 on holidays.\nIV. Damage caused by irresistible forces such as water immersion, fire, lightning, earthquake, and power surge"
+    },
+    {
+      "id": 235,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": ".\nTwo. Remote support: respond within 2 hours after receiving a repair request, assisting in troubleshooting via phone, remote desktop, or log analysis.\nThree. Repair service: complete detection and repair within 5 working days after receiving the equipment, and return it. Freight for return during warranty is covered by the company; outside warranty, the customer covers the outgoing freight, and the company covers the return freight.\nFour. On-site service: applicable to customers who purchased an on-site service package or projects with single procurement of 50 units or more. Arrive at the site within 24 hours in major service cities, within 48 hours in regional business destinations, and by mutual agreement in remote areas.\nNine. Spare machine borrowing\nVII. Appearance wear and faded from normal use, not functioning, not warranty\nThe scope does not affect the warranty of other components.\nArticle V Time of service response\nI. Hotlines 416-555-0147, working days 8:30 to 20:30, holidays 9\nTo 1800 hours.\nRemote support: respond within 2 hours of receipt of a call for repairs, by telephone, remote desktop or day\nAssist in troubleshooting with log analysis"
+    },
+    {
+      "id": 236,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": ".\nIII. MAINTENANCE SERVICES: COMPLETE EXCESSING AND READY TO BE CONTINUED AND SUBJECT IN FIVE WORKING DAYS\nThe cost of transportation is borne by the company during the guarantee period; outside the guarantee period, the customer bears the cost of sending.\nThe company bears the cost of return freight.\nIV. Home service: for customers purchasing door-to-door packages or single purchase 50\nOn the project client. The major service cities arrives at the site within 24 hours, and the other municipalities within 48 hours.\nOn arrival, the two sides in the remote areas agree otherwise.\nArticle 6 On standby\nCustomers who have signed an annual service agreement can apply for a spare machine loan during the device repair period, with a maximum loan period of 15 days. The spare machine will be of the same model or a higher model, with configuration assistance provided by our engineers.\nLongest 15 days. The spare machine is of the same model or higher model, configuration is imported by our engineers"
+    },
+    {
+      "id": 237,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": ". The spare machine is of the same model or higher model, configuration is imported by our engineers.\nA daily usage fee of 1% of the original equipment price will be charged for overdue returns.\nArticle 7: Paid Repair\n1. Faults not covered by the free warranty will be charged based on the actual cost of replaced materials plus labor fees. A quotation will be provided before repair, and the customer must confirm before proceeding.\n2. Components repaired under paid repair will be under warranty for 3 months from the date of completion.\n3. If no fault is detected, a detection fee of 200 CAD will be charged; if the customer decides not to proceed with the repair, the device will be returned as is, with shipping costs borne by the customer.\n\n[Page 3]\nArticle 8: Technical Support Content\n1. Product selection recommendations and site planning suggestions.\n2. Remote guidance for the initial deployment, including management port configuration, southbound device integration, and northbound platform connection.\nI. Product selection suggestions, point planning suggestions"
+    },
+    {
+      "id": 238,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": ".\n2. Remote guidance for the initial deployment, including management port configuration, southbound device integration, and northbound platform connection.\n3. Firmware upgrade plan formulation and support during the upgrade process.\n4. Interface documentation and example code for secondary development, including RESTful API and OPC UA\nArticle 9: Support for Discontinued Models\nAfter product discontinuation, the company will continue to provide spare parts and repair support for at least 3 years. The GTE-2000 series was discontinued in December 2023, with support until December 31, 2026. During the support period, spare parts will be supplied from inventory. After inventory is exhausted, an exchange or migration solution will be provided.\nArticle 10: Limitation of Liability\nServer.\n1. The company's liability for equipment failure is limited to the purchase amount of the equipment.\n2. The company will not be liable for indirect losses caused by equipment failure, including production line downtime losses, business losses due to data loss, and third-party claims.\nThe series has been discontinued since December 2023, with support until December 31, 2026"
+    },
+    {
+      "id": 239,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": ". Support Period\nArticle 11: Dispute Resolution\nDisputes arising from this clause shall be resolved through negotiation between the parties. If negotiations fail, the dispute shall be submitted to the local court with jurisdiction in the location of the company for litigation.\nArticle 12: Supplementary Provisions\nThis clause is interpreted by the customer service center and shall take effect from the date of its implementation. The original \"After-sales Service Terms\" (GL-SVC-2022-002) is hereby repealed.\nNorthline Industrial Systems GTE Series Firmware Upgrade and Version Release Notes\nDocument Number: GL-PRD-2024-023\nStorage instruments.\nArticle 11 Settlement of disputes\nDisputes arising from the present articles shall be settled by mutual agreement between the parties; if such consultations are not possible, they shall be submitted to the company ' s seat. ]\nResolution through the local court with jurisdiction in the place where the dispute occurred"
+    },
+    {
+      "id": 240,
+      "kb_id": 208,
+      "document_id": 133,
+      "content": ".\nAnnex XII\nThis provision is explained by the Client Service Centre and has been in effect since its entry into force.\nThe provision (GL-SVC-2022-002) was repealed at the same time."
+    },
+    {
+      "id": 260,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": "Northline Industrial Systems Inc. Spare Parts Supply and Returns\n\nVersion: V3.1\nResponsible Department: Customer Service Center / Supply Chain Department\nEffective Date: October 1, 2024\nOne, Applicability Scope\n\nI. Scope of application\n\nThese terms apply to the procurement, return, and exchange of spare parts for the GTE series industrial intelligent gateways and their accessories. In case of conflicting provisions in the project contract, the contract terms shall prevail"
+    },
+    {
+      "id": 261,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ".\n\nII. Spare Parts Catalog and Pricing\n\nCommon Spare Parts and Reference Prices (Including Tax, Unit: CAD):\n\nGTE-3000 Mainboard                    1280\nGTE-3000S Mainboard                   1860\nGTE-3000Pro Mainboard                 3450\n24V/2A Industrial Power Adapter              120\n3-Pin Power Phoenix Terminal                    15\nSerial Terminal (5-Pin)                    18\nDIN Rail Clip"
+    },
+    {
+      "id": 262,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": "18\nDIN Rail Clip                       25\n4G Clamp Antenna (SMA Interface)             65\n5G Rod Antenna (SMA Interface)             150\nDust Cover Kit (IP54 Upgrade)              280\nReplacement Enclosure (Including Reprint of Label)              420\n\nSpare part prices are adjusted every six months, with the price published on the official website on the day of the order as the basis"
+    },
+    {
+      "id": 263,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ". Bulk purchases of 20 units or more can apply for a discount, which requires approval from the sales manager\n\nIII. Spare Parts Supply Cycle\n\nCommon Spare Parts: Shipped Within 2 Working Days After Payment.\nNon-Common Spare Parts (Such as Discontinued Model Mainboards): Inventory and Production Plan Assessment Required, Generally Delivered Within 20 Working Days, Written Response Within 3 Working Days If Not Available.\nEmergency Spare Parts: Customers with Annual Service Agreements Can Apply for Emergency Shipment, Shipped the Same Day if Ordered Before 15:00, With an Additional 15% Rush Fee.\n\nIV. Spare Parts Support for Discontinued Models\n\nThe GTE-2000 series has been discontinued since December 2023, and spare parts support is available until December 31, 2026"
+    },
+    {
+      "id": 264,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ". During the support period, spare parts will be supplied based on existing inventory. If the inventory is exhausted, alternative solutions will be provided, including discounted trade-in or migration to the GTE-3000 series\n\nSpare Parts for Discontinued Models Are Not Acceptable for Returns.\n\nV. Return Policy\n\n(I) Eligible for Return\n\n1. Within 7 Days of Delivery, If the Equipment Is Unopened, Packaging Intact, and Accessories Complete, and the Customer Requests a Return for Reasons Related to the Customer, a No-Reason Return Can Be Applied, with the Customer Bearing Round-Trip Freight, and the Company Not Charging Depreciation Fees.\n2. If the equipment is confirmed to have quality issues and cannot be resolved through repair within 15 days of delivery, it can be returned. The company will cover the round-trip shipping costs, and the full payment will be refunded"
+    },
+    {
+      "id": 265,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ".\n3. If the delivered model and configuration do not match the contract and the customer does not accept replacement, the equipment can be returned, and all costs will be borne by the company"
+    },
+    {
+      "id": 266,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ".\n\n(II) Not Eligible for Return\n\n1. More Than 15 Days After Delivery\n2. The Equipment Has Been Put into Use and Has Caused Wear, Scratches, or Terminal Deformation\n3. Seal Broken or Self-Disassembly\n4. Devices with Custom Firmware or Custom Hardware Configuration\n5. Devices Converted from Trial to Purchase (Trial Period Is the Acceptance Period)\n6. Devices for promotion, clearance, and special price sales of sample units\n\n(3) Return Process\n\n1. Customers submit a return application, noting the device serial number, purchase order number, and reason for return, along with on-site photos\n2. Customer Service Center reviews and responds within 2 working days\n3. After approval, customers return the device, with a copy of the return application attached inside the packaging\n4. We complete the appearance and function inspection within 3 working days after receiving the device\n5. Testing"
+    },
+    {
+      "id": 267,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ". We will complete the appearance and function inspection within 3 working days after receiving the goods\n5. Refund is processed within 5 working days after the inspection passes, and the refund is returned via the original payment method\n\nIf the inspection reveals that the equipment has been damaged by human factors, the return application will be canceled, and the equipment will be sent back to the customer, with the shipping costs borne by the customer"
+    },
+    {
+      "id": 268,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ".\n\nSix. Exchange Policy\n\n(1) Exchange During Warranty Period\n\nIf the same fault occurs in the device during the warranty period and remains unresolved after two repairs, an exchange can be requested. The warranty period of the new device is calculated based on the remaining warranty period of the original device, with a minimum of 3 months if less than 3 months remains\n\nIf non-human functional faults occur within 30 days of delivery, a new device can be directly requested for exchange without prior repair\n\n(2) Model Upgrade Exchange\n\nWithin 90 days after procurement, if the project requires an upgrade to a higher model (e.g., GTE-3000 to GTE-3000S), a price difference can be applied for to exchange the equipment. The price difference = new model price - original model price × 0.9, where 0.9 is the depreciation coefficient"
+    },
+    {
+      "id": 269,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ". The equipment must be in good appearance and functioning properly"
+    },
+    {
+      "id": 270,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ".\n\n(3) Exchange Process\n\n1. Submit an exchange application, noting the original device serial number and target model\n2. After approval, the company will first send the new device (the customer must provide a deposit or sign a Device Return Commitment Letter)\n3. The customer returns the original device within 10 working days after receiving the new device\n4. After inspecting the original device and confirming no human damage, the deposit is refunded or the commitment letter is released\n5. If the original device is not returned on time, a charge will be issued based on the original price of the new device\n\nSeven. Packaging Requirements for Repairs and Returns\n\n1. Use the original factory packaging box; if unavailable, use a hard cardboard box with no less than 5 layers of corrugated paper\n2. Fill the device around with shock-absorbing material of no less than 3 centimeters thickness\n3. Small parts such as terminals and antennas should be individually bagged to avoid scratching the motherboard during transportation"
+    },
+    {
+      "id": 271,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": "Materials\n3. Small parts such as terminals and antennas should be individually bagged to avoid scratching the motherboard during transportation\n4. The box must include a Repair/Return Application Form, stating the serial number, fault symptoms, contact person, and phone number\n5. Choose a trackable logistics method when shipping, and do not accept cash-on-delivery items\n\nIf damage is caused by improper packaging during transportation, the responsibility lies with the sender"
+    },
+    {
+      "id": 272,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ".\n\nEight. Common Issues\n\nQ: Where can I find the device serial number?\nA: The serial number is printed on the device's side label, with the format GL3000-YYWW-XXXXX, where YY represents the last two digits of the manufacturing year and WW represents the manufacturing week. It can also be viewed at the top of the Web interface's [Operation Monitoring] page\n\nQ: How to handle the invoice when returning?\nA: The original copy of the issued VAT special invoice must be returned. We will process the refund after receiving the original invoice. If the invoice has been authenticated and claimed for tax deduction, the customer must issue a red invoice information form\n\nQ: Can I just replace the motherboard and repair it myself?\nAnswer: Disassembling the equipment during the warranty period will result in the loss of warranty eligibility"
+    },
+    {
+      "id": 273,
+      "kb_id": 208,
+      "document_id": 135,
+      "content": ". After the warranty period, customers can purchase and replace the motherboard themselves, but the equipment will no longer be covered by the full warranty, and only the motherboard itself will have a 6-month warranty\n\nQ: Does the spare part have a warranty?\nA: Yes. Spare parts purchased separately are warranted for 6 months from the date of receipt. Spare parts replaced during a full system repair will carry the remaining warranty period of the system, with any remaining period less than 3 months counted as 3 months."
+    },
+    {
+      "id": 443,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "# Northline Industrial Systems Customer FAQ\n\nDocument Number: GL-SVC-2024-011\nVersion: V5.0\nMaintenance Department: Customer Service Center\nUpdate Date: January 10, 2025\n\n## Section One: Ordering and Delivery\n\n### Q1: What is the standard delivery cycle for the GTE-3000?\n\nWhen the inventory of standard models is sufficient, the goods will be shipped within 3 working days after payment. The GTE-3000Pro and customized configurations are produced on order, with a delivery cycle of 15 working days. For bulk orders exceeding 100 units, the delivery cycle will be confirmed separately"
+    },
+    {
+      "id": 444,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": ". For bulk orders exceeding 100 units, the delivery cycle will be confirmed separately\n\n### Q2: What accessories are included in the shipment?\n\nThe standard packaging includes: 1 gateway host, 1 24V/2A power adapter, 1 DIN rail clip set, 1 3-pin power terminal, 2 serial port terminals (4 for GTE-3000S and GTE-3000Pro), 1 quick start guide, 1 certificate of conformity. Antennas are optional accessories, and 4G/5G models come with 1 suction cup antenna by default.\n\n### Q3: Can I try before purchasing?\n\nSupport. Potential customers can apply for a 30-day trial, which requires submitting a trial application form and approval from the sales manager"
+    },
+    {
+      "id": 445,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": ". During the trial period, the equipment ownership belongs to the company. After the trial period, the equipment must be returned within 7 days or converted into a purchase. The shipping costs for the trial equipment are borne by the customer, and the shipping costs can be deducted from the payment upon conversion to a purchase\n\n### Q4: Can a VAT special invoice be issued?\n\nYes. After the customer provides the invoicing information (company name, taxpayer identification number, address and phone number, bank account and number), a 13% VAT special invoice will be issued either with the goods or within 5 working days after receiving the payment.\n\n## Section Two: Warranty and Maintenance\n\n### Q5: What is the warranty period for the equipment?\n\nThe overall quality warranty period for the GTE series is 24 months from the date of manufacture. The warranty period for accessories such as power adapters and antennas is 12 months"
+    },
+    {
+      "id": 446,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": ". The warranty period for accessories such as power adapters and antennas is 12 months. The warranty period is based on the manufacturing date on the equipment's nameplate. If the customer can provide valid purchase proof, the warranty period can be extended from the purchase date, with a maximum extension of 3 months"
+    },
+    {
+      "id": 447,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": ".\n\n### Q6: What situations are not covered by the warranty?\n\nThe following situations are not covered by the warranty and will be handled as paid repairs:\n\n- Beyond the warranty period\n- Improper use as per the manual, such as input voltage exceeding the DC 9V~36V range causing damage\n- Self-disassembly, modification, or broken seal\n- Damage caused by water immersion, fire, lightning, earthquakes, etc., which are force majeure events\n- Obvious mechanical damage to the casing, such as structural deformation caused by dropping\n- Faults caused by using non-Northline Industrial Systems firmware or third-party unauthorized software\n\n### Q7: How to report a repair if the equipment is faulty"
+    },
+    {
+      "id": 448,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "?\n\nChoose any of the following three methods:\n\n1. Call the service hotline at 416-555-0147, from 8:30 to 20:30 on weekdays, and 9:00 to 18:00 on holidays\n2. Submit an online service ticket on the Northline Industrial Systems official website under the [Service Support] section\n3. Contact the assigned sales manager or after-sales engineer\n\nWhen reporting a repair, please provide the equipment serial number (SN), description of the fault phenomenon, time of fault occurrence, on-site photos or log files"
+    },
+    {
+      "id": 449,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": ". The serial number is located on the nameplate on the side of the equipment, with the format GL3000-YYWW-XXXXX\n\n### Q8: How long does the repair usually take?\n\nRepair method: After the customer sends the device, we will complete the inspection and repair within 5 working days and return it. The round-trip shipping costs during the warranty period are covered by the company, while customers are responsible for the shipping costs outside the warranty period.\n\nOn-site service method: This is only applicable to customers who have purchased the on-site service package or projects with a single purchase of more than 50 units. In major service cities, the service team will arrive on-site within 24 hours, while in regional business destinations, it will arrive within 48 hours.\n\n### Q9: Can a spare device be borrowed?\n\nCustomers who sign an annual service agreement can apply for the use of a spare unit, with a maximum borrowing period of 15 days"
+    },
+    {
+      "id": 450,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": ". The spare unit is of the same model or a higher model. The configuration during the borrowing period will be assisted by our engineers. A daily usage fee of 1% of the original equipment price will be charged if the equipment is not returned on time\n\n## III. Installation and Commissioning\n\n### Q10: What should I do if I forget the device management port IP?\n\nLong press the RESET button on the equipment panel for more than 10 seconds to restore the equipment to factory settings. The management port IP will be restored to 192.168.1.10, with the default account admin and default password Gl@2024. Restoring to factory settings will clear all point configuration. Please try other methods to recover the equipment first, such as using a network scanning tool to find the host with the MAC prefix 8C:1F:64 in the network segment"
+    },
+    {
+      "id": 451,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": ".\n\n### Q11: How to troubleshoot RS485 communication timeout"
+    },
+    {
+      "id": 452,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "?\n\nFollow the steps below to troubleshoot:\n\n1. Confirm that the A and B lines are not reversed; reversed connections result in no response at all.\n2. Confirm that the serial port parameters match those of the slave device, especially the baud rate, data bits, stop bits, and parity.\n3. Confirm that the slave address is correct, with Modbus slave address ranging from 1 to 247.\n4. Confirm that 120Ω terminal resistors are connected at both ends of the bus, and they must be connected if the distance exceeds 300 meters.\n5. Confirm that the device's PE terminal is grounded. In environments with many variable frequency drives, interference is strong, and grounding is essential to prevent data loss.\n6. Use the [Running Monitoring]→[Communication Quality] panel to check the response time and timeout rate to determine if the issue is with all slaves or individual slaves.\n\n### Q12: After data is uploaded to the cloud, the platform does not receive it"
+    },
+    {
+      "id": 453,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "GTE-3000 series product technical manual\n\n### GTE series on-site installation and maintenance operation guide"
+    },
+    {
+      "id": 454,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "?\n\nGTE series fault code quick reference table"
+    },
+    {
+      "id": 455,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "Q12: After data is uploaded to the cloud, the platform does not receive it. Where to start checking\n\n### Q13: Can point configurations be imported in bulk?\n\nCheck the connection status on the [Data Forwarding] page"
+    },
+    {
+      "id": 456,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "If the status is \"Connected\", it indicates that the network and authentication are normal, and the issue is likely in topic mapping or platform-side subscription; if the status is \"Reconnecting\", it indicates network or certificate issues. Check if the device can ping the platform domain name, whether the certificate has expired, and whether the system time is accurate. System time deviation exceeding 5 minutes can cause TLS handshake failure\n\n## IV. Faults and Alarms\n\n### Q14: What does the error code ERR-5021 mean?\n\nERR-5021 indicates incompatibility between point configuration and the protocol stack, commonly occurring after cross-major version firmware upgrades. The solution is to roll back to the firmware version before the upgrade, and follow the instructions in the [Firmware Upgrade and Version Release Notes] to first upgrade to the transitional version before the target version.\n\n### Q15: Why does the device frequently restart?\n\nThe three most common reasons are:\n\n1. Yes. Download the Excel template from [Device Management] → [Point Management], fill in the point name, register address, data type, scaling coefficient, unit, and other fields according to the template, and import it. Single import is limited to no more than 5000 rows, and batch imports are required if exceeded"
+    },
+    {
+      "id": 457,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "Single import is limited to no more than 5000 rows, and batch imports are required if exceeded. The system will perform format validation before import, and rows that fail validation will be highlighted in red with the reason, and re-import after correction\n2. High ambient temperature. Long-term temperatures above 60°C will trigger a protection restart. Check if the installation location is near a heat source and if the cabinet has proper ventilation.\n3. High memory usage by edge rules or models. When the GTE-3000Pro runs more than three models simultaneously, it may trigger memory protection. Reduce the number of models.\n\n### Q16: Will data be lost during network disconnection?\n\nUnstable power supply"
+    },
+    {
+      "id": 458,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "Use a multimeter to measure the input voltage. When it is below 9V, the device will power off and restart. Prioritize checking the power adapter and line voltage drop\n\n## V. Account and Security\n\n### Q17: What should I do if I forget the Web management password?\n\nGuest password cannot be recovered, so the device must be reset via factory reset. Operator and visitor account passwords can be reset by the administrator via [System Maintenance]→[User Management]. It is recommended to retain at least two administrator accounts during deployment.\n\n### Q18: What security reinforcement measures does the device support?\n\nData will not be immediately lost. When the network is disconnected, data is stored in local cache. GTE-3000 can cache up to 100,000 entries, GTE-3000S up to 500,000 entries, and GTE-3000Pro up to 5,000,000 entries"
+    },
+    {
+      "id": 459,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "The data is automatically retransmitted once the network is restored. Only when the cache is full and the network is still not restored will the oldest data be discarded on a first-in-first-out basis\n\n### Q19: Does the firmware upgrade automatically?\n\nNo. The device does not perform automatic upgrades. All upgrades must be manually triggered via the Web interface or device management platform to avoid unexpected interruption of data collection during production hours.\n\n## Six. Others\n\n### Q20: What certifications does the product have?\n\nThe GTE series has obtained CE, FCC, and RoHS certifications, and wireless approvals must be confirmed with the sales manager for the deployment region"
+    },
+    {
+      "id": 460,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "The certification certificate can be obtained in electronic format from the sales manager\n\n### Q21: Is the old model GTE-2000 still available for purchase?\n\nGTE-2000 was discontinued in December 2023. Currently, only spare parts and repair support are provided, with support until December 2026. New projects are recommended to directly select the GTE-3000 series. Point configuration files can be migrated from GTE-2000 to GTE-3000 via conversion tools.\n\n### Q22: Can secondary development interfaces be provided?\n\nYes. The device provides two ways to connect: RESTful API and OPC UA Server. The API documentation can be downloaded from the official website [Developer] section"
+    },
+    {
+      "id": 461,
+      "kb_id": 208,
+      "document_id": 134,
+      "content": "GTE-3000Pro also supports deploying custom containers, which requires signing a technical cooperation agreement for permission to be granted by us"
+    }
+  ]
+}

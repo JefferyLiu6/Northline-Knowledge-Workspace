@@ -1,0 +1,35 @@
+Knowledge Workspace
+Workspace
+/
+Dashboard
+Open Q&A
+PA
+Dashboard
+Knowledge Management
+Knowledge Bases
+Document Management
+Knowledge Chunks
+Chunking Strategy
+Retrieval Strategy
+Retrieval Testing
+Retrieval Debugger
+AI Configuration
+Q&A Apps
+Evaluation
+User Management
+Dashboard
+
+Welcome, Platform administrator.
+
+Document Management 
+
+Upload, preview, and embed documents.
+
+Knowledge Q&A 
+
+Ask a question and inspect the sources.
+
+Knowledge Bases
+Retrieval Testing
+AI Model Configuration
+Batch Evaluation

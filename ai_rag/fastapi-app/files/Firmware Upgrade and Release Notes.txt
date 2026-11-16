@@ -1,0 +1,91 @@
+Northline Industrial Systems GTE Series Firmware Upgrade and Release Notes
+
+Document number: GL-PRD-2024-023
+Version: V1.8
+Models covered: GTE-3000, GTE-3000S, and GTE-3000Pro
+Maintenance Department: Product Department Firmware Group
+
+I. Firmware Version Naming Convention
+
+Firmware version numbers are in the format 3.2.14-r5, with the following four segments:
+
+3   Major version number, incremented when there is a major hardware platform change or protocol stack restructure
+2   Minor version number, incremented when new features are added
+14  Revision number, incremented when defects are fixed
+r5  Release batch, re-packaging of the same revision number with no functional changes
+
+Firmware with different major version numbers cannot be directly upgraded. For example, upgrading from 2.x to 3.x must first go through the transitional version 2.9.20 before upgrading to 3.0.0. Skipping versions may cause configuration files to be unreadable, and all point positions will be lost after device startup.
+
+II. Current Maintenance Versions
+
+3.2.14-r5   Stable version, released in September 2024, recommended for production environments
+3.3.6-r2    Feature version, released in December 2024, supports 5G dual SIM dual standby and MQTT 5.0
+2.9.20-r8   Maintenance version, only fixes critical defects, maintenance stops on December 31, 2025
+
+III. Major Changes in 3.3.6
+
+New Features:
+1. MQTT 5.0 support, supports shared subscriptions and topic aliases, reducing message overhead by about 15% in long connection scenarios
+2. GTE-3000S and GTE-3000Pro support 5G dual SIM dual standby, automatically switching to the backup SIM within 30 seconds when the main SIM fails
+3. Collection groups support importing and exporting to Excel, including fields such as point name, register address, data type, and scaling coefficient
+4. Web interface adds a "Communication Quality" panel, displaying response time and timeout rate for each southbound device
+5. Edge rules support window functions, allowing calculation of 5-minute sliding averages
+
+Bug Fixes:
+1. Fixed the occasional frame loss issue with RS485 at 115200bps over long periods, caused by the serial port driver buffer not being cleared in high load conditions
+2. Fixed the data order disorder issue during disconnection recovery, with the recovery queue now strictly sorted by timestamp
+3. Fixed the issue where DO output status was not reset after importing a configuration file
+4. Fixed the issue where OPC UA Server did not release sessions after abnormal client disconnection, rejecting new connections after exceeding 64 sessions
+5. Fixed the issue where log timestamps were set to 1970 when the device time was not synchronized
+
+Known Issues:
+1. GTE-3000Pro has high memory usage when running more than four ONNX models simultaneously, suggesting no more than three models per device
+2. FOCAS protocol connection to some older FANUC systems is slow on the first handshake, taking about 20 seconds
+
+IV. Pre-upgrade Preparation
+
+1. Export the current configuration from the Web interface under [System Maintenance] → [Configuration Management], with the filename recommended to include a date, for example line3-gw01-20241220.glcfg
+2. Export the last 7 days' logs from [System Maintenance] → [Log Download], for comparison after upgrade
+3. Ensure the device power supply is stable, as power interruption during upgrade may damage the firmware, requiring factory re-flashing
+4. Verify that the current firmware version matches the target firmware version's major version number
+5. Notify relevant production line personnel that data collection will be interrupted for 3 to 5 minutes during the upgrade
+
+Five, Upgrade Operation Steps
+
+Method One: Web Interface Upgrade (Recommended)
+
+1. Access the device management port https://192.168.1.10 via a browser and log in with an administrator account
+2. Navigate to [System Maintenance]→[Firmware Upgrade]
+3. Click "Select File" and upload the .glfw firmware package
+4. The system automatically verifies the signature and model compatibility. Once verification is successful, the "Start Upgrade" button becomes clickable
+5. Click "Start Upgrade", the page displays a progress bar. At this time, do not close the page or power off the device
+6. After the progress reaches 100%, the device automatically restarts. The Web interface will be accessible again approximately 60 seconds later
+7. After logging in, check the version number in [Operation Monitoring] to confirm it has been updated, and ensure all collection groups are in "Running" status
+
+Method Two: Batch Upgrade
+
+Use the Northline Industrial Systems Device Management Platform to batch push firmware to more than 20 devices. The platform pushes firmware by group and supports batch gray release: first upgrade 10% of the devices, observe for 24 hours without anomalies before pushing the remaining devices
+
+Six, Handling Upgrade Failures
+
+Phenomenon One: After uploading the firmware package, it prompts "Signature Verification Failed"
+The cause is that the firmware package is incomplete or from an untrusted source. Redownload from the official channel and verify the SHA256 checksum
+
+Phenomenon Two: Prompt "Model Mismatch"
+The firmware package for GTE-3000 and GTE-3000S is not interchangeable. Check the model identifier in the package name
+
+Phenomenon Three: The device is inaccessible after the upgrade
+First confirm whether the management port IP has changed. Access 192.168.1.10 directly. If still inaccessible, hold RESET for 10 seconds to restore factory settings, then import the configuration file exported before the upgrade
+
+Phenomenon Four: The collection groups do not run after the upgrade, and the log shows ERR-5021
+This is due to incompatibility between the point configuration and the new version protocol stack, commonly seen when upgrading from 2.x to 3.x. Roll back to the version before the upgrade, and reupgrade through the 2.9.20 transitional version
+
+Seven, Firmware Rollback
+
+The device retains the firmware image of the previous version. Click "Rollback to the Previous Version" on the [System Maintenance]→[Firmware Upgrade] page. The rollback process takes about 2 minutes. Rollback only keeps one historical version. After two consecutive upgrades, it is not possible to roll back to an earlier version
+
+After rollback, the configuration file will automatically downgrade to be compatible, but new configuration items in the new version will be lost, for example, when rolling back from 3.3.6 to 3.2.14, the 5G dual-card configuration and window function rules will be cleared
+
+Eight, Version Support Period
+
+Northline Industrial Systems Inc. Spare Parts Supply and Return Policy

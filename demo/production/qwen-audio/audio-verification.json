@@ -1,0 +1,63 @@
+{
+  "model": "Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16",
+  "speaker": "ryan",
+  "alignment": "Whisper large-v3-turbo through supplied pipeline",
+  "segments": [
+    {
+      "shot": "shot_01",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 0.5,
+      "duration": 11.907
+    },
+    {
+      "shot": "shot_02",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 0.64,
+      "duration": 12.55
+    },
+    {
+      "shot": "shot_03",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 0.28,
+      "duration": 11.358
+    },
+    {
+      "shot": "shot_04",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 1.2,
+      "duration": 20.078
+    },
+    {
+      "shot": "shot_05",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 0.4,
+      "duration": 11.113
+    },
+    {
+      "shot": "shot_06",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 0.58,
+      "duration": 14.142
+    },
+    {
+      "shot": "shot_07",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 0.72,
+      "duration": 14.392
+    },
+    {
+      "shot": "shot_08",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 0.34,
+      "duration": 16.397
+    },
+    {
+      "shot": "shot_09",
+      "transcription_similarity": 1.0,
+      "max_word_gap_seconds": 0.42,
+      "duration": 16.384
+    }
+  ],
+  "caption_cues": 51,
+  "non_overlapping_captions": true
+}
