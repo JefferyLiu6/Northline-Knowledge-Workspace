@@ -14,6 +14,67 @@ The business setting is **industrial automation and manufacturing technology**. 
 
 **[Watch the 2:21 demo](docs/media/northline-demo.mp4)** · [Customer-background memo](Technical%20Support%20and%20Warranty%20Background.docx) · [Recorded results](docs/verification/README.md) · [Run locally](docs/LOCAL_SETUP.md)
 
+## What the workspace does
+
+Each screenshot is an unedited capture from the running application. Click an image to open it at full resolution.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**1. Manage the knowledge collection**<br>
+Upload documents to a knowledge base and track parsing and embedding status for each one. The demo holds 11 documents in five formats across three knowledge bases.
+
+<a href="demo/raw/02-documents.png"><img src="demo/raw/02-documents.png" alt="Document Management page listing 11 documents with their knowledge base, parsing status, and embedding status"></a>
+
+</td>
+<td width="50%" valign="top">
+
+**2. Check parsed content before indexing**<br>
+Preview the text extracted from a file, including spreadsheet tables, before it is split into chunks and embedded.
+
+<a href="demo/raw/03-parsed-document.png"><img src="demo/raw/03-parsed-document.png" alt="Parsing results dialog showing the fault-code spreadsheet extracted as a table"></a>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**3. Trace what retrieval found**<br>
+Run a query against a knowledge base and see each retrieval stage, its timing, and the ranked passages with their similarity scores.
+
+<a href="demo/raw/04b-retrieval-evidence.png"><img src="demo/raw/04b-retrieval-evidence.png" alt="Retrieval Testing page showing stage timings and five ranked passages with cosine similarity scores"></a>
+
+</td>
+<td width="50%" valign="top">
+
+**4. Ask a question**<br>
+Ask a Q&A app such as the Product Technical Assistant. The answer comes back with the sources it was built from, and earlier conversations stay in the sidebar.
+
+<a href="demo/raw/05-answer.png"><img src="demo/raw/05-answer.png" alt="Q&A page answering the ERR-5022 data-point question for the GTE-3000Pro"></a>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**5. Inspect the evidence**<br>
+Expand **Sources** to read each retrieved passage behind an answer, with its chunk number and relevance score.
+
+<a href="demo/raw/06-sources.png"><img src="demo/raw/06-sources.png" alt="Expanded Sources panel showing retrieved fault-code passages with chunk numbers and relevance scores"></a>
+
+</td>
+<td width="50%" valign="top">
+
+**6. See and retry failed processing**<br>
+Every processing attempt is recorded. A failed parse stays visible with its reason, and the step can be retried.
+
+<a href="demo/raw/08-recovery.png"><img src="demo/raw/08-recovery.png" alt="Processing history dialog showing a failed document-parsing attempt with its error message"></a>
+
+</td>
+</tr>
+</table>
+
 ## Before: one fault code, several documents, repeated checks
 
 A field technician is commissioning a gateway at a factory. The device reports **ERR-5022**, and the technician calls Northline's service desk for help.
