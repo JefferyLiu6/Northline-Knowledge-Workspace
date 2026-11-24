@@ -67,8 +67,8 @@
     "id": "09-close",
     "shot": 9,
     "start": 124.06666666666666,
-    "end": 141.96666666666667,
-    "audio_seconds": 16.384083333333333,
-    "narration": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials."
+    "end": 141.16666666666666,
+    "audio_seconds": 15.597,
+    "narration": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. I built it on an existing RAG codebase and demonstrated it with fictional company materials."
   }
 ]

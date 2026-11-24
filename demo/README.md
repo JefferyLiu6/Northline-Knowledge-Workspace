@@ -38,7 +38,7 @@ The captured live answer correctly says 20,000 but attributes it to Source 2. Th
 
 Evaluation figures come from the earlier recorded run, preserved in evaluations/recorded-demo/summary.json and the included production/evidence/ report. They are historical development measurements, not a new benchmark or production/customer outcome. The 222-test count and restart checks refer to the repository's verification record.
 
-Narration uses local Qwen3-TTS 1.7B CustomVoice bf16, speaker Ryan, through the supplied ai-video-pipeline. Its configured calm documentary style is retained. Whisper large-v3-turbo aligns the captions. The updated video runs approximately 2 minutes 22 seconds. Product screenshots were taken via Playwright/Chrome because the Browser plugin was unavailable. Capture had no uncaught JavaScript errors. The running app was not restyled or modified for these images.
+Narration uses local Qwen3-TTS 1.7B CustomVoice bf16, speaker Ryan, through the supplied ai-video-pipeline. Its configured calm documentary style is retained. Whisper large-v3-turbo aligns the captions. The updated video runs approximately 2 minutes 21 seconds. Product screenshots were taken via Playwright/Chrome because the Browser plugin was unavailable. Capture had no uncaught JavaScript errors. The running app was not restyled or modified for these images.
 
 ## Suggested portfolio caption
 
@@ -51,6 +51,8 @@ The supplied pipeline was used directly through its pipeline.tts and pipeline.su
 The text of all nine Whisper transcriptions matches the script after case and punctuation normalization. This is an automated content check, not a guarantee of subjective voice quality or perfect phoneme alignment. Captions do not overlap or cross scene boundaries.
 
 The screenshot images and narration script are unchanged. Scene durations, captions, chapter markers, and final audio were regenerated for the new voice. The older Samantha version was retained in a temporary backup outside this kit.
+
+On 2026-11-24 the closing scene was updated: its narration and slide note were reworded to "I built it on an existing RAG codebase." Only shot 9 was re-voiced, with the same model, speaker, and style; shots 1–8 keep their original audio. Captions, chapter markers, the video, the MP3, and both GIF previews were rebuilt from the updated sources.
 
 ## Regenerate the animated preview
 

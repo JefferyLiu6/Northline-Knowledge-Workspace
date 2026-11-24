@@ -1,8 +1,8 @@
 # Northline Knowledge Workspace
 
-### A knowledge assistant for industrial equipment support and after-sales service
+### A knowledge workspace I built for industrial equipment support and after-sales service
 
-**This system helps support agents answer equipment and warranty questions by finding relevant information across product manuals, fault-code workbooks, installation guides, and service policies.** It brings an answer and the retrieved source passages into one workspace so an agent can review the evidence before advising a customer.
+**I built this system so support agents can answer equipment and warranty questions by finding relevant information across product manuals, fault-code workbooks, installation guides, and service policies.** It brings an answer and the retrieved source passages into one workspace so an agent can review the evidence before advising a customer.
 
 The business setting is **industrial automation and manufacturing technology**. Northline supplies industrial IoT gateways that connect factory equipment to monitoring systems. Its service desk handles installation problems, device faults, warranty questions, returns, and spare-parts enquiries. The primary users are technical support and after-sales agents; knowledge administrators maintain the source collection, and Product Engineering reviews uncertain cases.
 
@@ -12,7 +12,7 @@ The business setting is **industrial automation and manufacturing technology**. 
 
 *30-second looping preview from the recorded demo · 3840 × 2160.* [Full HD GIF](docs/media/northline-demo-1080p.gif) · [Original 4K screenshots](docs/media/northline-screenshots-4k.zip) · [Static preview](docs/media/cover.png)
 
-**[Watch the 2:22 demo](docs/media/northline-demo.mp4)** · [Customer-background memo](Technical%20Support%20and%20Warranty%20Background.docx) · [Recorded results](docs/verification/README.md) · [Run locally](docs/LOCAL_SETUP.md)
+**[Watch the 2:21 demo](docs/media/northline-demo.mp4)** · [Customer-background memo](Technical%20Support%20and%20Warranty%20Background.docx) · [Recorded results](docs/verification/README.md) · [Run locally](docs/LOCAL_SETUP.md)
 
 ## Before: one fault code, several documents, repeated checks
 
@@ -26,11 +26,11 @@ After-sales enquiries have the same underlying problem. A distributor asks for a
 
 ## The change: put the question, guidance, and evidence together
 
-I built the workspace around that support workflow on an existing FastAPI/Vue RAG codebase. I reconstructed **11 source documents across three knowledge bases**, connected local Ollama models, and added a clearer workspace for finding and inspecting information.
+I built the workspace around that support workflow on an existing FastAPI/Vue RAG codebase. I reconstructed **11 source documents across three knowledge bases**, integrated local Ollama models, and built a clearer workspace for finding and inspecting information.
 
 Getting an answer was only the first checkpoint. During verification, I found that replacing a document could leave its old search data behind, and a backend interruption could leave a task appearing to run forever. Those defects matter to a service desk: an agent could receive outdated guidance, or a knowledge administrator could be unable to tell whether new material was ready.
 
-I repaired the document lifecycle, guarded conflicting jobs, added interrupted-stage cleanup and retry, and packaged a reproducible local installation. I then compared retrieval approaches and checked their failures instead of treating a fluent answer as proof of correctness.
+I fixed the document lifecycle, built guards against conflicting jobs, implemented interrupted-stage cleanup and retry, and built a reproducible local installation. I then compared retrieval approaches and checked their failures instead of treating a fluent answer as proof of correctness.
 
 ## Now: an agent can find an answer and inspect its basis
 
@@ -50,7 +50,7 @@ The recorded demo returns **20,000 data points** and exposes the retrieved sourc
 | An interrupted job could remain marked “Processing.” | Restart cleanup marks the attempt failed and allows a new retry while preserving history. |
 | An answer sounds plausible, but its quality is unclear. | Review the evidence and compare performance against a recorded development question set. |
 
-**An important finding remains:** the live answer gives the correct limit but names Source 2, while the explicit limit is in Source 1. That citation error is retained in the demo. The workspace assists the agent; it does not remove the need for review, supply missing case details, approve warranty claims, or integrate with a ticketing system.
+**An important finding remains:** the live answer gives the correct limit but names Source 2, while the explicit limit is in Source 1. That citation error is retained in the demo. I built the workspace to support the agent's judgment, not replace it: it does not remove the need for review, supply missing case details, approve warranty claims, or integrate with a ticketing system.
 
 <details>
 <summary><strong>See the citation mismatch captured in the demo</strong></summary>
@@ -70,7 +70,7 @@ The following is an **illustrative planning scenario**, not an achieved result o
 | Planning input | Assumption |
 | --- | ---: |
 | Support cases per week | 200 |
-| Cases suitable for document-assisted research | 60% = 120 cases |
+| Cases suitable for workspace-based research | 60% = 120 cases |
 | Current lookup effort per eligible case | 10 minutes, assumed baseline |
 | Lookup effort after adoption | 4 minutes, assumed target |
 | Potential capacity released | **120 × (10 − 4) = 720 minutes = 12 agent-hours/week** |
@@ -88,18 +88,18 @@ A real pilot would first measure the baseline, then compare similar cases with a
 
 **The adoption decision would depend on time saved without an increase in incorrect advice.** These are proposed pilot measures, not existing dashboard features.
 
-## What I delivered
+## What I built
 
 I built the workspace around this support workflow and concentrated on the conditions that make a knowledge service useful in daily operations.
 
-| Business need | Delivered capability | Evidence |
+| Business need | What I built | Evidence |
 | --- | --- | --- |
-| A usable reference collection | Reconstructed 11 documents covering technical support, after-sales service, and company policy across five file formats. | [Raw source documents](docs/media/raw-documents.zip) |
-| Answers that can be checked | Local question answering, retrieval inspection, and expandable source passages. | [Recorded demo](docs/media/northline-demo.mp4) |
-| Updated documents must replace old guidance in search | Repairs to document replacement, reparsing, chunk editing, and deletion remove obsolete derived data. | [Lifecycle verification](evaluations/results/REPORT.md) |
-| Processing failures must be understandable and recoverable | Visible failure history, cleanup of interrupted work, and explicit retries; concurrent jobs are guarded. | [Recovery evidence](docs/verification/recovery.json) |
-| Administrative source material needs controlled access | Restricted administrative/raw-document access, immutable upload keys, hashed passwords, and session invalidation. | [Security and lifecycle tests](ai_rag/fastapi-app/tests/test_security_lifecycle.py) |
-| Another reviewer must be able to run the project | Docker packaging, database seeds, local model checks, setup instructions, and verification scripts. | [Local setup guide](docs/LOCAL_SETUP.md) |
+| A usable reference collection | Rebuilt 11 documents covering technical support, after-sales service, and company policy across five file formats. | [Raw source documents](docs/media/raw-documents.zip) |
+| Answers that can be checked | Built local question answering, retrieval inspection, and expandable source passages. | [Recorded demo](docs/media/northline-demo.mp4) |
+| Updated documents must replace old guidance in search | Fixed document replacement, reparsing, chunk editing, and deletion so they remove obsolete derived data. | [Lifecycle verification](evaluations/results/REPORT.md) |
+| Processing failures must be understandable and recoverable | Built visible failure history, cleanup of interrupted work, and explicit retries, with guards against concurrent jobs. | [Recovery evidence](docs/verification/recovery.json) |
+| Administrative source material needs controlled access | Implemented restricted administrative/raw-document access, immutable upload keys, hashed passwords, and session invalidation. | [Security and lifecycle tests](ai_rag/fastapi-app/tests/test_security_lifecycle.py) |
+| Another reviewer must be able to run the project | Built Docker packaging, database seeds, local model checks, setup instructions, and verification scripts. | [Local setup guide](docs/LOCAL_SETUP.md) |
 
 ![Processing history retains a failed attempt beside its successful retry](docs/media/recovery.png)
 
@@ -107,11 +107,11 @@ I built the workspace around this support workflow and concentrated on the condi
 
 ## What the evidence shows
 
-The recorded engineering verification includes **222 passing backend tests**, **three successful interrupted-stage recovery scenarios**, a clean-source installation, and desktop/mobile retry checks. These establish local functionality and selected reliability behaviors; they do not establish business impact.
+The engineering verification I ran includes **222 passing backend tests**, **three successful interrupted-stage recovery scenarios**, a clean-source installation, and desktop/mobile retry checks. These establish local functionality and selected reliability behaviors; they do not establish business impact.
 
 ![Comparison of technical fact checks and retrieval time across three search strategies](docs/media/evaluation.svg)
 
-In a **50-question development evaluation of the refreshed corpus**, vector search passed 15 of 18 selected technical fact checks, hybrid retrieval passed 17, and hybrid with reranking passed 17. Median retrieval times were 0.09, 0.18, and 7.62 seconds, respectively.
+In the **50-question development evaluation I built for the refreshed corpus**, vector search passed 15 of 18 selected technical fact checks, hybrid retrieval passed 17, and hybrid with reranking passed 17. Median retrieval times were 0.09, 0.18, and 7.62 seconds, respectively.
 
 The recorded video and screenshots use the [earlier run’s measurements](evaluations/recorded-demo/summary.json). The chart and report here describe the refreshed corpus.
 

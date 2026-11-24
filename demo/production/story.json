@@ -76,8 +76,8 @@
     "chapter": "EXPLORE / INSPECT / REPRODUCE",
     "title": "Run it locally.<br>Follow the evidence.<br><em>Improve what fails.</em>",
     "body": "Vue + FastAPI + MySQL + pgvector + Ollama",
-    "note": "AI-assisted adaptation of an existing enterprise RAG application.",
+    "note": "Built on an existing enterprise RAG application.",
     "kind": "close",
-    "narration": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials."
+    "narration": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. I built it on an existing RAG codebase and demonstrated it with fictional company materials."
   }
 ]

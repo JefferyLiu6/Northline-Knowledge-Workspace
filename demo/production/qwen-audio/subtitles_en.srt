@@ -179,25 +179,25 @@ not production accuracy.
 Run the stack locally with Docker Compose
 
 46
-00:02:06,867 --> 00:02:09,787
+00:02:06,867 --> 00:02:09,627
 and host Ollama. The repository includes
 
 47
-00:02:09,787 --> 00:02:11,847
+00:02:09,627 --> 00:02:11,547
 architecture, contribution notes,
 
 48
-00:02:12,187 --> 00:02:14,227
+00:02:11,847 --> 00:02:13,547
 recovery tests, and documented
 
 49
-00:02:14,227 --> 00:02:17,067
-limitations. This is an AI-assisted
+00:02:13,547 --> 00:02:16,367
+limitations. I built it on an existing RAG
 
 50
-00:02:17,067 --> 00:02:19,467
-adaptation, demonstrated with fictional
+00:02:16,367 --> 00:02:18,187
+codebase and demonstrated it with
 
 51
-00:02:19,467 --> 00:02:20,851
-company materials.
+00:02:18,187 --> 00:02:20,064
+fictional company materials.

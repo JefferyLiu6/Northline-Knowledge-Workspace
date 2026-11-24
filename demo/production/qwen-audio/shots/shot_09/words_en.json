@@ -1,8 +1,8 @@
 {
-  "text": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials.",
-  "audio_mtime": 1794866073.544546,
-  "duration": 16.384,
-  "heard": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials.",
+  "text": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. I built it on an existing RAG codebase and demonstrated it with fictional company materials.",
+  "audio_mtime": 1795551910.0971718,
+  "duration": 15.597,
+  "heard": "Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. I built it on an existing RAG codebase and demonstrated it with fictional company materials.",
   "words": [
     {
       "start": 0.0,
@@ -11,157 +11,177 @@
     },
     {
       "start": 0.24,
-      "end": 0.38,
+      "end": 0.36,
       "word": " the"
     },
     {
-      "start": 0.38,
-      "end": 0.68,
+      "start": 0.36,
+      "end": 0.62,
       "word": " stack"
     },
     {
-      "start": 0.68,
-      "end": 1.18,
+      "start": 0.62,
+      "end": 1.1,
       "word": " locally"
     },
     {
-      "start": 1.18,
-      "end": 1.44,
+      "start": 1.1,
+      "end": 1.36,
       "word": " with"
     },
     {
-      "start": 1.44,
-      "end": 1.76,
+      "start": 1.36,
+      "end": 1.68,
       "word": " Docker"
     },
     {
-      "start": 1.76,
+      "start": 1.68,
       "end": 2.4,
       "word": " Compose"
     },
     {
       "start": 2.4,
-      "end": 2.6,
+      "end": 2.64,
       "word": " and"
     },
     {
-      "start": 2.6,
-      "end": 3.02,
+      "start": 2.64,
+      "end": 2.98,
       "word": " host"
     },
     {
-      "start": 3.02,
-      "end": 3.54,
+      "start": 2.98,
+      "end": 3.46,
       "word": " Ollama."
     },
     {
-      "start": 3.76,
-      "end": 4.24,
+      "start": 3.72,
+      "end": 3.94,
       "word": " The"
     },
     {
-      "start": 4.24,
-      "end": 4.78,
+      "start": 3.94,
+      "end": 4.5,
       "word": " repository"
     },
     {
-      "start": 4.78,
-      "end": 5.32,
+      "start": 4.5,
+      "end": 5.16,
       "word": " includes"
     },
     {
-      "start": 5.32,
-      "end": 5.98,
+      "start": 5.16,
+      "end": 5.82,
       "word": " architecture,"
     },
     {
-      "start": 6.32,
-      "end": 6.86,
+      "start": 6.18,
+      "end": 6.72,
       "word": " contribution"
     },
     {
-      "start": 6.86,
-      "end": 7.38,
+      "start": 6.72,
+      "end": 7.08,
       "word": " notes,"
     },
     {
-      "start": 7.72,
-      "end": 8.14,
+      "start": 7.38,
+      "end": 7.76,
       "word": " recovery"
     },
     {
-      "start": 8.14,
-      "end": 8.58,
+      "start": 7.76,
+      "end": 8.2,
       "word": " tests,"
     },
     {
-      "start": 8.7,
-      "end": 9.14,
+      "start": 8.36,
+      "end": 8.46,
       "word": " and"
     },
     {
-      "start": 9.14,
-      "end": 9.76,
+      "start": 8.46,
+      "end": 9.08,
       "word": " documented"
     },
     {
-      "start": 9.76,
-      "end": 10.38,
+      "start": 9.08,
+      "end": 9.66,
       "word": " limitations."
     },
     {
-      "start": 10.8,
-      "end": 11.2,
-      "word": " This"
+      "start": 10.06,
+      "end": 10.3,
+      "word": " I"
     },
     {
-      "start": 11.2,
-      "end": 11.32,
-      "word": " is"
+      "start": 10.3,
+      "end": 10.62,
+      "word": " built"
     },
     {
-      "start": 11.32,
-      "end": 11.48,
+      "start": 10.62,
+      "end": 10.74,
+      "word": " it"
+    },
+    {
+      "start": 10.74,
+      "end": 10.92,
+      "word": " on"
+    },
+    {
+      "start": 10.92,
+      "end": 11.06,
       "word": " an"
     },
     {
-      "start": 11.48,
+      "start": 11.06,
+      "end": 11.54,
+      "word": " existing"
+    },
+    {
+      "start": 11.54,
       "end": 11.9,
-      "word": " AI"
+      "word": " RAG"
     },
     {
       "start": 11.9,
-      "end": 12.6,
-      "word": "-assisted"
+      "end": 12.44,
+      "word": " codebase"
     },
     {
-      "start": 12.6,
-      "end": 13.28,
-      "word": " adaptation,"
+      "start": 12.44,
+      "end": 12.66,
+      "word": " and"
     },
     {
-      "start": 13.54,
-      "end": 14.32,
+      "start": 12.66,
+      "end": 13.22,
       "word": " demonstrated"
     },
     {
-      "start": 14.32,
-      "end": 14.62,
+      "start": 13.22,
+      "end": 13.52,
+      "word": " it"
+    },
+    {
+      "start": 13.52,
+      "end": 13.72,
       "word": " with"
     },
     {
-      "start": 14.62,
-      "end": 15.0,
+      "start": 13.72,
+      "end": 14.18,
       "word": " fictional"
     },
     {
-      "start": 15.0,
-      "end": 15.44,
+      "start": 14.18,
+      "end": 14.64,
       "word": " company"
     },
     {
-      "start": 15.44,
-      "end": 15.98,
+      "start": 14.64,
+      "end": 15.12,
       "word": " materials."
     }
   ]

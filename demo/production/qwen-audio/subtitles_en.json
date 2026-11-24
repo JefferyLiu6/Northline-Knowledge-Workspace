@@ -272,37 +272,37 @@
   {
     "shot": 9,
     "start": 126.867,
-    "end": 129.787,
+    "end": 129.627,
     "text": "and host Ollama. The repository includes"
   },
   {
     "shot": 9,
-    "start": 129.787,
-    "end": 131.847,
+    "start": 129.627,
+    "end": 131.547,
     "text": "architecture, contribution notes,"
   },
   {
     "shot": 9,
-    "start": 132.187,
-    "end": 134.227,
+    "start": 131.847,
+    "end": 133.547,
     "text": "recovery tests, and documented"
   },
   {
     "shot": 9,
-    "start": 134.227,
-    "end": 137.067,
-    "text": "limitations. This is an AI-assisted"
+    "start": 133.547,
+    "end": 136.367,
+    "text": "limitations. I built it on an existing RAG"
   },
   {
     "shot": 9,
-    "start": 137.067,
-    "end": 139.467,
-    "text": "adaptation, demonstrated with fictional"
+    "start": 136.367,
+    "end": 138.187,
+    "text": "codebase and demonstrated it with"
   },
   {
     "shot": 9,
-    "start": 139.467,
-    "end": 140.851,
-    "text": "company materials."
+    "start": 138.187,
+    "end": 140.064,
+    "text": "fictional company materials."
   }
 ]

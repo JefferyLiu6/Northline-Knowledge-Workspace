@@ -13,16 +13,16 @@
         3840,
         2160
       ],
-      "bytes": 4413573,
-      "sha256": "180392de3152c6f097598d7e1f6dd8be3c11ea0c9d9e3a5f89d728a19182e53d"
+      "bytes": 4407757,
+      "sha256": "59cb68157729f281809e8daf3e05201553029138fca48240e7e0fb46cc385027"
     },
     "Northline-Preview-1080p.gif": {
       "resolution": [
         1920,
         1080
       ],
-      "bytes": 2021416,
-      "sha256": "8c35c18de641c2ac1f6814a4fb1b8ff26abdef25cf5456eb606e3021dfe39132"
+      "bytes": 2021712,
+      "sha256": "50178573fc5ae4f672c913dedf7d18f6213ce85b4e1680b9856fab5c870cc567"
     }
   }
 }

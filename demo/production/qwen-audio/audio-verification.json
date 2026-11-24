@@ -54,8 +54,8 @@
     {
       "shot": "shot_09",
       "transcription_similarity": 1.0,
-      "max_word_gap_seconds": 0.42,
-      "duration": 16.384
+      "max_word_gap_seconds": 0.4,
+      "duration": 15.597
     }
   ],
   "caption_cues": 51,

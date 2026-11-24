@@ -1,12 +1,13 @@
 {
-  "updated_at": "2026-11-16T21:56:47.862092+00:00",
+  "updated_at": "2026-11-24T20:28:00.373157+00:00",
   "source_pipeline": "/Users/jeffery/Desktop/ai-video-pipeline",
   "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-CustomVoice-bf16",
   "voice": "ryan",
   "model_snapshot": "52f4770fd9726457eae3d3b6aa92047a25a10776",
   "inference": "local MLX, offline cached models",
-  "duration_seconds": 141.988,
+  "duration_seconds": 141.188,
   "video_decode": "passed",
-  "script_changed": false,
-  "screenshots_changed": false
+  "script_changed": true,
+  "screenshots_changed": true,
+  "change_note": "Shot 9 narration regenerated with the same model, voice, and style after a script wording change; 09-close slide note updated; captions realigned; video, MP3, and GIF previews re-rendered. Shots 1-8 audio unchanged."
 }

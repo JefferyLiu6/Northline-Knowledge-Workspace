@@ -34,4 +34,4 @@ The development evaluation records one hundred fifty comparisons across fifty qu
 
 ## EXPLORE / INSPECT / REPRODUCE
 
-Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. This is an AI-assisted adaptation, demonstrated with fictional company materials.
+Run the stack locally with Docker Compose and host Ollama. The repository includes architecture, contribution notes, recovery tests, and documented limitations. I built it on an existing RAG codebase and demonstrated it with fictional company materials.
