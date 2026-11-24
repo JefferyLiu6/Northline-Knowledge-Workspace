@@ -61,7 +61,7 @@ flowchart LR
   Answer --> Citation["Answer with numbered source passages"]
 ```
 
-The inherited application also supports configurable prompts, query rewriting, agents/tools, conversation history, feedback, and evaluation management. The portfolio benchmark isolates vector, hybrid, and hybrid-plus-reranking paths; it does not establish the correctness of every agent/tool workflow.
+The underlying codebase also supports configurable prompts, query rewriting, agents/tools, conversation history, feedback, and evaluation management. The portfolio benchmark isolates vector, hybrid, and hybrid-plus-reranking paths; it does not establish the correctness of every agent/tool workflow.
 
 ## Boundaries and remaining work
 

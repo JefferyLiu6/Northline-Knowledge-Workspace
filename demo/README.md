@@ -32,7 +32,7 @@ An edited, narrated walkthrough of real screenshots captured from the local appl
 
 ## Evidence and limitations
 
-Northline Industrial Systems Inc. is fictional. The supplied documents are generated demonstration materials. This project is an AI-assisted adaptation of an existing Vue/FastAPI RAG system, not a claim of original authorship of the inherited framework.
+Northline Industrial Systems Inc. is fictional. The supplied documents are generated demonstration materials. The workspace was built on an existing Vue/FastAPI RAG codebase; the underlying framework is not claimed as original work.
 
 The captured live answer correctly says 20,000 but attributes it to Source 2. The explicit number is in Source 1. This defect is deliberately retained and discussed in the demo. The screenshot recovery example is an empty-file parse failure followed by source replacement and a real successful retry, using a temporary fixture that was deleted afterward. It is separate from the three previously completed SIGKILL restart checks.
 

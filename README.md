@@ -6,7 +6,7 @@
 
 The business setting is **industrial automation and manufacturing technology**. Northline supplies industrial IoT gateways that connect factory equipment to monitoring systems. Its service desk handles installation problems, device faults, warranty questions, returns, and spare-parts enquiries. The primary users are technical support and after-sales agents; knowledge administrators maintain the source collection, and Product Engineering reviews uncertain cases.
 
-> **Portfolio case study:** Northline is a fictional company, and its customer memo and source documents are simulated. This is an AI-assisted adaptation of an existing enterprise RAG application. My work focused on document integrity, processing recovery, retrieval evaluation, and local deployment.
+> **Portfolio case study:** Northline is a fictional company, and its customer memo and source documents are simulated. I built it on an existing FastAPI/Vue RAG codebase, adding document-lifecycle fixes, restart recovery, a retrieval evaluation, and a reproducible local deployment.
 
 [![Northline workspace: documents, retrieval, answers, source inspection, and recovery](docs/media/northline-demo.gif)](docs/media/northline-demo.mp4)
 
@@ -26,7 +26,7 @@ After-sales enquiries have the same underlying problem. A distributor asks for a
 
 ## The change: put the question, guidance, and evidence together
 
-I adapted an existing enterprise RAG application around that support workflow. I reconstructed **11 source documents across three knowledge bases**, connected local Ollama models, and added a clearer workspace for finding and inspecting information.
+I built the workspace around that support workflow on an existing FastAPI/Vue RAG codebase. I reconstructed **11 source documents across three knowledge bases**, connected local Ollama models, and added a clearer workspace for finding and inspecting information.
 
 Getting an answer was only the first checkpoint. During verification, I found that replacing a document could leave its old search data behind, and a backend interruption could leave a task appearing to run forever. Those defects matter to a service desk: an agent could receive outdated guidance, or a knowledge administrator could be unable to tell whether new material was ready.
 
@@ -90,7 +90,7 @@ A real pilot would first measure the baseline, then compare similar cases with a
 
 ## What I delivered
 
-I adapted the existing application around this support workflow and concentrated on the conditions that make a knowledge service useful in daily operations.
+I built the workspace around this support workflow and concentrated on the conditions that make a knowledge service useful in daily operations.
 
 | Business need | Delivered capability | Evidence |
 | --- | --- | --- |
